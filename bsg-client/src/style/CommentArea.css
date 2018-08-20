@@ -1,43 +1,40 @@
+
+
 .commentContainer {
-  height: auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 3fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea"
-    "ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea";
+  display: flex;
+  flex-direction: column;
+  border-radius : 5px;
 }
 
 .PostCommentArea { 
-  grid-area: PostCommentArea;
   text-align : center;
+  height : 50px
 }
 
 .ViewCommentArea { 
-  grid-area: ViewCommentArea; 
+
 }
 
 .InputPostComment{
   margin-top : 10px;
   margin-bottom : 10px;
   width : 80%;
-  height : 90%;
+  height : 100%;
   
 }
 
 .BtnPostComment {
   width : 10%;
-  height : 90%;
+  height : 100%;
 }
 
 .oneCommentBox {
   display : flex;
   justify-content : space-between;
   margin : 10px;
-  border : 1px solid black;
   border-radius : 10px;
-  height : 13%;
+  height : 50px;
+  text-align : center;
 }
 
 .ViewCommentArea {
@@ -48,17 +45,18 @@
 
 .commentLeft {
   display : flex;
-  width : 15%;
+  width : 20%;
   justify-content :space-between;
-  padding : 10px;
+  padding : 15px;
+  font-weight : bold;
 }
 
 .commentRight {
   display : flex;
-  width : 50%;
+  width : 60%;
   justify-content :space-between;
   margin-right: 10px;
-  padding : 10px;
+  padding : 15px;
 }
 
 .commentRightRight{

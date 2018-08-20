@@ -5,6 +5,7 @@
 }
 
 .MyPageContainer {
+  background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   display: grid;
   height : 1100px;
   background-color: #222831;
@@ -24,8 +25,10 @@
 
 .MyPageCenter { 
   grid-area: MyPageCenter; 
-  background-color : #00ACB5;
+  background-color : #00000069;
 }
+
+
 
 .innerMypage {
   display: grid;
@@ -45,29 +48,57 @@
 .Title { 
   grid-area: Title; 
   text-align: center;
-  background-color : white;
+  background-color : #167cc585;
+  font-size: xxx-large;
+  font-family: 'Jua', sans-serif;
 }
 .updateUserBtn { 
-  grid-area: updateUserBtn; 
-
+  grid-area: updateUserBtn;
+  background-color: #9c9db07d;
+	border: 2px solid #333;
+	color: black;
+	line-height: 50px;
+  font-size: xx-large;
+  font-family: 'Jua', sans-serif;
 }
+
+.updateUserBtn:hover {
+	background-color: #fff;
+	border-color: #59b1eb;
+	color: #59b1eb;
+}
+
 .deleteUserBtn { 
   grid-area: deleteUserBtn; 
+  font-size: xx-large;
+  background-color: #9c9db07d;
+	border: 2px solid #333;
+	color: black;
+	line-height: 50px;
+  font-family: 'Jua', sans-serif;
 }
+
+.deleteUserBtn:hover {
+	background-color: #fff;
+	border-color: #e21c1c;
+	color: #fc0707;
+}
+
+
 .TearIcon { 
   grid-area: TearIcon;
   height : 100%; 
 }
 .userData { 
   grid-area: userData;
-  background-color : rgb(48, 48, 48);
+  background-color : rgb(255 255 255 / 59%);
   border-radius: 5px;
   padding : 20px;
   display : flex;
   flex-direction : column;
   justify-content : space-between;
   font-size : 2rem;
-  color : white;
+  color : black;
 }
 
 .updateData {
@@ -105,6 +136,23 @@
   font-size: 2.5rem;
   color : white;
 
+}
+
+
+.nameText{
+height: 150px;
+width : 10%;
+display : flex;
+flex-direction: column;
+justify-self: space-between;
+text-align: left;
+}
+.copyright{
+height: 100%;
+width : 90%;
+display : flex;
+flex-direction: column;
+justify-content : center;
 }
 
 /* .updateInput {
