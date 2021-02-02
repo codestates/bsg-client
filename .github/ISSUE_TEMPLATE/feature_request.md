@@ -11,7 +11,7 @@ assignees: ''
 - Group:  `client`, `server`, `sr`
 - Type: `bug`, `feature`, `delete`
 - Detail: fix actions from client redux
-
+- Memeber:`JunSeok`, `SangCheul`
 ### TODO
 1. [ ] Job1
 2. [ ] Job2
