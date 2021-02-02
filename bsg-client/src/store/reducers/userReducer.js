@@ -7,9 +7,9 @@ import { NOW_LOGIN } from '../action/users'
 import { NOW_LOGOUT } from '../action/users'
 
 const initialState = {
-  isLogin : null,
+  isLogin : false,
   userNow : null,
-  accessToken : null
+  accessToken : null,
 }
 
 export default function(state = initialState, action){

@@ -67,7 +67,7 @@ export const nowLogOut = () => {
 export const setAccessToken = (data) => {
   return {
     type : SET_ACCESS_TOKEN,
-    data
+    accessToken : data
   }
 }
 
