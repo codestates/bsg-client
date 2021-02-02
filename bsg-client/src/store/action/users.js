@@ -113,6 +113,8 @@ export const signingOutUser = (accessToken) => {
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
+    }).catch((err) => {
+      throw(err)
     })
   }
 }
@@ -125,6 +127,8 @@ export const secedingUser = (data) => {
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
+    }).catch((err) => {
+      throw(err)
     })
   }
 }
