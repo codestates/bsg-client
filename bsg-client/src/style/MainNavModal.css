@@ -5,13 +5,13 @@
 }
 
 
-.container {
+.MainPageContainer {
   margin:0;
-  height: 1500px;
+  height: 1700px;
   background-color: #222831;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 0.8fr 0.6fr 2fr 1fr 1.5fr 1.5fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.8fr 0.6fr 2.7fr 1fr 1.5fr 2fr 1fr 1fr;
   gap: 5% 1%;
   grid-template-areas:
     ". . . . . ."
@@ -46,17 +46,20 @@
   grid-area: searchData;
   background-color : white;
   border-radius : 10px;
+  box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 6px 6px;
 }
 .video1 { 
   grid-area: video1;
-  box-shadow: 5px 5px 10px 2px gray;
+  border: 5px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 2px black;
   
 }
 .video2 { 
   grid-area: video2;
-  border: none;
+  border: 5px solid black;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px 2px gray;
+  box-shadow: 5px 5px 10px 2px black;
   
 }
 .footer { 
@@ -107,12 +110,13 @@
 
 .navBtn {
   width : 25%;
-  background-color :#065458;
+  background: #404040;
   border: none;
   color : white;
   font-weight: bold;
   font-size : 20px;
   border-radius : 5px;
+  
 }
 
 .searchBar{

@@ -1,0 +1,28 @@
+*{
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.MyPageContainer {
+  display: grid;
+  height : 1100px;
+  background-color: #222831;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . . ."
+    ". MyPageCenter MyPageCenter MyPageCenter MyPageCenter ."
+    ". MyPageCenter MyPageCenter MyPageCenter MyPageCenter ."
+    ". MyPageCenter MyPageCenter MyPageCenter MyPageCenter ."
+    ". MyPageCenter MyPageCenter MyPageCenter MyPageCenter ."
+    ". . . . . ."
+    "footer footer footer footer footer footer";
+}
+
+
+.MyPageCenter { 
+  grid-area: MyPageCenter; 
+  background-color : #00ACB5;
+}

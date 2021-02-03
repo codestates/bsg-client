@@ -40,7 +40,7 @@ const MainPage = () => {
     <Modal isOpen={modalNow} openModal={openModal} closeModal={closeModal}/>
 
     <Nav openModal={openModal}></Nav>
-    <div className="container">
+    <div className="MainPageContainer">
       <div className="search">
       <input className="searchBar" type="text"></input>
       <button className="searchBtn">검색</button>
