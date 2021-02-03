@@ -1,59 +1,81 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { signingInUser } from '../store/action/users';
+import { signingUpUser } from '../store/action/users';
 
 
 
-const Modal = ({isOpen, openModal ,closeModal}) => {
-
-  const dispatch = useDispatch();
+const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSignUp, signInUser, isSignUp, offSignUp}) => {
   
-  const [signUp, setSignUp] = useState(false);
-  const [email, setEmail] = useState({ email : '' });
-  const [password, setPassword] = useState({ password : '' });
+  const dispatch = useDispatch()
 
-  const userNow = useSelector((state) => state.userData.userNow)
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
+  const [comPass, setComPass] = useState('')
+  const [username, setUsername] = useState('')
 
-  const setEmailfromInput = (e) => {
-    setEmail({ email : e.target.value })
+
+  const emailSignUp = (e) => {
+    setEmail(e.target.value)
   }
 
-  const setPasswordfromInput = (e) => {
-    setPassword({ password : e.target.value })
+  const passSignUp = (e) => {
+    setPass(e.target.value)
   }
 
-  const signInUser = () => {
+  const compassSignUp = (e) => {
+    setComPass(e.target.value)
+  }
+
+  const usernameSignUp = (e) => {
+    setUsername(e.target.value)
+  }
+
+  const postSignUp = () => {
     let userdata = {
       email : email,
-      password : password
+      password : pass,
+      username : username
     }
-    // dispatch(signingInUser(userdata))
-    console.log(userNow)
-    if(userNow){
-      closeModal()
-    }
+    dispatch(signingUpUser(userdata))
+    offSignUp()
   }
-  
+
+  const offAllMode = () => {
+    offSignUp()
+    closeModal()
+  }
+
   return ( 
-    <>
-    {isOpen ? 
-      <div className="modalOuter">
-        <div onClick={closeModal}>
+    <>{!isSignUp ? 
+      <div className="modalOuter" onClick={offAllMode}>
           <div className="insideModal" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={closeModal}>&times;</span>
+            <span className="close" onClick={offAllMode}>&times;</span>
             <div className="modalContents">
-            <img src="https://ifh.cc/g/XpHtKW.png"></img>
-              <input onChange={setEmailfromInput} placeholder="Email" className="typeBar" type='email'></input>
-              <input onChange={setPasswordfromInput} placeholder="Password" className="typeBar" type="password"></input>
+            <img src="https://ifh.cc/g/XpHtKW.png"></img> 
+              <input onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
+              <input onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
               <button className="btnModal" onClick={() => {signInUser()}}>로그인</button>
-              <button className="btnModal">회원가입</button>
+              <button className="btnModal" onClick={() => {toSignUp()}}>회원가입</button>
             </div>
           </div>
+      </div> 
+      : 
+      <div className="modalOuter" onClick={offAllMode}>
+      <div className="insideModal" onClick={(e) => e.stopPropagation()}>
+        <span className="close" onClick={offAllMode}>&times;</span>
+        <div className="modalContents">
+        <img src="https://ifh.cc/g/XpHtKW.png"></img> 
+          <input onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
+          <input onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
+          <input onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
+          <input onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
+          <button className="btnModal" onClick={() => {postSignUp()}}>회원가입</button>
         </div>
-      </div> : null
+      </div>
+  </div> 
     }
     </>
     )
   }
   
-  export default Modal
+  export default LoginModal

@@ -10,13 +10,14 @@
   height:1000px;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 0.1fr 0.5fr 1.5fr 0.5fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.1fr 0.5fr 1.5fr 1fr 0.5fr 1fr 1fr;
   gap: 5% 1%;
   grid-template-areas:
     ". . . . . ."
     ". . . . . ."
     "search search search search search search"
     ". searchData searchData searchData searchData ."
+    ". video1 video1 video2 video2 ."
     ". video1 video1 video2 video2 ."
     ". video1 video1 video2 video2 ."
     "footer footer footer footer footer footer";
@@ -33,11 +34,15 @@
 }
 .video1 { 
   grid-area: video1;
-  border: rgb(77, 77, 255) solid 2px;
+  box-shadow: 5px 5px 10px 2px gray;
+  
 }
 .video2 { 
   grid-area: video2;
-  border: rgb(77, 77, 255) solid 2px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 2px gray;
+  
 }
 .footer { 
   grid-area: footer;
@@ -156,7 +161,7 @@
 }
 
 .btnModal {
-  height: 40px;
+  height: 50px;
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
@@ -167,4 +172,9 @@
   margin-bottom: 12px;
   border-radius: 3px;
   border-style: none;
+}
+
+.bestVideos {
+  width: 100%;
+  height: 100%;
 }
