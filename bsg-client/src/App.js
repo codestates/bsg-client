@@ -1,10 +1,11 @@
 import './style.css';
+import MainPage from '../src/pages/Mainpage'
 
 function App() {
   return (
-    <div className="App">
-   
-    </div>
+    <>
+    <MainPage></MainPage>
+    </>
   );
 }
 

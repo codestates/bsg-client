@@ -4,7 +4,6 @@ import { GET_BOARD } from '../action/pagedata'
 import { GET_COMMENT } from '../action/pagedata'
 
 const initialState = {
-  openModal : false,  // 액션, 리듀서 결합 보류중
   searchData : null,
   bestVideos : null,
   boards : null,
