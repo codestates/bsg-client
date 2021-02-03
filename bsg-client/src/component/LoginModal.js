@@ -49,27 +49,27 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
     <>{!isSignUp ? 
       <div className="modalOuter" onClick={offAllMode}>
           <div className="insideModal" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={offAllMode}>&times;</span>
+            <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
             <div className="modalContents">
             <img src="https://ifh.cc/g/XpHtKW.png"></img> 
               <input onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
               <input onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
-              <button className="btnModal" onClick={() => {signInUser()}}>로그인</button>
-              <button className="btnModal" onClick={() => {toSignUp()}}>회원가입</button>
+              <button className="btnSignIn" onClick={() => {signInUser()}}>로그인</button>
+              <button className="btnSignUp" onClick={() => {toSignUp()}}>회원가입</button>
             </div>
           </div>
       </div> 
       : 
       <div className="modalOuter" onClick={offAllMode}>
       <div className="insideModal" onClick={(e) => e.stopPropagation()}>
-        <span className="close" onClick={offAllMode}>&times;</span>
+        <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
         <div className="modalContents">
         <img src="https://ifh.cc/g/XpHtKW.png"></img> 
           <input onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
           <input onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
           <input onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
           <input onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
-          <button className="btnModal" onClick={() => {postSignUp()}}>회원가입</button>
+          <button className="btnSignIn" onClick={() => {postSignUp()}}>회원가입</button>
         </div>
       </div>
   </div> 

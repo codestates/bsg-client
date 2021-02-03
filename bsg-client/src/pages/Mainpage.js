@@ -54,7 +54,7 @@ const MainPage = () => {
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video2}`} allowFullScreen></iframe>
   </div>
-  <div className="footer"></div>
+  <div className="footer">designed by apple in california</div>
   </div>
   </>
   )
