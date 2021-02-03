@@ -1,0 +1,170 @@
+*{
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.container {
+  margin:0;
+  height:1000px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 0.1fr 0.5fr 1.5fr 0.5fr 1fr 1fr;
+  gap: 5% 1%;
+  grid-template-areas:
+    ". . . . . ."
+    ". . . . . ."
+    "search search search search search search"
+    ". searchData searchData searchData searchData ."
+    ". video1 video1 video2 video2 ."
+    ". video1 video1 video2 video2 ."
+    "footer footer footer footer footer footer";
+}
+
+.search { 
+  grid-area: search;
+  text-align: center;
+
+}
+.searchData { 
+  grid-area: searchData;
+  border: rgb(77, 77, 255) solid 2px;
+}
+.video1 { 
+  grid-area: video1;
+  border: rgb(77, 77, 255) solid 2px;
+}
+.video2 { 
+  grid-area: video2;
+  border: rgb(77, 77, 255) solid 2px;
+}
+.footer { 
+  grid-area: footer;
+  border: rgb(77, 77, 255) solid 2px;
+}
+
+.Navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color : rgb(88, 86, 86);
+  height : 60px;
+  width : 100%;
+  position : fixed;
+}
+
+.NavLeft{
+  width : 60%;
+  height : 100%;
+}
+
+.logo{
+  height : 100%;
+}
+
+.NavRight {
+  display : flex;
+  justify-content : space-between;
+  width : 40%;
+  height : 100%
+}
+
+
+.loginBtn {
+  width : 25%;
+  background-color :rgb(0, 0, 0);
+  border: none;
+  color : white;
+  font-weight: bold;
+  font-size : 20px;
+  border-radius : 5px;
+}
+
+
+.navBtn {
+  width : 25%;
+  background-color :rgb(0, 0, 0);
+  border: none;
+  color : white;
+  font-weight: bold;
+  font-size : 20px;
+  border-radius : 5px;
+}
+
+.searchBar{
+  width : 65%;
+  height : 100%;
+  padding-left: 5%;
+  font-size : 12px;
+  box-shadow: 5px 5px 10px 2px gray;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.searchBtn{
+  width : 10%;
+  height : 100%;
+  box-shadow: 5px 5px 10px 2px gray;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.modalOuter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6); 
+}
+
+.insideModal {
+    width: 480px;
+    height: 621px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;  
+}
+
+.modalContents {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.close {
+  float: right;
+  font-size: 25px;
+}
+
+.typeBar {
+  height : 10%;
+  margin-top : 5%;
+  padding-left: 5%;
+  
+}
+
+.btnModal {
+  height: 40px;
+  font-size: 14px;
+  padding: 13px 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  line-height: 1px;
+  margin-top: 10%;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border-style: none;
+}
