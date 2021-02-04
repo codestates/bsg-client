@@ -37,7 +37,7 @@ const MainPage = () => {
 
   return(
     <>
-    <Modal isOpen={modalNow} openModal={openModal} closeModal={closeModal}/>
+    <Modal isOpen={modalNow} closeModal={closeModal}/>
 
     <Nav openModal={openModal}></Nav>
     <div className="MainPageContainer">

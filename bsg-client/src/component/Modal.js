@@ -4,7 +4,7 @@ import { signingInUser } from '../store/action/users';
 import LoginModal from '../component/LoginModal'
 
 
-const Modal = ({isOpen, openModal ,closeModal}) => {
+const Modal = ({isOpen, closeModal}) => {
 
   const dispatch = useDispatch();
   
