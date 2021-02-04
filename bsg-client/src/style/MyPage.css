@@ -26,3 +26,46 @@
   grid-area: MyPageCenter; 
   background-color : #00ACB5;
 }
+
+.innerMypage {
+  display: grid;
+  height : 100%;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "Title Title Title Title Title Title Title"
+    ". . . . . . ."
+    ". TearIcon TearIcon userData userData userData ."
+    ". TearIcon TearIcon userData userData userData ."
+    ". . . . . . ."
+    ". updateUserBtn updateUserBtn . deleteUserBtn deleteUserBtn ."
+    ". . . . . . .";
+}
+.Title { 
+  grid-area: Title; 
+  text-align: center;
+  background-color : white;
+}
+.updateUserBtn { 
+  grid-area: updateUserBtn; 
+
+}
+.deleteUserBtn { 
+  grid-area: deleteUserBtn; 
+}
+.TearIcon { 
+  grid-area: TearIcon;
+  height : 100%; 
+}
+.userData { 
+  grid-area: userData;
+  background-color : rgb(48, 48, 48);
+  border-radius: 5px;
+  padding : 20px;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-between;
+  font-size : 2rem;
+  color : white;
+}
