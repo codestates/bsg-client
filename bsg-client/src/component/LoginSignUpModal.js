@@ -13,6 +13,12 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
   const [comPass, setComPass] = useState('')
   const [username, setUsername] = useState('')
 
+  const clearInput = () => {
+    setEmail('')
+    setPass('')
+    setComPass('')
+    setUsername('')
+  }
 
   const emailSignUp = (e) => {
     setEmail(e.target.value)
@@ -37,10 +43,12 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       username : username
     }
     dispatch(signingUpUser(userdata))
+    clearInput()
     offSignUp()
   }
 
   const offAllMode = () => {
+    clearInput()
     offSignUp()
     closeModal()
   }

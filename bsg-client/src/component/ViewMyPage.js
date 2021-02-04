@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 
-const ViewMyPage = () => {
+const ViewMyPage = ({doUpdate}) => {
 
 
   
@@ -18,7 +18,7 @@ const ViewMyPage = () => {
       <div>승률 : 10%</div>
       <div>가입일 : 2021년 1월 30일</div>
     </div>
-    <button className="updateUserBtn">정보수정</button>
+    <button onClick={() => {doUpdate()}} className="updateUserBtn">라이엇 닉네임 변경</button>
     <button className="deleteUserBtn">회원탈퇴</button>
 </div>
   )

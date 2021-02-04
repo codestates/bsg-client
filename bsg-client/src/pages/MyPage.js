@@ -3,24 +3,30 @@ import { useSelector, useDispatch } from 'react-redux';
 import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import ViewMyPage from '../component/ViewMyPage'
+import UpdateMyPage from '../component/UpdateMyPage'
 const axios = require('axios')
 
 
 const MyPage = () => {
 
   const userdata = useSelector((state) => state.userData.userNow)
-  const [mode, setMode] = useState('read')
+  const [isUpdate, setMode] = useState(false)
 
-  const changeMode = (mode) => {
-    setMode(mode)
+  const doUpdate = () => {
+    setMode(true)
+  }
+
+  const cancelUpdate = () => {
+    setMode(false)
   }
 
   return( 
     <>
     <Nav></Nav>
     <div className="MyPageContainer">
-      <div className="MyPageCenter">
-        <ViewMyPage clickBtn={changeMode}></ViewMyPage>
+      <div className="MyPageCenter">{!isUpdate ? <ViewMyPage doUpdate={doUpdate}></ViewMyPage> 
+      : <UpdateMyPage cancelUpdate={cancelUpdate}></UpdateMyPage>}
+        
       </div>
       <div className="footer">designed by apple in california</div>
     </div>

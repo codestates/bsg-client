@@ -1,14 +1,19 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 const axios = require('axios')
+const html = document.querySelector('html')
+
 
 
 const MainPage = () => {
   
+  const history = useHistory();
   const [modalNow, setModal] = useState(false)
   const [bestvideos, getvideos] = useState({})
+  const [openSearchBox, setOnOff] = useState(false)
 
   useEffect(() => {
     getYoutube()
@@ -25,13 +30,23 @@ const MainPage = () => {
       getvideos(video)
     })
   }
+
+  const clickLogo = () => {
+    history.push('/')
+  }
   
   const openModal = () => {
+    html.classList.add("stopScroll")
     setModal(true)
   }
 
   const closeModal = () => {
+    html.classList.remove("stopScroll")
     setModal(false)
+  }
+
+  const openSearBox = () => {
+    setOnOff(true)
   }
   
 
@@ -43,9 +58,12 @@ const MainPage = () => {
     <div className="MainPageContainer">
       <div className="search">
       <input className="searchBar" type="text"></input>
-      <button className="searchBtn">검색</button>
+      <button onClick={openSearBox} className="searchBtn">검색</button>
     </div>
-  <div className="searchData"></div>
+    <div className="mainlogo">
+      <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/>
+      </div>
+  {openSearchBox ? <div className="searchData"></div> : null}
   <div className="video1">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>
