@@ -10,11 +10,12 @@ const ContentBoard = () => {
     return( 
       <>
       <Nav></Nav>
-      <div class="grid-container">
-  <div class="mainBox">
-    <div class="title"></div>
-    <div class="contentBox"></div>
-    <div class="buttonBox">
+      <div className="Main-container">
+      <div className="mainBox">
+      <div className="title"></div>
+      <div className="contentBox">
+      </div>
+      <div className="buttonBox">
       <button type="button">글쓰기</button>
     </div>
   </div>
