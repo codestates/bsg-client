@@ -2,11 +2,12 @@ import { SEARCH_DATA } from '../action/pagedata'
 import { GET_VIDEOS } from '../action/pagedata'
 import { GET_BOARD } from '../action/pagedata'
 import { GET_COMMENT } from '../action/pagedata'
+const fakeData = require('../reducers/fakedata') 
 
 const initialState = {
   searchData : null,
   bestVideos : null,
-  boards : null,
+  boards : fakeData,
   comments : null
 }
 
