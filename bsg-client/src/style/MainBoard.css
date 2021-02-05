@@ -1,28 +1,25 @@
-.container{
-    min-height: 100vh;
-    padding: 200px 0;
+.Mainboard-container {
+    height: 1500px;
     display: grid;
-    grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(auto-fit, 300px);
-    grid-auto-rows: 300px;
-    grid-gap: 30px 20px;
-    justify-content: center;
-    background: #ffffff;
-    box-sizing: border-box;
-}
-
-.postBox{
-    border: 1px solid black;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 10px 5px 5px #7f8fa6;
-}
-
-.title{
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid black;
-    font-weight: 600;
-}
+    grid-template-columns: 0.3fr 1.5fr 1.5fr 1.5fr 0.3fr;
+    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . . ."
+      ". bigPostBox bigPostBox bigPostBox ."
+      ". bigPostBox bigPostBox bigPostBox ."
+      ". . writeBtn . ."
+      "footer footer footer footer footer";
+  }
+  .footer { grid-area: footer; }
+  .bigPostBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px 25px;
+    grid-template-areas:
+      ". . ."
+      ". . .";
+    grid-area: bigPostBox;
+  }
+  .writeBtn { grid-area: writeBtn; }
