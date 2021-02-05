@@ -4,6 +4,7 @@ import {useHistory} from 'react-router'
 import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import axios from 'axios';
+import BoardMapping from '../component/BoardMapping'
 const html = document.querySelector('html')
 
 
@@ -27,6 +28,10 @@ const MainBoard = () => {
   //     .then(({ data }) => setPosts(data));
   // }, []);
 
+  const boardList = useSelector((state) => 
+    state.pageData.boards.fakeData.boardlist
+  );
+
   const handleClick = () => history.push('/contentBoard')
 
   
@@ -37,27 +42,9 @@ const MainBoard = () => {
 
     <Nav openModal={openModal}></Nav>
       
-      <container className = 'container'>
-      {posts.map((post, index) => {
-        <div className = 'postBox'>
-        <div onClick={() => handleClick('/contentBoard')}>{post.title}</div>
-        <div onClick={() => handleClick('/contentBoard')}>{post.body}</div>
-      </div>
-      })}
-      <div className = 'postBox'>
-        <div className = 'title'>Title</div>
-        <div>Body</div>
-      </div>
-      <div className = 'postBox'>
-        <div className = 'title'>Title</div>
-        <div>Body</div>
-      </div>
-      <div className = 'postBox'>
-        <div className = 'title'>Title</div>
-        <div>Body</div>
-      </div>
-    
-  </container>
+  <div className = 'Mainboard-container'>
+        <BoardMapping></BoardMapping>
+  </div>
       </>
     )
 }
