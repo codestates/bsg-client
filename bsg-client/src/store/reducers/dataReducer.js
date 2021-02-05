@@ -8,7 +8,7 @@ const initialState = {
   searchData : null,
   bestVideos : null,
   boards : fakeData,
-  comments : null
+  comments : fakeData
 }
 
 export default function(state = initialState, action){
