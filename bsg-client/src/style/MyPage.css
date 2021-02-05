@@ -9,7 +9,7 @@
   height : 1100px;
   background-color: #222831;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   gap: 0px 0px;
   grid-template-areas:
     ". . . . . ."
@@ -69,3 +69,44 @@
   font-size : 2rem;
   color : white;
 }
+
+.updateData {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "label1 input1 input1 input1"
+    ". . . ."
+    "label2 input2 input2 input2";
+}
+
+.input1 { 
+  grid-area: input1; 
+  text-align : center;
+  font-size : 25px;
+}
+.label1 { 
+  grid-area: label1; 
+}
+.label2 { 
+  grid-area: label2; 
+}
+.input2 { 
+  grid-area: input2; 
+  text-align : center;
+}
+
+.updateIpDiv{
+  display : flex;
+  justify-content: space-around;
+  /* height : 20%; */
+  margin-top: 30px;
+  font-size: 2.5rem;
+  color : white;
+
+}
+
+/* .updateInput {
+  width : 60%;
+} */

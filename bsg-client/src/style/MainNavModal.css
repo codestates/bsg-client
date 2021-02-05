@@ -4,6 +4,9 @@
   margin: 0;
 }
 
+.stopScroll{
+  overflow: hidden;
+}
 
 .MainPageContainer {
   margin:0;
@@ -11,11 +14,11 @@
   background-color: #222831;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 0.8fr 0.6fr 2.7fr 1fr 1.5fr 2fr 1fr 1fr;
-  gap: 5% 1%;
+  grid-template-rows: 0.5fr 0.8fr 0.8fr 2.7fr 1fr 1.5fr 2fr 1fr 1fr;
+  gap: 4% 1%;
   grid-template-areas:
     ". . . . . ."
-    ". . . . . ."
+    ". . mainlogo mainlogo . ."
     "search search search search search search"
     ". searchData searchData searchData searchData ."
     ". . . . . ."
@@ -27,15 +30,9 @@
 
 .mainlogo {
   grid-area: mainlogo;
-  padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
-.logos{
-  height: 50%;
-  padding: 0;
-  margin: 0;
-}
 
 .search { 
   grid-area: search;
@@ -93,7 +90,7 @@
   display : flex;
   justify-content : space-between;
   width : 40%;
-  height : 100%
+  
 }
 
 
@@ -104,7 +101,8 @@
   color : white;
   font-weight: bold;
   font-size : 20px;
-  border-radius : 5px;
+  border-radius : 25px;
+  margin : 5px;
 }
 
 
@@ -115,8 +113,8 @@
   color : white;
   font-weight: bold;
   font-size : 20px;
-  border-radius : 5px;
-  
+  border-radius : 25px;
+  margin : 5px;
 }
 
 .searchBar{
@@ -161,10 +159,38 @@
     height: 621px;
     position: relative;
     box-sizing: border-box;
-    margin: 50px auto;
+    margin: 100px auto;
     padding: 20px;
     background: #222831;
+    transform: scale(0); 
+    animation: zoomIn .2s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
 }
+
+/* 
+transform: translateX(-1500px); 
+animation: roadRunnerIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+transform: scale(0); 
+animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; 
+*/
+
+
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes roadRunnerIn { 
+  0% { transform: translateX(-1500px) skewX(30deg) scaleX(1.3); } 
+  70% { transform: translateX(50px) skewX(0deg) scaleX(0.9); } 
+  100% { transform: translateX(0px) skewX(0deg) scaleX(1); } 
+}
+
 
 .modalContents {
   margin: 0 auto;

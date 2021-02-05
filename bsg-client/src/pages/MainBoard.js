@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Nav from '../component/Nav'
-import Modal from '../component/LoginModal'
+import Modal from '../component/Modal'
 import axios from 'axios';
 
 const MainBoard = () => {
