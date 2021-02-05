@@ -1,25 +1,32 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Nav from '../component/Nav'
-import Modal from '../component/LoginModal'
-import axios from 'axios';
+import {useHistory} from 'react-router'
 
-const MainBoard = () => {
+
+const BoardMapping = () => {
 
 const [posts, setPosts] = useState([]);
 
+const history = useHistory();
+
+const handleClick = () => history.push('/contentBoard')
+
+const boardList = useSelector((state) => 
+state.pageData.boards.fakeData.boardlist
+);
+
     return(
     <>
-    <container className = 'container'>
-    {posts.map((post, index) => {
-        <div className = 'postBox'>
-        <div>{post.title}</div>
-        <div>{post.body}</div>
-    </div>
-    })}
-    </container>
+     <div className = 'bigPostBox'>
+      {boardList.map((board, index) => (
+        <div className = 'postBox' onClick={() => handleClick()}>
+        <div>{board.title}</div>
+        <div>{board.body}</div>
+      </div>
+      ))}
+      </div>
     </>
     )
 }
 
-export default MainBoard;
+export default BoardMapping;
