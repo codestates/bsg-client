@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {useHistory} from 'react-router'
 
 
-const BoardMapping = () => {
+const BoardMapping = ({children}) => {
 
 const [posts, setPosts] = useState([]);
 
@@ -22,6 +22,7 @@ state.pageData.boards.fakeData.boardlist
         <div className = 'postBox' onClick={() => handleClick()}>
         <div>{board.title}</div>
         <div>{board.body}</div>
+        {children}
       </div>
       ))}
       </div>
