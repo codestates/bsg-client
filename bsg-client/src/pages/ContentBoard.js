@@ -14,7 +14,9 @@ const ContentBoard = () => {
   <div class="mainBox">
     <div class="title"></div>
     <div class="contentBox"></div>
-    <div class="buttonBox"></div>
+    <div class="buttonBox">
+      <button type="button">글쓰기</button>
+    </div>
   </div>
   <div class="commentBox"></div>
   <div class="footer"></div>
