@@ -44,6 +44,7 @@ const MainBoard = () => {
       
   <div className = 'Mainboard-container'>
         <BoardMapping></BoardMapping>
+        <div class="footer"></div>
   </div>
       </>
     )

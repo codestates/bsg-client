@@ -1,0 +1,47 @@
+.commentContainer {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 3fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea"
+    "ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea";
+}
+
+.PostCommentArea { 
+  grid-area: PostCommentArea;
+  text-align : center;
+}
+
+.ViewCommentArea { 
+  grid-area: ViewCommentArea; 
+}
+
+.InputPostComment{
+  margin-top : 10px;
+  margin-bottom : 10px;
+  width : 80%;
+  height : 90%;
+  
+}
+
+.BtnPostComment {
+  width : 10%;
+  height : 90%;
+}
+
+.oneCommentBox {
+  display : flex;
+  justify-content : space-between;
+  padding : 10px;
+  margin : 10px;
+  border : 1px solid black;
+  border-radius : 10px
+}
+
+.ViewCommentArea {
+  display : flex;
+  flex-direction: column;
+}
+
