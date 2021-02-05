@@ -36,6 +36,7 @@ const MainPage = () => {
   }
   
   const openModal = () => {
+    setOnOff(false)
     html.classList.add("stopScroll")
     setModal(true)
   }
