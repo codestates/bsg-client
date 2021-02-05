@@ -1,10 +1,13 @@
 import './style/MainNavModal.css';
 import './style/MyPage.css'
 import './style/MainBoard.css'
+import './style/ContentBoard.css'
 import MainPage from '../src/pages/Mainpage'
 import MyPage from '../src/pages/MyPage'
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import MainBoard from './pages/MainBoard';
+import ContentBoard from './pages/ContentBoard';
+
 
 function App() {
   return (
@@ -28,9 +31,12 @@ function App() {
             exact
             path='/mainboard'
             render={() => <MainBoard/>}
-          >
-
-          </Route>
+          />
+          <Route
+            exact
+            path='/contentboard'
+            render={() => <ContentBoard/>}
+          />
     </Switch>
     </>
   );

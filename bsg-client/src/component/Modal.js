@@ -1,10 +1,10 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { signingInUser } from '../store/action/users';
-import LoginModal from '../component/LoginModal'
+import LoginSignUpModal from '../component/LoginSignUpModal'
 
 
-const Modal = ({isOpen, openModal ,closeModal}) => {
+const Modal = ({isOpen, closeModal}) => {
 
   const dispatch = useDispatch();
   
@@ -35,17 +35,21 @@ const Modal = ({isOpen, openModal ,closeModal}) => {
   }
 
   const toSignUp = () => {
+    setEmail('')
+    setPassword('')
     setSignUp(true)
   }
 
   const offSignUp = () => {
+    setEmail('')
+    setPassword('')
     setSignUp(false)
   }
   
   return ( 
     <>
     {
-    isOpen ? <LoginModal 
+    isOpen ? <LoginSignUpModal 
     setPasswordfromInput={setPasswordfromInput} 
     setEmailfromInput={setEmailfromInput}
     closeModal={closeModal}
