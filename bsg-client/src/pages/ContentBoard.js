@@ -1,16 +1,24 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
+import Nav from '../component/Nav'
+import Modal from '../component/Modal'
+import { useHistory } from 'react-router'
+const html = document.querySelector('html')
 
-const readBoard = (data) => {
-    if (!data) {
-        return <div>페이지가 없습니다.</div>
-      }
+
+const ContentBoard = () => {
+
     return( 
       <>
       <Nav></Nav>
-      <div className = 'postBox'>
-        <div className = 'title'>Title</div>
-        <div>Body</div>
-      </div>
+      <div class="grid-container">
+  <div class="mainBox">
+    <div class="title"></div>
+    <div class="contentBox"></div>
+    <div class="buttonBox"></div>
+  </div>
+  <div class="commentBox"></div>
+  <div class="footer"></div>
+</div>
       </>
     )
   }
