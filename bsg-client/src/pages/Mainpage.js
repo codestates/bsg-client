@@ -36,6 +36,7 @@ const MainPage = () => {
   }
   
   const openModal = () => {
+    setOnOff(false)
     html.classList.add("stopScroll")
     setModal(true)
   }
@@ -63,7 +64,11 @@ const MainPage = () => {
     <div className="mainlogo">
       <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/>
       </div>
-  {openSearchBox ? <div className="searchData"></div> : null}
+  {openSearchBox ? <div className="searchData">
+    <div className="box">
+    <div className="loading"></div>
+    </div>
+  </div> : null}
   <div className="video1">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>
