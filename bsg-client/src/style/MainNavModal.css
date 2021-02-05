@@ -44,6 +44,8 @@
   background-color : white;
   border-radius : 10px;
   box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 6px 6px;
+  transform: scale(0); 
+  animation: zoomIn .2s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .video1 { 
   grid-area: video1;
