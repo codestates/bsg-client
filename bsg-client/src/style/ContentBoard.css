@@ -1,0 +1,88 @@
+.postBox{
+    border: 1px solid black;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 10px 5px 5px #7f8fa6;
+}
+
+.title{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-weight: 600;
+}
+
+.container{
+    min-height: 100vh;
+    padding: 200px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(auto-fit, 300px);
+    grid-auto-rows: 300px;
+    grid-gap: 30px 20px;
+    justify-content: center;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    height: 1500px;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    gap: 15px 0px;
+    grid-template-areas:
+      ". . . . ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". commentBox commentBox commentBox ."
+      "footer footer footer footer footer";
+  }
+  
+  .mainBox {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 0.75fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
+    gap: 15px 0px;
+    grid-template-areas:
+      "title title title title title"
+      ". contentBox contentBox contentBox ."
+      ". contentBox contentBox contentBox ."
+      ". contentBox contentBox contentBox ."
+      ". contentBox contentBox contentBox ."
+      ". contentBox contentBox contentBox ."
+      ". buttonBox buttonBox buttonBox .";
+    grid-area: mainBox;
+  }
+  
+  .title { 
+      grid-area: title; 
+      border: double;
+    height: 80px;
+    width: 1000px;
+    }
+  
+  .contentBox { 
+      grid-area: contentBox; 
+      border: 1px solid black;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 10px 5px 5px #7f8fa6;
+    }
+  
+  .buttonBox { grid-area: buttonBox; }
+  
+  .commentBox { 
+      grid-area: commentBox; 
+      border: 1px solid black;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 10px 5px 5px #7f8fa6;
+    }
+  
+  .footer { grid-area: footer; }
+  
