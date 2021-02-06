@@ -1,0 +1,68 @@
+.Update-content-container {
+  height : 1000px;
+  display: grid;
+  background-color: #222831;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . . . ."
+    ". Update-input-container Update-input-container Update-input-container Update-input-container Update-input-container ."
+    ". Update-input-container Update-input-container Update-input-container Update-input-container Update-input-container ."
+    ". Update-input-container Update-input-container Update-input-container Update-input-container Update-input-container ."
+    ". Update-input-container Update-input-container Update-input-container Update-input-container Update-input-container ."
+    ". . . . . . ."
+    "footer footer footer footer footer footer footer";
+}
+
+.Update-input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "updateTitle updateTitle updateTitle"
+    "updateBody updateBody updateBody"
+    "updateBody updateBody updateBody"
+    "updateBody updateBody updateBody"
+    "updateBtn updateBtn updateBtn";
+  grid-area: Update-input-container;
+}
+
+.updateTitle { 
+  grid-area: updateTitle; 
+  text-align: center;
+  
+}
+
+.updateBody { 
+  grid-area: updateBody; 
+}
+
+.updateBtnArea { 
+  grid-area: updateBtn; 
+  display : flex;
+  text-align: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.updateBtn {
+  width: 50%;
+}
+
+.footer { grid-area: footer; }
+
+.inputUpdateTitle {
+  width : 50%;
+  height : 50%;
+  text-align :center;
+  font-size : 2rem;
+}
+
+.inputUpdateBody {
+  width : 100%;
+  height : 100%;
+  padding : 50px;
+  font-size : 2rem;
+}

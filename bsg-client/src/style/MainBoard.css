@@ -1,5 +1,5 @@
 .Mainboard-container {
-  height: auto;
+  height: 1000px;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.3fr 1.5fr 1.5fr 1.5fr 0.3fr;
@@ -42,5 +42,4 @@
     background: white;
     box-shadow: 10px 5px 5px #7f8fa6;
 }
-
 
