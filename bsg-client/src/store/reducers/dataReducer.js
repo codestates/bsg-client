@@ -2,11 +2,13 @@ import { SEARCH_DATA } from '../action/pagedata'
 import { GET_VIDEOS } from '../action/pagedata'
 import { GET_BOARD } from '../action/pagedata'
 import { GET_COMMENT } from '../action/pagedata'
+import { GET_BOARD_NOW } from '../action/pagedata'
 const fakeData = require('../reducers/fakedata') 
 
 const initialState = {
   searchData : null,
   bestVideos : null,
+  boardNow : null,
   boards : fakeData,
   comments : fakeData
 }
@@ -33,6 +35,11 @@ export default function(state = initialState, action){
       ...state,
       comments : action.data
     }
+    case GET_BOARD_NOW :
+      return {
+        ...state,
+        boardNow : action.data
+      }
     default:
       return state
   }
