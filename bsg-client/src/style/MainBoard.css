@@ -26,7 +26,15 @@
       ". . .";
     grid-area: bigPostBox;
   }
-  .writeBtn { grid-area: writeBtn; }
+  .writeBtn { 
+    grid-area: writeBtn;
+    position: relative;
+    top: -130px;
+    height: 38px;
+    width: 100px;
+    font-size: x-large;
+    left: 85px;
+  }
 
   .postBox{
     border: 1px solid black;
@@ -34,3 +42,4 @@
     background: white;
     box-shadow: 10px 5px 5px #7f8fa6;
 }
+

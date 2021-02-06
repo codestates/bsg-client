@@ -14,8 +14,6 @@ import UpdateContent from './pages/UpdateContent';
 import WriteBoard from './pages/WriteBoard';
 
 
-
-
 function App() {
   return (
     <>

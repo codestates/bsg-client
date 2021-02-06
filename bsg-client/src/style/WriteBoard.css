@@ -1,0 +1,29 @@
+.submitBtn{
+    position: relative;
+    top: 10px;
+    height: 38px;
+    width: 100px;
+    font-size: x-large;
+    left: 100px;
+}
+
+.cancleBtn{
+    position: relative;
+    top: 10px;
+    height: 38px;
+    width: 100px;
+    font-size: x-large;
+    left: 700px;
+}
+
+.inputTitle{
+    height: 50px;
+    width: 700px;
+}
+
+.inputContent{
+    height: 200px;
+    margin: 20px;
+    width: 800px;
+}
+
