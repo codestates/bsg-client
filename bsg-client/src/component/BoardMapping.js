@@ -1,20 +1,23 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {useHistory} from 'react-router'
-import { getBoardNow } from '../store/action/pagedata'
+import { SetBoardNow } from '../store/action/pagedata'
 
 
 const BoardMapping = () => {
 
 const dispatch = useDispatch()
-const [posts, setPosts] = useState([]);
 
 const history = useHistory();
+
+window.onhashchange = function() { 
+  console.log('page Changed') 
+}
 
 const handleClick = (board) => {
   
   history.push('/contentBoard')
-  dispatch(getBoardNow(board))
+  dispatch(SetBoardNow(board))
 }
 
 const boardList = useSelector((state) => 

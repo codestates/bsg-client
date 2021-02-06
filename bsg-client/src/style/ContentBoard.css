@@ -1,20 +1,15 @@
-.postBox{
-    border: 1px solid black;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 10px 5px 5px #7f8fa6;
-}
 
-.title{
+
+/* .title{
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid black;
     font-weight: 600;
-}
+} */
 
-.container{
+/* .container{
     min-height: 100vh;
     padding: 200px 0;
     display: grid;
@@ -25,12 +20,12 @@
     justify-content: center;
     background: #ffffff;
     box-sizing: border-box;
-}
+} */
 
-.Main-container {
+.content-board-container {
     height: 1500px;
     display: grid;
-
+    background-color: #222831;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
     grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
     gap: 15px 0px;
@@ -45,34 +40,58 @@
   }
   
   .mainBox {
+    grid-area: mainBox;
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.75fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
+    grid-template-rows: 0.75fr 0.2fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
     gap: 15px 0px;
     grid-template-areas:
-      "title title title title title"
+      ". title title title ."
+      ". . . controlbtnDiv ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". buttonBox buttonBox buttonBox .";
-    grid-area: mainBox;
+    
+  }
+
+  .controlbtnDiv {
+    grid-area: controlbtnDiv;
+    display:flex;
+    justify-content: flex-end;
+  }
+
+  .controlbtn {
+    margin-left: 10px;
+    height : 100%;
+    width: 10%;
+    background-color : white;
+    border : 0;
+    outline : 0;
+    font-size : 18px;
+  }
+
+  .controlbtn:hover {
+    color : blue;
   }
   
   .title { 
-      grid-area: title; 
-      border: double;
-    height: 80px;
-    width: 1000px;
+    grid-area: title; 
+    text-align: center;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    background-color : white;
     }
   
   .contentBox { 
       grid-area: contentBox; 
       border: 1px solid black;
+      text-align: center;
       border-radius: 20px;
       background: white;
-      box-shadow: 10px 5px 5px #7f8fa6;
     }
   
   .buttonBox { grid-area: buttonBox; }
@@ -80,9 +99,9 @@
   .commentBox { 
       grid-area: commentBox; 
       border: 1px solid black;
-      border-radius: 20px;
-      background: white;
-      box-shadow: 10px 5px 5px #7f8fa6;
+      width: 100%;
+      text-align: center;
+      background-color: white;
     }
   
   .footer { grid-area: footer; }

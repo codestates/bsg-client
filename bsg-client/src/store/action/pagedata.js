@@ -31,7 +31,7 @@ export const getBoard = (data) => {
   }
 }
 
-export const getBoardNow = (data) => {
+export const SetBoardNow = (data) => {
   return {
     type : GET_BOARD_NOW,
     data
