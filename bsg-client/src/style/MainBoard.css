@@ -1,9 +1,9 @@
 .Mainboard-container {
-    height: 1500px;
+  height: auto;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.3fr 1.5fr 1.5fr 1.5fr 0.3fr;
-    grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr;
+    /* grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr; */
     gap: 0px 0px;
     grid-template-areas:
       ". . . . ."
@@ -14,9 +14,12 @@
   }
   .footer { grid-area: footer; }
   .bigPostBox {
+    height: auto;
+    margin-top : 10rem;
+    margin-bottom : 10rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
     gap: 25px 25px;
     grid-template-areas:
       ". . ."
@@ -24,3 +27,8 @@
     grid-area: bigPostBox;
   }
   .writeBtn { grid-area: writeBtn; }
+
+  .postBox {
+    height : 20rem;
+    padding : 20px;
+  }

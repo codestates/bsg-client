@@ -5,17 +5,22 @@ import CommentArea from '../component/CommentArea'
 import { useSelector, useDispatch } from 'react-redux';
 
 const ContentBoard = () => {
+  
 
+    const getBoardNow = useSelector((state) => state.pageData.boardNow)
     const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList)
     return( 
       <>
       <Nav></Nav>
-      <div class="grid-container">
-  <div class="mainBox">
-    <div class="title"></div>
-    <div class="contentBox"></div>
-    <div class="buttonBox">
-      <button type="button">글쓰기</button>
+      <div className="Main-container">
+      <div className="mainBox">
+      <div className="title">
+        {getBoardNow && getBoardNow.title}
+      </div>
+      <div className="contentBox">
+        {getBoardNow && getBoardNow.body}
+      </div>
+      <div className="buttonBox">
     </div>
   </div>
   <div class="commentBox">
