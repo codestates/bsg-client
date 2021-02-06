@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {useHistory} from 'react-router'
+import { useHistory } from 'react-router'
 import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import axios from 'axios';
@@ -33,7 +33,7 @@ const MainBoard = () => {
   );
 
   const handleClick = () => history.push('/contentBoard')
-
+  const handleWriteBtn = () => history.push('/writeboard')
   
   
     return(
@@ -44,6 +44,7 @@ const MainBoard = () => {
       
   <div className = 'Mainboard-container'>
         <BoardMapping></BoardMapping>
+        <button className = 'writeBtn' onClick={() => handleWriteBtn()}>글쓰기</button>
         <div class="footer"></div>
   </div>
       </>
