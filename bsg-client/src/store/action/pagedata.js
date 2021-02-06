@@ -6,6 +6,7 @@ export const SEARCH_DATA = 'SEARCH_DATA';
 export const GET_VIDEOS = 'GET_VIDEO';
 
 export const GET_BOARD = 'GET_BOARD';
+export const GET_BOARD_NOW = 'GET_BOARD_NOW'
 export const GET_COMMENT = 'GET_COMMENT';
 
 
@@ -26,6 +27,13 @@ export const getVideos = (data) => {
 export const getBoard = (data) => {
   return {
     type : GET_BOARD,
+    data
+  }
+}
+
+export const getBoardNow = (data) => {
+  return {
+    type : GET_BOARD_NOW,
     data
   }
 }

@@ -1,15 +1,21 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {useHistory} from 'react-router'
+import { getBoardNow } from '../store/action/pagedata'
 
 
-const BoardMapping = ({children}) => {
+const BoardMapping = () => {
 
+const dispatch = useDispatch()
 const [posts, setPosts] = useState([]);
 
 const history = useHistory();
 
-const handleClick = () => history.push('/contentBoard')
+const handleClick = (board) => {
+  
+  history.push('/contentBoard')
+  dispatch(getBoardNow(board))
+}
 
 const boardList = useSelector((state) => 
 state.pageData.boards.fakeData.boardlist
@@ -19,10 +25,10 @@ state.pageData.boards.fakeData.boardlist
     <>
      <div className = 'bigPostBox'>
       {boardList.map((board, index) => (
-        <div className = 'postBox' onClick={() => handleClick()}>
+        <div className = 'postBox' onClick={() => handleClick(board)}>
         <div>{board.title}</div>
         <div>{board.body}</div>
-        {children}
+        <div>{board.username}</div>
       </div>
       ))}
       </div>
