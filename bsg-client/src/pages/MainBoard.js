@@ -32,9 +32,6 @@ const MainBoard = () => {
     state.pageData.boards.fakeData.boardlist
   );
 
-  const handleClick = () => history.push('/contentBoard')
-
-  
   
     return(
       <>
@@ -44,7 +41,7 @@ const MainBoard = () => {
       
   <div className = 'Mainboard-container'>
         <BoardMapping></BoardMapping>
-        <div class="footer"></div>
+        <div className="footer"></div>
   </div>
       </>
     )

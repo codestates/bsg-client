@@ -5,18 +5,30 @@ import CommentArea from '../component/CommentArea'
 import { useSelector, useDispatch } from 'react-redux';
 
 const ContentBoard = () => {
-  
 
+    const history = useHistory();
+    const userNow = useSelector((state) =>  state.userData.userNow)
     const getBoardNow = useSelector((state) => state.pageData.boardNow)
     const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList)
+
+    const goToUpdate = () => {
+      history.push('/updatecontent')
+    }
+
     return( 
       <>
       <Nav></Nav>
-      <div className="Main-container">
+      <div className="content-board-container">
       <div className="mainBox">
       <div className="title">
         {getBoardNow && getBoardNow.title}
       </div>
+      {userNow.username === getBoardNow.username ?  
+      <div className="controlbtnDiv">
+        <button onClick={goToUpdate} className="controlbtn">수정</button>
+        <button className="controlbtn">삭제</button>
+      </div> : null}
+     
       <div className="contentBox">
         {getBoardNow && getBoardNow.body}
       </div>
