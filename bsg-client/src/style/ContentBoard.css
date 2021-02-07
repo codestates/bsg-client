@@ -3,7 +3,7 @@
     height: 1500px;
     display: grid;
     background-color: #222831;
-    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
     grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
     gap: 15px 0px;
     grid-template-areas:
@@ -57,29 +57,76 @@
   .title { 
     grid-area: title; 
     text-align: center;
-    border: 1px solid black;
+
+    border-radius : 10px;
     height: 100%;
     width: 100%;
+    font-size : 40px;
+    padding : 20px;
     background-color : white;
     }
   
   .contentBox { 
       grid-area: contentBox; 
-      border: 1px solid black;
+      padding : 30px;
+      font-size : 1.5rem;
       text-align: center;
       border-radius: 20px;
       background: white;
     }
   
-  .buttonBox { grid-area: buttonBox; }
-  
   .commentBox { 
       grid-area: commentBox; 
-      border: 1px solid black;
       width: 100%;
       text-align: center;
-      background-color: white;
+      background-color : #222831;
+      
+    }
+    .ViewCommentArea{
+      background-color: #222831;
+    }
+    .oneCommentBox{
+      background-color : white;
+      height : 20%;
     }
   
   .footer { grid-area: footer; }
+
+  .PostCommentArea{
+    margin-bottom: 10px;
+  }
   
+  .InputPostComment{
+    font-size: 20px;
+    background-color : white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 40px;
+    border : 0;
+    outline : 0;
+  }
+
+  .BtnPostComment{
+    font-size: 20px;
+    height : 100%;
+    border : 0;
+    outline : 0;
+    transition : 0.5s;
+    background-color : cadetblue;
+    color : white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .BtnPostComment:hover{
+    background-color : teal;
+  }
+
+  @media screen and (max-width: 700px){
+    /* .MainBox{
+      grid-template-columns: 1fr 1fr 1fr ;
+    } */
+    .content-board-container{
+      grid-template-columns: 0.1fr 5fr 5fr 5fr 0.1fr;
+    }
+  }

@@ -36,9 +36,9 @@ const WritePage = () => {
                     <button className = 'cancleBtn' onClick={() => handleCancleBtn()}>취소</button>
                     </div>
             </div>
-                    <div class="commentBox">
+                    <div className="commentBox">
                     </div>
-                    <div class="footer"></div>
+                    <div className="footer"></div>
             </div>
         </>
     )
