@@ -47,7 +47,7 @@ const MainBoard = () => {
   <div className = 'Mainboard-container'>
         <BoardMapping></BoardMapping>
         
-        <button className = 'writeBtn' onClick={() => handleWriteBtn()}>글쓰기</button>
+        <button className = 'MainBoardWriteBtn' onClick={() => handleWriteBtn()}>한마디 하기</button>
         <div className="footer"></div>
   </div>
       </>

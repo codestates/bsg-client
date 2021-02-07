@@ -20,16 +20,14 @@ const handleClick = (board) => {
   dispatch(SetBoardNow(board))
 }
 
-const boardList = useSelector((state) => 
-state.pageData.boards.fakeData.boardlist
-);
+const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || []
 
     return(
     <>
      <div className = 'bigPostBox'>
       {boardList.map((board, index) => (
         <div className = 'postBox' onClick={() => handleClick(board)}>
-        <div>{board.title}</div>
+        <div className="onePostBoxTitle">{board.title}</div>
         <div>{board.body}</div>
         <div>{board.username}</div>
       </div>

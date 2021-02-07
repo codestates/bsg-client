@@ -1,34 +1,38 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { signingInUser } from '../store/action/users';
+import { setErrorMessage, signingInUser } from '../store/action/users';
 import LoginSignUpModal from '../component/LoginSignUpModal'
 
 
 const Modal = ({isOpen, closeModal}) => {
 
   const dispatch = useDispatch();
-  
+  const [loginError, setLoginError] = useState('')
   const [isSignUp, setSignUp] = useState(false);
-  const [email, setEmail] = useState({ email : '' });
-  const [password, setPassword] = useState({ password : '' });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const userNow = useSelector((state) => state.userData.userNow)
 
   const setEmailfromInput = (e) => {
-    setEmail({ email : e.target.value })
+    setEmail(e.target.value)
   }
 
   const setPasswordfromInput = (e) => {
-    setPassword({ password : e.target.value })
+    setPassword(e.target.value)
   }
 
   const signInUser = () => {
+    if(email.length === 0 || password.length === 0){
+      return setLoginError('공백이 있습니다')
+    }
     let userdata = {
       email : email,
       password : password
     }
+    console.log(userdata)
     dispatch(signingInUser(userdata))
-    console.log(userNow)
+    
     if(userNow){
       closeModal()
     }
@@ -43,6 +47,7 @@ const Modal = ({isOpen, closeModal}) => {
   const offSignUp = () => {
     setEmail('')
     setPassword('')
+    setLoginError('')
     setSignUp(false)
   }
   
@@ -57,6 +62,7 @@ const Modal = ({isOpen, closeModal}) => {
     toSignUp={toSignUp}
     isSignUp={isSignUp}
     offSignUp={offSignUp}
+    loginError={loginError}
     /> : null
     }
     </>

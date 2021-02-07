@@ -1,45 +1,69 @@
 .Mainboard-container {
-  height: 1000px;
+  height: auto;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.3fr 1.5fr 1.5fr 1.5fr 0.3fr;
-    /* grid-template-rows: 0.5fr 1.5fr 1.5fr 0.5fr 0.5fr; */
+    grid-template-rows: 0.4fr 0.3fr 2.0fr 2fr 0.5fr 0.5fr;
     gap: 0px 0px;
     grid-template-areas:
       ". . . . ."
+      ". writeBtn writeBtn writeBtn ."
       ". bigPostBox bigPostBox bigPostBox ."
       ". bigPostBox bigPostBox bigPostBox ."
-      ". . writeBtn . ."
+      ". . . . ."
       "footer footer footer footer footer";
   }
   .footer { grid-area: footer; }
   .bigPostBox {
     height: auto;
-    margin-top : 10rem;
+    margin-top : 2rem;
     margin-bottom : 10rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
     gap: 25px 25px;
-    grid-template-areas:
-      ". . ."
-      ". . .";
     grid-area: bigPostBox;
   }
-  .writeBtn { 
+  .MainBoardWriteBtn { 
     grid-area: writeBtn;
-    position: relative;
-    top: -130px;
-    height: 38px;
-    width: 100px;
-    font-size: x-large;
-    left: 85px;
+    background-color : rgb(126, 28, 172);
+    font-size : 1.8rem;
+    border : 0;
+    outline : 0;
+    border-radius: 10px;
+    color : white;
+    font-weight: bold;
+    width : 100%;
+    text-align: center;
+    height : 50%;
+  }
+
+  .MainBoardWriteBtn:hover {
+    background-color :rgb(126, 28, 172);
+    color : white;
+
   }
 
   .postBox{
     border: 1px solid black;
     border-radius: 20px;
-    background: white;
-    box-shadow: 10px 5px 5px #7f8fa6;
+    background: #9BB7D4;
+    height : 200px;
+    padding : 20px;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    
+}
+.onePostBoxTitle{
+  border-bottom: 2px solid black;
+  text-align : center;
+  font-size : 1.5rem;
+  font-weight : bold;
+}
+
+@media screen and (max-width: 500px){
+  .bigPostBox{
+    grid-template-columns: 1fr
+  }
 }
 

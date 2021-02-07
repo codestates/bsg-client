@@ -1,20 +1,20 @@
-import { SIGNOUT_USER } from '../action/users'
+import { LOGOUT_USER } from '../action/users'
 import { GETUSER_DATA } from '../action/users'
-import { SECEDE_USER } from '../action/users'
+import { SIGN_OUT_USER } from '../action/users'
 import { SET_ACCESS_TOKEN } from '../action/users'
-
+import { SET_ERROR_MESSAGE } from '../action/users'
 import { NOW_LOGIN } from '../action/users'
 import { NOW_LOGOUT } from '../action/users'
 
 const initialState = {
   isLogin : false,
-  userNow : {username : '테스터유저'},
+  userNow : null,
   accessToken : null,
 }
 
 export default function(state = initialState, action){
   switch (action.type){
-    case SIGNOUT_USER : 
+    case LOGOUT_USER : 
     return {
       ...state,
       userNow : null,
@@ -24,7 +24,7 @@ export default function(state = initialState, action){
       ...state,
       userNow : action.data
     }
-    case SECEDE_USER : 
+    case SIGN_OUT_USER : 
     return {
       ...state,
       userNow : null
@@ -44,6 +44,11 @@ export default function(state = initialState, action){
       ...state,
       isLogin : false
     } 
+    case SET_ERROR_MESSAGE : 
+    return {
+      ...state,
+      errorMessage : action.message
+    }
     default :
       return state 
   }
