@@ -2,6 +2,7 @@ import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {useHistory} from 'react-router'
 import { SetBoardNow } from '../store/action/pagedata'
+import { BrowserRouter, Route, Switch, NavLink, useParams } from 'react-router-dom'
 
 
 const BoardMapping = () => {
