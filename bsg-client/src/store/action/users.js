@@ -106,6 +106,7 @@ export const signingInUser = (userdata) => {
     return axios.post('https://api.projects1faker.com/login', {
       email : userdata.email,
       password : userdata.password
+      
     })
     .then((res) => {
       if(res.message === 'ok'){
