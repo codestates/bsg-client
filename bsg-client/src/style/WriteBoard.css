@@ -1,29 +1,71 @@
+.Write-container {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 13px 0px;
+    grid-template-areas:
+    ". . . . ."
+    ". WriteTitle WriteTitle WriteTitle ."
+    ". WriteBox WriteBox WriteBox ."
+    ". WriteBox WriteBox WriteBox ."
+    ". WriteBox WriteBox WriteBox ."
+    "WriteBtnBox WriteBtnBox WriteBtnBox WriteBtnBox WriteBtnBox"
+    "footer footer footer footer footer";
+}
+.WriteBox { 
+    grid-area: WriteBox; 
+    border: 2px solid black;
+    height: 600px;
+}
+
+.WriteTitle { 
+    grid-area: WriteTitle;
+    border: 2px solid black;
+    height: 95px;
+    margin: 41px;
+}
+
+.WriteinputTitle{
+    position: absolute;
+    top: 200px;
+    left: 236px;
+    height: 55px;
+    width: 800px;
+    margin: -11px;
+}
+
+.WriteinputContent{
+    position: absolute;
+    top: 333px;
+    left: 183px;
+    height: 597px;
+    width: 895px;
+}
+
+.WriteinputBtn{
+        position: absolute;
+    top: 210px;
+    height: 105px;
+    margin: -35px;
+    width: 700px;
+    left: 305px;
+}
+
+.footer { 
+    grid-area: footer; 
+}
+
+.WriteBtnBox { 
+    grid-area: WriteBtnBox;
+}
+
 .submitBtn{
     position: relative;
-    top: 10px;
-    height: 38px;
-    width: 100px;
-    font-size: x-large;
-    left: 100px;
+    bottom: -1000px;
 }
 
 .cancleBtn{
     position: relative;
-    top: 10px;
-    height: 38px;
-    width: 100px;
-    font-size: x-large;
-    left: 700px;
+    bottom: -1000px;
+    left: 325px;
 }
-
-.inputTitle{
-    height: 50px;
-    width: 700px;
-}
-
-.inputContent{
-    height: 200px;
-    margin: 20px;
-    width: 800px;
-}
-
