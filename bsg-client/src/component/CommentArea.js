@@ -1,11 +1,11 @@
 import React, {useState, useEffet } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import CommentMapping from './CommentMapping'
 
 
 
 const CommentArea = ({comments}) => {
 
+  const isLogin = useSelector((state) => state.userData.isLogin) || false
   const tearIcon = {
     'BRONZE' : 'https://ifh.cc/g/SMwWFx.png',
     'SILVER' : 'https://ifh.cc/g/uERo3F.png',
@@ -16,7 +16,9 @@ const CommentArea = ({comments}) => {
     <div className="commentContainer">
 
       <div className="PostCommentArea">
-        <input className="InputPostComment"></input>
+        {isLogin ? <input placeholder="댓글을 입력해주세요" className="InputPostComment"></input> :
+          <input placeholder="댓글을 입력하려면 로그인이 필요합니다" className="InputPostComment" disabled></input>
+      }
         <button className="BtnPostComment">Send</button>
         </div>
       <div className="ViewCommentArea">

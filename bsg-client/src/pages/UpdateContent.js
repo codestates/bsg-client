@@ -8,7 +8,7 @@ import { useHistory } from 'react-router'
 const UpdateContent = () => {
   
   const history = useHistory();
-  const getBoardNow = useSelector((state) => state.pageData.boardNow)
+  const getBoardNow = useSelector((state) => state.pageData.boardNow) || []
   const [title, changeTitle] = useState(getBoardNow.title)
   const [body, changeBody] = useState(getBoardNow.body)
   const dispatch = useDispatch()

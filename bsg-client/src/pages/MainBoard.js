@@ -5,6 +5,8 @@ import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import axios from 'axios';
 import BoardMapping from '../component/BoardMapping'
+import { BrowserRouter, Route, Switch, NavLink, useParams } from 'react-router-dom'
+
 const html = document.querySelector('html')
 
 
@@ -21,21 +23,10 @@ const MainBoard = () => {
     html.classList.remove("stopScroll")
     setModal(false)
   }
-  const [posts, setPosts] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get("")
-  //     .then(({ data }) => setPosts(data));
-  // }, []);
-
-  const boardList = useSelector((state) => 
-    state.pageData.boards.fakeData.boardlist
-  );
-
 
 
   const handleWriteBtn = () => history.push('/writeboard')
-  
+  const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || []
 
   
     return(
@@ -45,9 +36,10 @@ const MainBoard = () => {
     <Nav openModal={openModal}></Nav>
       
   <div className = 'Mainboard-container'>
-        <BoardMapping></BoardMapping>
         
-        <button className = 'writeBtn' onClick={() => handleWriteBtn()}>글쓰기</button>
+        {boardList.map(board => <BoardMapping board={board} key = {board.id}><NavLink to={'/contentboard/' + board.id}></NavLink></BoardMapping> )}
+        
+        <button className = 'MainBoardWriteBtn' onClick={() => handleWriteBtn()}>한마디 하기</button>
         <div className="footer"></div>
   </div>
       </>

@@ -18,7 +18,7 @@ const CommentMapping = ({comments}) => {
   return (
     <>
     {comments && comments.map((comment) => (
-      <div className="oneCommentBox">
+      <div key={comment.id} className="oneCommentBox">
         <img src={tearIcon[comment.tear]}></img>
         <div>{comment.useranme}</div>
         <div>{comment.comment}</div>

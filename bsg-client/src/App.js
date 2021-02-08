@@ -37,11 +37,11 @@ function App() {
             path='/mainboard'
             render={() => <MainBoard/>}
           />
-          <Route
+          {/* <Route
             exact
             path='/contentboard'
             render={() => <ContentBoard/>}
-          />
+          /> */}
           <Route
             exact
             path="/updatecontent"
@@ -51,6 +51,11 @@ function App() {
             exact
             path='/writeboard'
             render={() => <WriteBoard/>}
+          />
+          <Route
+            exact
+            path="/contentboard/:id"
+            render={() => <ContentBoard/>}
           />
     </Switch>
     </>

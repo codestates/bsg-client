@@ -9,12 +9,14 @@ const html = document.querySelector('html')
 
 
 const MainPage = () => {
-  
+
+  const [keyword, setkeyword] = useState('')  
   const history = useHistory();
   const [modalNow, setModal] = useState(false)
   const [bestvideos, getvideos] = useState({})
   const [openSearchBox, setOnOff] = useState(false)
 
+  let pageWidth = window.innerWidth
   useEffect(() => {
     getYoutube()
   },[])
@@ -49,6 +51,11 @@ const MainPage = () => {
   const openSearBox = () => {
     setOnOff(true)
   }
+
+  const getSearchData = (e) => {
+    setkeyword(e.target.value)
+  }
+
   
 
   return(
@@ -58,22 +65,21 @@ const MainPage = () => {
     <Nav openModal={openModal}></Nav>
     <div className="MainPageContainer">
       <div className="search">
-      <input className="searchBar" type="text"></input>
+      <input onChange={getSearchData} className="searchBar" type="text"></input>
       <button onClick={openSearBox} className="searchBtn">검색</button>
     </div>
     <div className="mainlogo">
-      <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/>
-      </div>
+      {pageWidth > 500 ? <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/> : null}
+      </div>  
   {openSearchBox ? <div className="searchData">
     <div className="box">
     <div className="loading"></div>
     </div>
   </div> : null}
-  <div className="video1">
+  <div className="video">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>
-  </div>
-  <div className="video2">
+  
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video2}`} allowFullScreen></iframe>
   </div>
