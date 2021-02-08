@@ -9,6 +9,8 @@ export const GET_BOARD = 'GET_BOARD';
 export const GET_BOARD_NOW = 'GET_BOARD_NOW'
 export const GET_COMMENT = 'GET_COMMENT';
 
+export const POST_BOARD = 'POST_BOARD';
+
 
 export const searchData = (data) => {
   return {
@@ -41,6 +43,13 @@ export const SetBoardNow = (data) => {
 export const getComment = (data) => {
   return {
     type : GET_COMMENT,
+    data
+  }
+}
+
+export const postBoard = (data) => {
+  return {
+    type : POST_BOARD,
     data
   }
 }

@@ -25,7 +25,7 @@
   }
   .MainBoardWriteBtn { 
     grid-area: writeBtn;
-    background-color : rgb(126, 28, 172);
+    background-color : #6B76AE;
     font-size : 1.8rem;
     border : 0;
     outline : 0;
@@ -38,7 +38,7 @@
   }
 
   .MainBoardWriteBtn:hover {
-    background-color :rgb(126, 28, 172);
+    background-color :#6B76AE;
     color : white;
 
   }
