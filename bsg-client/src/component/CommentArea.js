@@ -1,6 +1,5 @@
 import React, {useState, useEffet } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import CommentMapping from './CommentMapping'
 
 
 
