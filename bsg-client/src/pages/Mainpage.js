@@ -55,6 +55,7 @@ const MainPage = () => {
   const getSearchData = (e) => {
     setkeyword(e.target.value)
   }
+
   
 
   return(

@@ -62,17 +62,23 @@ export const fakeData = {
   }
 ],
 commentList : [
-  { tear : 'BRONZE',
+  { 
+    id : 1,
+    tear : 'BRONZE',
     username : '브론즈유저',
     comment : '나는야 브론즈',
     createAt : '2021-02-05'
   },
-  { tear : 'GOLD',
+  { 
+    id : 2,
+    tear : 'GOLD',
     username : '골드유저',
     comment : '나는야 골드',
     createAt : '2021-02-05'
   },
-  { tear : 'SILVER',
+  { 
+    id : 3,
+    tear : 'SILVER',
     username : '실버유저',
     comment : '나는야 실버',
     createAt : '2021-02-05'

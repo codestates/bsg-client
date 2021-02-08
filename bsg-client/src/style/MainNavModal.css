@@ -43,6 +43,7 @@
 
 }
 .searchData { 
+  z-index: 2;
   grid-area: searchData;
   background-color : white;
   border-radius : 10px;
@@ -73,6 +74,7 @@
 }
 
 .Navbar{
+  z-index : 3;
   display: flex;
   justify-content: space-between;
   background-color : #00ACB5;
@@ -170,6 +172,7 @@
 }
 
 .modalOuter {
+  z-index : 4;
   position: fixed;
   top: 0;
   right: 0;

@@ -36,7 +36,8 @@ const MainBoard = () => {
     <Nav openModal={openModal}></Nav>
       
   <div className = 'Mainboard-container'>
-        <BoardMapping></BoardMapping>
+        
+        {boardList.map(board => <BoardMapping board={board} key = {board.id}><NavLink to={'/contentboard/' + board.id}></NavLink></BoardMapping> )}
         
         <button className = 'MainBoardWriteBtn' onClick={() => handleWriteBtn()}>한마디 하기</button>
         <div className="footer"></div>
