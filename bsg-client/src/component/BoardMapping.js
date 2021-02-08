@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router'
-
+import ReactHtmlParser from 'react-html-parser'
 
 const BoardMapping = () => {
 
@@ -26,7 +26,7 @@ const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlis
       {boardList.map((board, index) => (
         <div key={board.id} className = 'postBox' onClick={() => handleClick(board)}>
         <div className="onePostBoxTitle">{board.title}</div>
-        <div>{board.body}</div>
+        <div>{ReactHtmlParser(board.body)}</div>
         <div>{board.username}</div>
       </div>
       ))}

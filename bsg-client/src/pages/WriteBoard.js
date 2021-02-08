@@ -22,6 +22,7 @@ const WritePage = () => {
     }
 
     const createBoard = () => {
+        console.log(boardList, userNow)
         let data = {
             id : boardList.length + 1,
             username : userNow.username,

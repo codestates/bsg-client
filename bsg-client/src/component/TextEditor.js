@@ -5,15 +5,19 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 
-const TextEditor = ({ onChangeContent }) => {
+const TextEditor = ({ onChangeContent, SelectedBoard }) => {
 
 
+  useEffect(() => {
+    console.log(SelectedBoard)
+  })
 
+  // const board = SelectedBoard[0].body || []
   return (
            <div className="WriteBox">
                 <CKEditor
                     editor={ ClassicEditor }
-                    data=""
+                    data={SelectedBoard ?  SelectedBoard[0].body : ''}
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );
