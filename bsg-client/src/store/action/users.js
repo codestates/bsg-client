@@ -108,19 +108,22 @@ export const signingInUser = (userdata) => {
       password : userdata.password
     })
     .then((res) => {
-      if(res.message === 'ok'){
-        dispatch(setAccessToken(res.data.accessToken))
+      console.log('첫번째',res.data.message)
+      if(res.data.message === 'ok'){
+        dispatch(setAccessToken(res.data.data.accessToken))
         dispatch(nowLogIn())
         return res
       }
+      
     }).then((res) => {
+      console.log('두번째',res)
       axios.get('https://api.projects1faker.com/getUserInfo', {
         headers: {
-          'authorization': `Bearer ${res.data.accessToken}` 
+          'authorization': `Bearer ${res.data.data.accessToken}` 
         }
       }).then((res) => {
-        console.log(res)
-        dispatch(getUserData(res.data)) 
+        console.log('세번째',res)
+        dispatch(getUserData(res.data.data.userInfo)) 
       })
     })
   }
