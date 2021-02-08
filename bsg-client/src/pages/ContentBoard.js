@@ -37,7 +37,7 @@ const ContentBoard = () => {
     const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList) || []
 
     const goToUpdate = () => {
-      history.push('/updatecontent')
+      history.push('/updatecontent/' + Board[0].id)
     }
 
     return( 

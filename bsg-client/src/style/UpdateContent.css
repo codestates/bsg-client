@@ -1,9 +1,9 @@
 .Update-content-container {
-  height : 1000px;
+  height : 1400px;
   display: grid;
   background-color: #222831;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 0.5fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     ". . . . . . ."
@@ -18,8 +18,8 @@
 .Update-input-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
-  gap: 0px 0px;
+  grid-template-rows: 0.1fr 0.5fr 0.5fr 0.5fr 0.1fr;
+  gap: 5px 0px;
   grid-template-areas:
     "updateTitle updateTitle updateTitle"
     "updateBody updateBody updateBody"
@@ -32,7 +32,8 @@
 .updateTitle { 
   grid-area: updateTitle; 
   text-align: center;
-  
+  width: 100%;
+  font-size: 2rem;
 }
 
 .updateBody { 

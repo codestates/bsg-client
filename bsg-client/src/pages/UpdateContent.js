@@ -3,26 +3,33 @@ import Nav from '../component/Nav'
 import { useSelector, useDispatch } from 'react-redux';
 import { SetBoardNow } from '../store/action/pagedata'
 import { useHistory } from 'react-router'
+import TextEditor from '../component/TextEditor'
+import { useParams } from 'react-router-dom'
 
 
 const UpdateContent = () => {
   
+  const params = useParams()
   const history = useHistory();
-  const getBoardNow = useSelector((state) => state.pageData.boardNow) || []
-  const [title, changeTitle] = useState(getBoardNow.title)
-  const [body, changeBody] = useState(getBoardNow.body)
+  const getAllBoardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || [];
+  const Board = getAllBoardList.filter((board) => board.id === Number(params.id))
+  const [title, changeTitle] = useState(Board[0].title)
+  const [body, changeBody] = useState(Board[0].body)
   const dispatch = useDispatch()
- 
+  
+  useEffect(() => {
+    console.log(params)
+  })
 
 const confirmUpdate = () => {
   let data = {
-    id : getBoardNow.id,
-    username : getBoardNow.username,
+    id : Board[0].id,
+    username : Board[0].username,
     title : title,
     body : body
   }
-  dispatch(SetBoardNow(data))
-  history.push('/contentboard')
+  // dispatch(SetBoardNow(data))
+  history.push('/contentboard/' + Board[0].id)
 }
 
 const cancelUpdate = () => {
@@ -30,11 +37,12 @@ const cancelUpdate = () => {
 }
 
 const changeTitleValue = (e) => {
+  console.log(e)
   changeTitle(e.target.value)
 }
 
-const changeBodyValue = (e) => {
-  changeBody(e.target.value)
+const changeBodyValue = (data) => {
+  changeBody(data)
 }
 
   return (
@@ -42,11 +50,9 @@ const changeBodyValue = (e) => {
     <Nav></Nav>
     <div className="Update-content-container">
   <div className="Update-input-container">
-    <div className="updateTitle">
-      <input name="title" onChange={changeTitleValue} value={title} className="inputUpdateTitle" type="text"></input>
-    </div>
+      <input className="updateTitle"  name="title" onChange={changeTitleValue} value={title} type="text"></input>
     <div className="updateBody">
-      <textarea name="body" onChange={changeBodyValue} value={body} className="inputUpdateBody" type ="text"></textarea>
+    <TextEditor onChangeContent={changeBodyValue} SelectedBoard={Board}></TextEditor>
     </div>
     <div className="updateBtnArea">
       <button className="updateBtn" onClick={confirmUpdate}>수정</button>
