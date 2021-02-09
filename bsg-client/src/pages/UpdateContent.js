@@ -1,30 +1,51 @@
 import React,{ useState, useEffect } from 'react';
 import Nav from '../component/Nav'
 import { useSelector, useDispatch } from 'react-redux';
-import { SetBoardNow } from '../store/action/pagedata'
 import { useHistory } from 'react-router'
 import TextEditor from '../component/TextEditor'
 import { useParams } from 'react-router-dom'
+import { checkLoginAgain } from '../store/action/users'
+import { getBoard } from '../store/action/pagedata'
+import axios from 'axios';
 
 
 const UpdateContent = () => {
   
   const params = useParams()
   const history = useHistory();
-  const getAllBoardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || [];
+  const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
   const Board = getAllBoardList.filter((board) => board.id === Number(params.id))
-  const [title, changeTitle] = useState(Board[0].title)
-  const [body, changeBody] = useState(Board[0].body)
+  const [title, changeTitle] = useState(localStorage.getItem("UpdateDataTitle"))
+  const [body, changeBody] = useState(localStorage.getItem("UpdateDataBody"))
   const dispatch = useDispatch()
-  
+
   useEffect(() => {
-    console.log(params)
-  })
+
+    if(localStorage.getItem('Token')){
+      dispatch(checkLoginAgain())
+    }
+    gettingBoard()
+  },[])
+
+
+
+  const gettingBoard = () => {
+    axios.get('https://api.projects1faker.com/getContent')
+     .then((res) => {
+       dispatch(getBoard(res.data))
+     }).catch((err) => {
+       throw(err)
+     })
+   }
+  
+  
+
+  
 
 const confirmUpdate = () => {
   let data = {
-    id : Board[0].id,
-    username : Board[0].username,
+    id : localStorage.getItem("UpdateDataId"),
+    username : localStorage.getItem("UpdateDataUsername"),
     title : title,
     body : body
   }

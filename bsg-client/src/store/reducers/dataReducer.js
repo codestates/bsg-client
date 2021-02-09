@@ -10,7 +10,7 @@ const initialState = {
   searchData : null,
   bestVideos : null,
   boardNow : null,
-  boards : fakeData,
+  boards : [],
   comments : fakeData
 }
 

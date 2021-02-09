@@ -18,7 +18,7 @@ const handleClick = (board) => {
   window.scrollTo({top:0}) // 컨텐츠를 선택했을때 스크롤을 맨위로 올려줌
 }
 
-const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || []
+const boardList = useSelector((state) => state.pageData.boards.data) || []
 
     return(
     <>
