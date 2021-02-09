@@ -1,7 +1,8 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import { Link } from 'react-router-dom'
+import { logOutUser } from '../store/action/users'
+
 
 
 
@@ -9,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 const Nav = ({openModal}) => {
 
-
+  const dispatch = useDispatch()
   const history = useHistory();
   const isLogin = useSelector((state) => state.userData.isLogin)
 
@@ -23,6 +24,9 @@ const Nav = ({openModal}) => {
 
   const clickToMyPage = () => {
     history.push('/mypage')
+  }
+  const ClicklogOutUser = () => {
+    dispatch(logOutUser())
   }
   
   return (
@@ -39,7 +43,7 @@ const Nav = ({openModal}) => {
       <button className = 'lolBtn'>LOL Inven</button>
       </a>
       {isLogin ? <button onClick={() => {clickToMyPage()}} className="loginBtn">마이페이지</button> : ''}
-      {isLogin ? <button className="loginBtn">로그아웃</button> : <button onClick={openModal} className="loginBtn">로그인</button>}
+      {isLogin ? <button onClick={ClicklogOutUser} className="loginBtn">로그아웃</button> : <button onClick={openModal} className="loginBtn">로그인</button>}
       </div>
     </div>
   )

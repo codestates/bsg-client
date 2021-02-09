@@ -3,13 +3,14 @@ import { GET_VIDEOS } from '../action/pagedata'
 import { GET_BOARD } from '../action/pagedata'
 import { GET_COMMENT } from '../action/pagedata'
 import { GET_BOARD_NOW } from '../action/pagedata'
+import { POST_BOARD } from '../action/pagedata'
 const fakeData = require('../reducers/fakedata') 
 
 const initialState = {
   searchData : null,
   bestVideos : null,
   boardNow : null,
-  boards : fakeData,
+  boards : [],
   comments : fakeData
 }
 
@@ -39,6 +40,13 @@ export default function(state = initialState, action){
       return {
         ...state,
         boardNow : action.data
+      }
+    case POST_BOARD :
+      const newBoard = Array.from(state.boards.fakeData.boardlist)
+      newBoard.push(action.data)
+      return {
+        ...state,
+        boards : { fakeData : { boardlist : newBoard}}
       }
     default:
       return state

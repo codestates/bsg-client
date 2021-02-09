@@ -33,9 +33,9 @@ const Modal = ({isOpen, closeModal}) => {
     console.log(userdata)
     dispatch(signingInUser(userdata))
     
-    if(userNow){
-      closeModal()
-    }
+        closeModal()
+  
+    
   }
 
   const toSignUp = () => {

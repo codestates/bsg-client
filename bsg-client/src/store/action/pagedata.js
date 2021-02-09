@@ -9,6 +9,8 @@ export const GET_BOARD = 'GET_BOARD';
 export const GET_BOARD_NOW = 'GET_BOARD_NOW'
 export const GET_COMMENT = 'GET_COMMENT';
 
+export const POST_BOARD = 'POST_BOARD';
+export const POST_COMMENT = 'POST_COMMENT'
 
 export const searchData = (data) => {
   return {
@@ -45,10 +47,24 @@ export const getComment = (data) => {
   }
 }
 
+export const postBoard = (data) => {
+  return {
+    type : POST_BOARD,
+    data
+  }
+}
+
+export const postComment = (data) => {
+  return {
+    type : POST_COMMENT,
+    data
+  }
+}
+
 export const searchingData = (username) => {
   return (dispatch) => {
-    return axios.get('서버 URL', {
-      data : username
+    return axios.get('https://api.projects1faker.com/getUserRanks', {
+      nickname : username
     })
     .then((res) => {
       dispatch(searchData(res.data))
@@ -70,25 +86,50 @@ export const gettingVideos = () => {
 }
 
 export const gettingBoard = () => {
-  return (dispatch) => {
-    return axios.get('서버 URL')
+  
+    return (dispatch) =>{axios.get('https://api.projects1faker.com/getContent')
     .then((res) => {
+      console.log('2단계')
       dispatch(getBoard(res.data))
     }).catch((err) => {
       throw(err)
     })
-  }
+    }
 }
 
 export const gettingComment = (boardId) => {
   return (dispatch) => {
-    return axios.get('서버 URL',{
+    return axios.get('https://api.projects1faker.com/getComment',{
       data : boardId
     })
     .then((res) => {
       dispatch(getComment(res.data))
     }).catch((err) => {
       throw(err)
+    })
+  }
+}
+
+export const posttingComment = (data) => {
+  return (dispatch) => {
+    return axios.post('https://api.projects1faker.com/postComment',{
+      contentid : data.id,
+      tier : data.tier,
+      comment : data.comment,
+      userid : data.userid,
+      nickname : data.nickname
+    })
+  }
+}
+
+export const posttingContent = (data) => {
+  return (dispatch) => {
+    return axios.post('https://api.projects1faker.com/postContent', {
+      userid : data.userid,
+      tier : data.tier,
+      title : data.title,
+      body : data.body,
+      nickname : data.nickname
     })
   }
 }
