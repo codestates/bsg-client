@@ -1,10 +1,10 @@
 
 .content-board-container {
-    height: 1500px;
+    height: auto;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr 0.5fr;
     gap: 15px 0px;
     grid-template-areas:
       ". . . . ."
@@ -19,25 +19,26 @@
   .mainBox {
     grid-area: mainBox;
     display: grid;
+    height : 700px;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.75fr 0.2fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
+    grid-template-rows: 0.75fr 0.4fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
     gap: 15px 0px;
     grid-template-areas:
       ". title title title ."
-      ". . . controlbtnDiv ."
+      ". . controlbtnDiv controlbtnDiv ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". contentBox contentBox contentBox ."
       ". buttonBox buttonBox buttonBox .";
-    
   }
 
   .controlbtnDiv {
     grid-area: controlbtnDiv;
     display:flex;
     justify-content: flex-end;
+    width : 100%;
   }
 
   .controlbtn {
@@ -70,9 +71,9 @@
       grid-area: contentBox; 
       padding : 30px;
       font-size : 1.5rem;
-      text-align: center;
       border-radius: 20px;
       background: white;
+      height : 500px;
     }
   
   .commentBox { 
@@ -90,7 +91,11 @@
       height : 20%;
     }
   
-  .footer { grid-area: footer; }
+  .footer { 
+    grid-area: footer;
+    display :flex;
+    height : 200px; 
+  }
 
   .PostCommentArea{
     margin-bottom: 10px;
