@@ -1,4 +1,5 @@
 .Write-container {
+    background-image: url(https://ifh.cc/g/sJooPS.jpg);
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
     grid-template-rows: 0.6fr 1fr 2fr 2fr 2fr 2fr 1fr;
