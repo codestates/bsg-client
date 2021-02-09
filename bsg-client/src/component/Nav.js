@@ -27,7 +27,7 @@ const Nav = ({openModal}) => {
   return (
     <div className="Navbar">
       <div className="NavLeft">
-      <img onClick={clickLogo} className="logo" src="https://ifh.cc/g/XpHtKW.png"></img>
+      <img onClick={clickLogo} className="logo" src="https://ifh.cc/g/zvCv8t.png"></img>
       </div>
       <div className="NavRight">
       <button onClick={() => {clickToBoard()}} className="navBtn">커뮤니티</button>
