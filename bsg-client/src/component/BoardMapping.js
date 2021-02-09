@@ -18,7 +18,7 @@ const handleClick = (board) => {
   window.scrollTo({top:0}) // 컨텐츠를 선택했을때 스크롤을 맨위로 올려줌
 }
 
-const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || []
+const boardList = useSelector((state) => state.pageData.boards.data) || []
 
     return(
     <>
@@ -26,8 +26,10 @@ const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlis
       {boardList.map((board, index) => (
         <div key={board.id} className = 'postBox' onClick={() => handleClick(board)}>
         <div className="onePostBoxTitle">{board.title}</div>
-        <div>{ReactHtmlParser(board.body)}</div>
-        <div>{board.username}</div>
+        <div className='PostUserName'>{board.user && board.user.nickname}</div>
+        <div>{board.createdAt.slice(0,10)}</div>
+
+
       </div>
       ))}
       </div>

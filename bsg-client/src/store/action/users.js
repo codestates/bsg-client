@@ -11,7 +11,7 @@ export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE'
 export const IS_LOGIN = 'IN_LOGIN';
 export const NOW_LOGIN = 'NOW_LOGIN'
 export const NOW_LOGOUT = 'NOW_LOGOUT'
-
+export const SET_DATA_USER_NOW = 'SET_DATA_USER_NOW'
 
 export const signUpUser = (data) => {
   return {
@@ -78,6 +78,13 @@ export const setErrorMessage = (message) => {
     message : message
   }
 }
+
+export const setDataUserNow = (data) => {
+  return {
+    type : SET_DATA_USER_NOW,
+    data : data
+  }
+}
  
 
 
@@ -108,10 +115,10 @@ export const signingInUser = (userdata) => {
       password : userdata.password
     })
     .then((res) => {
-      console.log('첫번째',res.data.message)
       if(res.data.message === 'ok'){
         dispatch(setAccessToken(res.data.data.accessToken))
-        dispatch(nowLogIn())
+        localStorage.setItem("Token", res.data.data.accessToken)
+
         return res
       }
       
@@ -122,37 +129,59 @@ export const signingInUser = (userdata) => {
           'authorization': `Bearer ${res.data.data.accessToken}` 
         }
       }).then((res) => {
-        console.log('세번째',res)
-        dispatch(getUserData(res.data.data.userInfo)) 
+      dispatch(nowLogIn())
+      dispatch(getUserData(res.data.data.userInfo))
+      console.log(res.data.data.userInfo.nickname)
+      axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : res.data.data.userInfo.nickname
+    }).then((res) => {
+       console.log(res.data[0])
+      dispatch(setDataUserNow(res.data[0]))
+    })
       })
     })
   }
 }
 
-export const logOutUser = (accessToken) => {
+export const logOutUser = () => {
   return (dispatch) => {
-    return axios.post('서버 URL', {
-      accessToken 
-    }).then((res) => {
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
+      return localStorage.clear();
+      
+  }
+}
+
+export const signingOutUser = (data) => {
+  return (dispatch) => {
+    return axios.post('https://api.projects1faker.com/signOut', {
+      email : data
+    }).then((res) => {
+
+      if(res.data.message === "We always wait for you" ){
+        dispatch(getUserData(null))
+        dispatch(setAccessToken(null))
+        dispatch(nowLogOut())
+        localStorage.clear();
+      }
+      
     }).catch((err) => {
       throw(err)
     })
   }
 }
 
-export const signingOutUser = (data) => {
-  return (dispatch) => {
-    return axios.post('서버 URL', {
-      data
+export const checkLoginAgain = () => {
+
+  return(dispatch) => {
+    return axios.get('https://api.projects1faker.com/getUserInfo', {
+      headers: {
+        'authorization': `Bearer ${localStorage.getItem('Token')}` 
+      }
     }).then((res) => {
-      dispatch(getUserData(null))
-      dispatch(setAccessToken(null))
-      dispatch(nowLogOut())
-    }).catch((err) => {
-      throw(err)
+      dispatch(nowLogIn())
+      dispatch(getUserData(res.data.data.userInfo)) 
     })
   }
 }

@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
+  background-image: url(https://ifh.cc/g/sJooPS.jpg);
 }
 
 .stopScroll{
@@ -119,7 +120,7 @@
 
 .navBtn {
   width : 25%;
-  background: #404040;
+  background:rgba(0, 0, 0, 0.6);
   border: 0;
   outline :0;
   color : white;
@@ -133,15 +134,15 @@
 
 
 .navBtn:hover{
-  background-color:blueviolet;
+  background-color:rgb(82, 88, 121);
 }
 
 .searchBar{
-  width : 40%;
-  height : 100%;
-  padding-left: 5%;
+  width: 40%;
+  height: 75%;
+  padding-left: 2%;
   font-size : 19px;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377);
+  /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377); */
   color : white;
   border: 0;
   outline :0;
@@ -157,7 +158,7 @@
   font-size : 20px;
   color : white;
   font-weight: bold;
-  box-shadow: 5px 5px 10px 2px black;
+  /* box-shadow: 5px 5px 10px 2px black; */
   border: 0;
   outline :0;
   border-left: none;
@@ -165,10 +166,18 @@
   border-bottom-right-radius: 5px;
   background-color : #52616B;
   transition: all 0.5s;
+  opacity: 0.6;
+  
 }
 
 .searchBtn:hover{
   background-color :cadetblue;
+}
+
+.searchBtnImg{
+  height: 28%;
+  width: 22%;
+  opacity: 0.7;
 }
 
 .modalOuter {
@@ -280,7 +289,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   height: 100%;
 }
 
-.box{
+.searchMainBox{
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -290,7 +299,6 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   background-color: gray;
   transition: all .2s ease;
   text-align: center;
-  padding-top: 50px;
   border-radius : 10px;
 }
 
@@ -303,6 +311,15 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+.searchAlready {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding : 20px;
+  font-size : 2rem;
+  color: #fff;
 }
 
 @keyframes spin {
@@ -350,4 +367,24 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .NoErrorMessageDiv {
   margin-top : 20px;
   height:  10%;
+}
+
+.lolBtn{
+    width: 116%;
+    height: 96%;
+    color: white;
+    font-size: x-large;
+    border: 0;
+    outline: 0;
+}
+
+.riotBtn{
+  position: relative;
+  height: 70%;
+  width: 19%;
+  color: white;
+  top: -35%;
+  font-size: x-large;
+  border: 0;
+  outline: 0;
 }
