@@ -83,7 +83,7 @@ export const setErrorMessage = (message) => {
 
 export const signingUpUser = (userdata) => {
   return (dispatch) => {
-    return axios.post('https://3.36.123.94:4000/signUp',{
+    return axios.post('https://api.projects1faker.com/signUp',{
       data : userdata
     })
     .then((res) => {
@@ -103,7 +103,7 @@ export const signingUpUser = (userdata) => {
 
 export const signingInUser = (userdata) => {
   return (dispatch) => {
-    return axios.post('https://3.36.123.94:4000/login', {
+    return axios.post('https://api.projects1faker.com/login', {
       email : userdata.email,
       password : userdata.password
     })
@@ -114,7 +114,7 @@ export const signingInUser = (userdata) => {
         return res
       }
     }).then((res) => {
-      axios.get('https://3.36.123.94:4000/getUserInfo', {
+      axios.get('https://api.projects1faker.com/getUserInfo', {
         headers: {
           'authorization': `Bearer ${res.data.accessToken}` 
         }

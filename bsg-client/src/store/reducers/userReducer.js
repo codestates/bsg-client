@@ -8,7 +8,7 @@ import { NOW_LOGOUT } from '../action/users'
 
 const initialState = {
   isLogin : false,
-  userNow : null,
+  userNow : { username : '테스터유저'},
   accessToken : null,
 }
 

@@ -9,7 +9,7 @@
     ". WriteBox WriteBox WriteBox ."
     ". WriteBox WriteBox WriteBox ."
     ". WriteBox WriteBox WriteBox ."
-    "WriteBtnBox WriteBtnBox WriteBtnBox WriteBtnBox WriteBtnBox"
+    ". WriteBtnBox WriteBtnBox WriteBtnBox ."
     "footer footer footer footer footer";
 }
 .WriteBox { 
@@ -32,7 +32,12 @@
     height: 5%;
     width: 74%;
     margin: -18px;
+    padding-left: 20px;
+
+
 }
+
+
 
 .WriteinputContent{
     position: absolute;
@@ -51,6 +56,7 @@
     left: 305px;
 } */
 
+
 .footer { 
     grid-area: footer; 
 }
@@ -58,6 +64,7 @@
 .WriteBtnBox { 
     grid-area: WriteBtnBox;
 }
+
 
 .submitBtn{
     position: relative;
@@ -75,3 +82,15 @@
     width: 53%;
     font-size: xxx-large;
 }
+
+.WriteBtn {
+    height : 50%;
+    width : 50%;
+}
+
+
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 550px;
+  }
+

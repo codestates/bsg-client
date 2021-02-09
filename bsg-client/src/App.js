@@ -44,7 +44,7 @@ function App() {
           /> */}
           <Route
             exact
-            path="/updatecontent"
+            path="/updatecontent/:id"
             render={() => <UpdateContent/>}
           />
           <Route

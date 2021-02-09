@@ -5,6 +5,7 @@ import { useHistory } from 'react-router'
 import CommentArea from '../component/CommentArea'
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
+import ReactHtmlParser from 'react-html-parser'
 const html = document.querySelector('html')
 
 const ContentBoard = () => {
@@ -36,7 +37,7 @@ const ContentBoard = () => {
     const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList) || []
 
     const goToUpdate = () => {
-      history.push('/updatecontent')
+      history.push('/updatecontent/' + Board[0].id)
     }
 
     return( 
@@ -55,7 +56,7 @@ const ContentBoard = () => {
       </div> : null}
      
       <div className="contentBox">
-        {Board[0] && Board[0].body}
+        {Board[0] && ReactHtmlParser(Board[0].body)}
       </div>
       <div className="buttonBox">
     </div>
