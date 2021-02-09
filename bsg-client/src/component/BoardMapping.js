@@ -26,8 +26,8 @@ const boardList = useSelector((state) => state.pageData.boards.fakeData.boardlis
       {boardList.map((board, index) => (
         <div key={board.id} className = 'postBox' onClick={() => handleClick(board)}>
         <div className="onePostBoxTitle">{board.title}</div>
-        <div>{board.body}</div>
-        <div>{board.username}</div>
+        <div className='PostBody'>{board.body}</div>
+        <div className='PostUserName'>{board.username}</div>
       </div>
       ))}
       </div>
