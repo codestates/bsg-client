@@ -135,7 +135,6 @@ export const signingInUser = (userdata) => {
       axios.post('https://api.projects1faker.com/getUserRanks',{
      nickname : res.data.data.userInfo.nickname
     }).then((res) => {
-       console.log(res.data[0])
       dispatch(setDataUserNow(res.data[0]))
     })
       })
@@ -145,11 +144,10 @@ export const signingInUser = (userdata) => {
 
 export const logOutUser = () => {
   return (dispatch) => {
+      localStorage.clear();
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
-      return localStorage.clear();
-      
   }
 }
 
@@ -158,14 +156,10 @@ export const signingOutUser = (data) => {
     return axios.post('https://api.projects1faker.com/signOut', {
       email : data
     }).then((res) => {
-
-      if(res.data.message === "We always wait for you" ){
         dispatch(getUserData(null))
         dispatch(setAccessToken(null))
         dispatch(nowLogOut())
         localStorage.clear();
-      }
-      
     }).catch((err) => {
       throw(err)
     })
@@ -181,7 +175,12 @@ export const checkLoginAgain = () => {
       }
     }).then((res) => {
       dispatch(nowLogIn())
-      dispatch(getUserData(res.data.data.userInfo)) 
+      dispatch(getUserData(res.data.data.userInfo))
+      axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : res.data.data.userInfo.nickname
+    }).then((res) => {
+      dispatch(setDataUserNow(res.data[0]))
+    })
     })
   }
 }

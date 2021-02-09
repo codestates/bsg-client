@@ -20,7 +20,9 @@ const MainPage = () => {
   const dispatch = useDispatch()
   let pageWidth = window.innerWidth
   useEffect(() => {
+    console.log(localStorage.getItem('Token'))
     if(localStorage.getItem('Token')){
+      // localStorage.clear()
       dispatch(checkLoginAgain())
     }
     getYoutube()

@@ -5,7 +5,6 @@ import Modal from '../component/Modal'
 import ViewMyPage from '../component/ViewMyPage'
 import UpdateMyPage from '../component/UpdateMyPage'
 import { checkLoginAgain } from '../store/action/users'
-const axios = require('axios')
 
 
 const MyPage = () => {
