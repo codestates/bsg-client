@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
-  background-image: url(https://ifh.cc/g/sJooPS.jpg);
 }
 
 .stopScroll{
@@ -11,6 +10,7 @@
 }
 
 .MainPageContainer {
+  background-image: url(https://ifh.cc/g/sJooPS.jpg);
   margin:0;
   height: 1700px;
   background-color: #222831;
@@ -103,7 +103,7 @@
 
 .loginBtn {
   width : 25%;
-  background-color :#065458;
+  background-color :black;
   border: 0;
   outline :0;
   color : white;
@@ -112,10 +112,36 @@
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
+  position: relative;
+  right: 3%;
 }
 .loginBtn:hover{
-  background-color:blueviolet;
+  background-color:rgb(56, 11, 99);
 }
+
+.loginBtn:before,.loginBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #70086b;
+  transition:400ms ease all;
+  outline:none;
+}
+.loginBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.loginBtn:hover:before,.loginBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
 
 
 .navBtn {
@@ -129,12 +155,36 @@
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
+  position: relative;
+  right: 13%;
+}
+
+.navBtn:before,.navBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #70086b;
+  transition:400ms ease all;
+  outline:none;
+}
+.navBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.navBtn:hover:before,.navBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
 
 
 
 .navBtn:hover{
-  background-color:rgb(82, 88, 121);
+  background-color:rgb(31, 38, 78);
 }
 
 .searchBar{
@@ -150,11 +200,13 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   background-color: #808080;
+  position: relative;
+    top: -12.5%;
 }
 
 .searchBtn{
-  width : 10%;
-  height : 100%;
+  width: 4%;
+  height: 76%;
   font-size : 20px;
   color : white;
   font-weight: bold;
@@ -175,8 +227,8 @@
 }
 
 .searchBtnImg{
-  height: 28%;
-  width: 22%;
+  height: 64%;
+  width: 40%;
   opacity: 0.7;
 }
 
@@ -370,15 +422,49 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .lolBtn{
+    background: black;
     width: 116%;
     height: 96%;
     color: white;
     font-size: x-large;
     border: 0;
     outline: 0;
+    position: relative;
+    right: 53%;
+    border-radius: 40px;
+    cursor:pointer;
+    transition:800ms ease all;
 }
 
+.lolBtn:hover{
+  background-color: rgb(38, 24, 65)
+}
+
+.lolBtn:before,.lolBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #70086b;
+  transition:400ms ease all;
+  outline:none;
+}
+.lolBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.lolBtn:hover:before,.lolBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
 .riotBtn{
+  background: black;
   position: relative;
   height: 70%;
   width: 19%;
