@@ -2,67 +2,66 @@
   height: auto;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 3fr;
+  grid-auto-flow: 500px;
   gap: 0px 0px;
   grid-template-areas:
     "PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea"
     "ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea ViewCommentArea";
 }
 
-.PostCommentArea { 
+.PostCommentArea {
   grid-area: PostCommentArea;
-  text-align : center;
-}
-
-.ViewCommentArea { 
-  grid-area: ViewCommentArea; 
-}
-
-.InputPostComment{
-  margin-top : 10px;
-  margin-bottom : 10px;
-  width : 80%;
-  height : 90%;
-  
-}
-
-.BtnPostComment {
-  width : 10%;
-  height : 90%;
-}
-
-.oneCommentBox {
-  display : flex;
-  justify-content : space-between;
-  margin : 10px;
-  border : 1px solid black;
-  border-radius : 10px;
-  height : 13%;
+  text-align: center;
 }
 
 .ViewCommentArea {
-  display : flex;
+  grid-area: ViewCommentArea;
+}
+
+.InputPostComment {
+  margin-top: 10px;
+  width: 80%;
+  height: 50px;
+}
+
+.BtnPostComment {
+  width: 10%;
+  height: 50px;
+}
+
+.oneCommentBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 4%;
+}
+
+.ViewCommentArea {
+  display: flex;
   flex-direction: column;
   margin-top: 30px;
 }
 
 .commentLeft {
-  display : flex;
-  width : 15%;
-  justify-content :space-between;
-  padding : 10px;
+  display: flex;
+  /* flex-direction : row; */
+  width: 20%;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .commentRight {
-  display : flex;
-  width : 50%;
-  justify-content :space-between;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
   margin-right: 10px;
-  padding : 10px;
+  padding: 10px;
 }
 
-.commentRightRight{
-  display : flex;
+.commentRightRight {
+  display: flex;
   width: 30%;
   justify-content: space-between;
 }
