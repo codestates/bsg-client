@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import Nav from '../component/Nav'
 import Modal from '../component/Modal'
+import { checkLoginAgain } from '../store/action/users'
 const axios = require('axios')
 const html = document.querySelector('html')
 
@@ -15,9 +16,13 @@ const MainPage = () => {
   const [modalNow, setModal] = useState(false)
   const [bestvideos, getvideos] = useState({})
   const [openSearchBox, setOnOff] = useState(false)
-
+  const [searchData, setSearchData] = useState([])
+  const dispatch = useDispatch()
   let pageWidth = window.innerWidth
   useEffect(() => {
+    if(localStorage.getItem('Token')){
+      dispatch(checkLoginAgain())
+    }
     getYoutube()
   },[])
 
@@ -49,6 +54,11 @@ const MainPage = () => {
   }
 
   const openSearBox = () => {
+    axios.get('https://api.projects1faker.com/getUserRanks',{
+      nickname : keyword
+    }).then((res) => {
+      console.log(res)
+    })
     setOnOff(true)
   }
 
@@ -57,7 +67,6 @@ const MainPage = () => {
   }
 
   
-
   return(
     <>
     <Modal isOpen={modalNow} closeModal={closeModal}/>
@@ -69,8 +78,10 @@ const MainPage = () => {
       <button onClick={openSearBox} className="searchBtn"><img className = 'searchBtnImg'src = 'https://ifh.cc/g/sZGhwz.png'/> </button>
     </div>  
   {openSearchBox ? <div className="searchData">
-    <div className="box">
-    <div className="loading"></div>
+    <div className="box">{ searchData.length > 0 ? 
+    <div></div> : <div className="loading"></div>
+    }
+    
     </div>
   </div> : null}
   <div className = 'recommendText'>브실골의 위한 추천영상!!</div>

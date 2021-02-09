@@ -108,48 +108,68 @@ export const signingInUser = (userdata) => {
       password : userdata.password
     })
     .then((res) => {
-      if(res.message === 'ok'){
-        dispatch(setAccessToken(res.data.accessToken))
-        dispatch(nowLogIn())
+      console.log('첫번째',res.data.message)
+      if(res.data.message === 'ok'){
+        dispatch(setAccessToken(res.data.data.accessToken))
+        localStorage.setItem("Token", res.data.data.accessToken)
         return res
       }
+      
     }).then((res) => {
+      console.log('두번째',res)
       axios.get('https://api.projects1faker.com/getUserInfo', {
         headers: {
-          'authorization': `Bearer ${res.data.accessToken}` 
+          'authorization': `Bearer ${res.data.data.accessToken}` 
         }
       }).then((res) => {
-        console.log(res)
-        dispatch(getUserData(res.data)) 
+        console.log('세번째',res)
+        dispatch(nowLogIn())
+        dispatch(getUserData(res.data.data.userInfo)) 
       })
     })
   }
 }
 
-export const logOutUser = (accessToken) => {
+export const logOutUser = () => {
   return (dispatch) => {
-    return axios.post('서버 URL', {
-      accessToken 
-    }).then((res) => {
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
+      return localStorage.clear();
+      
+  }
+}
+
+export const signingOutUser = (data) => {
+  return (dispatch) => {
+    return axios.post('https://api.projects1faker.com/signOut', {
+      email : data
+    }).then((res) => {
+
+      if(res.data.message === "We always wait for you" ){
+        dispatch(getUserData(null))
+        dispatch(setAccessToken(null))
+        dispatch(nowLogOut())
+        localStorage.clear();
+      }
+      
     }).catch((err) => {
       throw(err)
     })
   }
 }
 
-export const signingOutUser = (data) => {
-  return (dispatch) => {
-    return axios.post('서버 URL', {
-      data
+export const checkLoginAgain = () => {
+
+  return(dispatch) => {
+    return axios.get('https://api.projects1faker.com/getUserInfo', {
+      headers: {
+        'authorization': `Bearer ${localStorage.getItem('Token')}` 
+      }
     }).then((res) => {
-      dispatch(getUserData(null))
-      dispatch(setAccessToken(null))
-      dispatch(nowLogOut())
-    }).catch((err) => {
-      throw(err)
+      console.log('세번째',res)
+      dispatch(nowLogIn())
+      dispatch(getUserData(res.data.data.userInfo)) 
     })
   }
 }

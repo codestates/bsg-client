@@ -3,24 +3,38 @@ import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import { useHistory } from 'react-router'
 import CommentArea from '../component/CommentArea'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser'
+import { checkLoginAgain } from '../store/action/users'
+import { getBoard } from '../store/action/pagedata'
+import axios from 'axios';
 const html = document.querySelector('html')
 
 const ContentBoard = () => {
   const params = useParams()
-
+  const dispatch = useDispatch()
     const [modalNow, setModal] = useState(false)
-    
-    const getAllBoardList = useSelector((state) => state.pageData.boards.fakeData.boardlist) || [];
+
+    const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
 
     const Board = getAllBoardList.filter((board) => board.id === Number(params.id))
 
+    const gettingBoard = () => {
+      axios.get('https://api.projects1faker.com/getContent')
+       .then((res) => {
+         dispatch(getBoard(res.data))
+       }).catch((err) => {
+         throw(err)
+       })
+     }
 
     useEffect(() => {
-      console.log(Board)
-    })
+      if(localStorage.getItem('Token')){
+        dispatch(checkLoginAgain())
+      }
+      gettingBoard()
+    },[])
     const openModal = () => {
     html.classList.add("stopScroll")
     setModal(true)
@@ -37,6 +51,10 @@ const ContentBoard = () => {
     const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList) || []
 
     const goToUpdate = () => {
+      localStorage.setItem("UpdateDataId", Board[0].id)
+      localStorage.setItem("UpdateDataTitle", Board[0].title)
+      localStorage.setItem("UpdateDataBody", Board[0].body)
+      localStorage.setItem("UpdateDataUsername", Board[0].username)
       history.push('/updatecontent/' + Board[0].id)
     }
 
