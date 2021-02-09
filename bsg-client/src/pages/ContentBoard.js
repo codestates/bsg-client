@@ -17,12 +17,7 @@ const ContentBoard = () => {
   const [modalNow, setModal] = useState(false);
 
   // const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
-  const getComment = useSelector((state) => state.pageData.comments.data) || [];
-  const Comment = getComment.filter(
-    (comment) => comment.contentid === Number(params.id),
-  );
-  const getAllBoard = useSelector((state) => state.pageData.boards.data) || [];
-  const Board = getAllBoard.filter((board) => board.id === Number(params.id));
+  
 
   const gettingBoard = () => {
     axios
@@ -34,14 +29,8 @@ const ContentBoard = () => {
         throw err;
       });
   };
-  const [comment, sendComment] = useState(Comment);
-  useEffect(() => {
-    if (localStorage.getItem('Token')) {
-      dispatch(checkLoginAgain());
-    }
-    dispatch(gettingComment())
-    gettingBoard();
-  }, []);
+
+  
   const openModal = () => {
     html.classList.add('stopScroll');
     setModal(true);
@@ -54,7 +43,6 @@ const ContentBoard = () => {
 
   const history = useHistory();
   const userNow = useSelector((state) => state.userData.userNow) || [];
-  // const getBoardNow = useSelector((state) => state.pageData.boardNow) || []
 
   const goToUpdate = () => {
     localStorage.setItem('UpdateDataId', Board[0].id);
@@ -63,6 +51,19 @@ const ContentBoard = () => {
     localStorage.setItem('UpdateDataUsername', Board[0].username);
     history.push('/updatecontent/' + Board[0].id);
   };
+
+  const getComment = useSelector((state) => state.pageData.comments.data) || [];
+  const Comment = getComment.filter((comment) => comment.contentid === Number(params.id));
+  const getAllBoard = useSelector((state) => state.pageData.boards.data) || [];
+  const Board = getAllBoard.filter((board) => board.id === Number(params.id));
+
+  useEffect(() => {
+    if (localStorage.getItem('Token')) {
+      dispatch(checkLoginAgain());
+    }
+    dispatch(gettingComment())
+    gettingBoard();
+  }, []);
 
   return (
     <>
@@ -87,7 +88,7 @@ const ContentBoard = () => {
         </div>
         <div class="commentBox">
           {getComment && (
-            <CommentArea board={Board[0]} comments={comment}></CommentArea>
+            <CommentArea board={Board[0]} comments={Comment}></CommentArea>
           )}
         </div>
         <div class="footer"></div>
