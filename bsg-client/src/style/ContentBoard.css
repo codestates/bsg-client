@@ -1,6 +1,7 @@
 
 .content-board-container {
-    height: auto;
+    background-image: url(https://ifh.cc/g/sJooPS.jpg);
+    height: 1500px;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
