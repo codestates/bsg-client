@@ -26,6 +26,18 @@ const MainPage = () => {
     getYoutube()
   },[])
 
+  const tearIcon = {
+    'IRON' : 'https://ifh.cc/g/9zJAdf.png',
+    'BRONZE' : 'https://ifh.cc/g/OtoyU2.png',
+    'SILVER' : 'https://ifh.cc/g/nIcDyS.png',
+    'GOLD' : 'https://ifh.cc/g/ruWbaS.png',
+    'PLATINUM' : 'https://ifh.cc/g/tOK9Km.png',
+    'DIAMOND' : 'https://ifh.cc/g/8qjsyE.png',
+    'MASTER' : 'https://ifh.cc/g/4bCj6b.png',
+    'GRANDMASTER' : 'https://ifh.cc/g/BpbGxY.png',
+    'CHALLENGER' : 'https://ifh.cc/g/RIIP0P.png'
+  }
+
   const getYoutube = () => {
     const enco = encodeURI('브실골')
     axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyCkkux5IIRetJ6rFp4edQzomSdZ-8a0e8k&q=${enco}&part=snippet&maxResults=2`)
@@ -54,10 +66,11 @@ const MainPage = () => {
   }
 
   const openSearBox = () => {
-    axios.get('https://api.projects1faker.com/getUserRanks',{
-      nickname : keyword
+    axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : keyword
     }).then((res) => {
-      console.log(res)
+      console.log(res.data[0])
+      setSearchData(res.data)
     })
     setOnOff(true)
   }
@@ -78,8 +91,14 @@ const MainPage = () => {
       <button onClick={openSearBox} className="searchBtn"><img className = 'searchBtnImg'src = 'https://ifh.cc/g/sZGhwz.png'/> </button>
     </div>  
   {openSearchBox ? <div className="searchData">
-    <div className="box">{ searchData.length > 0 ? 
-    <div></div> : <div className="loading"></div>
+    <div className="searchMainBox">{ searchData.length > 0 ? 
+    <div className="searchAlready">
+      <img className="TearIcon" src={tearIcon[searchData[0].tier]}></img>
+      <div>{searchData[0].summonerName}</div>
+      <div>{`승   ${searchData[0].wins}`}</div>
+      <div>{`패   ${searchData[0].losses}`}</div>
+      <div>{'승률   ' +((searchData[0].wins / (searchData[0].wins + searchData[0].losses)) * 100).toFixed(1) }</div>
+    </div> : <div className="loading"></div>
     }
     
     </div>

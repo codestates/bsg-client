@@ -7,18 +7,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser'
 import { checkLoginAgain } from '../store/action/users'
-import { getBoard } from '../store/action/pagedata'
+import { getBoard, gettingComment } from '../store/action/pagedata'
 import axios from 'axios';
 const html = document.querySelector('html')
 
 const ContentBoard = () => {
+
+
+
   const params = useParams()
   const dispatch = useDispatch()
     const [modalNow, setModal] = useState(false)
 
-    const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
-
-    const Board = getAllBoardList.filter((board) => board.id === Number(params.id))
+    // const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
+    const getComment = useSelector((state) => state.pageData.comments.data) || []
+    const getAllBoard = useSelector((state) => state.pageData.boards.data) || []
+    const Board = getAllBoard.filter((board) => board.id === Number(params.id))
 
     const gettingBoard = () => {
       axios.get('https://api.projects1faker.com/getContent')
@@ -32,6 +36,7 @@ const ContentBoard = () => {
     useEffect(() => {
       if(localStorage.getItem('Token')){
         dispatch(checkLoginAgain())
+        dispatch(gettingComment())
       }
       gettingBoard()
     },[])
@@ -48,8 +53,8 @@ const ContentBoard = () => {
     const history = useHistory();
     const userNow = useSelector((state) =>  state.userData.userNow) || []
     // const getBoardNow = useSelector((state) => state.pageData.boardNow) || []
-    const getComment = useSelector((state) => state.pageData.comments.fakeData.commentList) || []
-
+    
+    
     const goToUpdate = () => {
       localStorage.setItem("UpdateDataId", Board[0].id)
       localStorage.setItem("UpdateDataTitle", Board[0].title)
@@ -80,7 +85,7 @@ const ContentBoard = () => {
     </div>
   </div>
   <div class="commentBox">
-    {getComment && <CommentArea comments={getComment}></CommentArea>}
+    {getComment && <CommentArea board={Board[0]} comments={getComment}></CommentArea>}
   </div>
   <div class="footer"></div>
 </div>
