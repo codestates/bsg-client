@@ -88,11 +88,8 @@ const MainPage = () => {
     <div className="MainPageContainer">
       <div className="search">
       <input onChange={getSearchData} className="searchBar" type="text"></input>
-      <button onClick={openSearBox} className="searchBtn">검색</button>
-    </div>
-    <div className="mainlogo">
-      {pageWidth > 500 ? <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/> : null}
-      </div>  
+      <button onClick={openSearBox} className="searchBtn"><img className = 'searchBtnImg'src = 'https://ifh.cc/g/sZGhwz.png'/> </button>
+    </div>  
   {openSearchBox ? <div className="searchData">
     <div className="searchMainBox">{ searchData.length > 0 ? 
     <div className="searchAlready">
@@ -106,6 +103,7 @@ const MainPage = () => {
     
     </div>
   </div> : null}
+  <div className = 'recommendText'>브실골의 위한 추천영상!!</div>
   <div className="video">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>
@@ -113,7 +111,24 @@ const MainPage = () => {
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video2}`} allowFullScreen></iframe>
   </div>
-  <div className="footer">designed by apple in california</div>
+  <div className="footer">
+
+  Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
+  <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>
+  
+  <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
+  <img className='twitchImg' src ='https://ifh.cc/g/wZvQCi.png'/>
+  </a>
+  
+  <a href = 'http://www.afreecatv.com/?hash=game' target = '_blank'>
+  <img className='afreecaImg' src ='https://ifh.cc/g/sSPrnP.png'/>
+  </a>
+
+  <a href = 'https://www.youtube.com/' target = '_blank'>
+  <img className='youtubeImg' src ='https://ifh.cc/g/5GjBXq.png'/>
+  </a>
+
+  </div>
   </div>
   </>
   )

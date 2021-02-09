@@ -1,7 +1,7 @@
 .Write-container {
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.6fr 0.3fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 1fr 2fr 2fr 2fr 2fr 1fr;
     gap: 13px 0px;
     grid-template-areas:
     ". . . . ."
@@ -13,12 +13,27 @@
     "footer footer footer footer footer";
 }
 .WriteBox { 
-    grid-area: WriteBox; 
+    grid-area: WriteBox;
+    border: 2px solid black;
+    height: 110%;
 }
 
 .WriteTitle { 
     grid-area: WriteTitle;
+    border: 2px solid black;
+    height: 80%;
+    margin: 1%;
+}
+
+.WriteinputTitle{
+    position: absolute;
+    top: 12%;
+    left: 14%;
+    height: 5%;
+    width: 74%;
+    margin: -18px;
     padding-left: 20px;
+
 
 }
 
@@ -26,12 +41,20 @@
 
 .WriteinputContent{
     position: absolute;
-    top: 333px;
-    left: 183px;
-    height: 597px;
-    width: 895px;
+    top: 18%;
+    left: 14%;
+    height: 58%;
+    width: 74%;
 }
 
+/* .WriteinputBtn{
+        position: absolute;
+    top: 210px;
+    height: 105px;
+    margin: -35px;
+    width: 700px;
+    left: 305px;
+} */
 
 
 .footer { 
@@ -40,6 +63,24 @@
 
 .WriteBtnBox { 
     grid-area: WriteBtnBox;
+}
+
+
+.submitBtn{
+    position: relative;
+    bottom: -1227%;
+    left: 150%;
+    height: 95%;
+    width: 170%;
+    font-size: xxx-large;
+}
+
+.cancleBtn{
+    position: relative;
+    bottom: -1227%;
+    left: 211%;
+    width: 53%;
+    font-size: xxx-large;
 }
 
 .WriteBtn {
@@ -52,3 +93,4 @@
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
     min-height: 550px;
   }
+
