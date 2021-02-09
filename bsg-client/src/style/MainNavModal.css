@@ -360,3 +360,23 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   margin-top : 20px;
   height:  10%;
 }
+
+.lolBtn{
+    width: 116%;
+    height: 96%;
+    color: white;
+    font-size: x-large;
+    border: 0;
+    outline: 0;
+}
+
+.riotBtn{
+  position: relative;
+  height: 70%;
+  width: 19%;
+  color: white;
+  top: -35%;
+  font-size: x-large;
+  border: 0;
+  outline: 0;
+}

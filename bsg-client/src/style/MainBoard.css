@@ -15,18 +15,37 @@
   }
   .footer {
     grid-area: footer;
-    background: #151414; 
+    background: black; 
     text-align: left;
     }
 
 .footerImg{
-  height: 110%;
-  width: 9%;
+  height: 108%;
+  width: 13%;
   background: #151414;
   position: relative;
-  left: -19%;
-  top: -30%;
+  left: -21%;
+  top: -19%;
 }
+
+.youtubeImg{
+    position: relative;
+    left: 15%;
+}
+
+.afreecaImg{
+  position: relative;
+  left: 23.7%;
+  bottom: 51%;
+}
+
+.twitchImg{
+  position: relative;
+  left: 30%;
+  bottom: 86%;
+  height: 50%;
+}
+
 
   .bigPostBox {
     height: auto;
@@ -97,7 +116,7 @@
   font-family: 'Kirang Haerang', cursive;
   display: grid;
   position: absolute;
-  bottom: 7%;
+  bottom: 10%;
   left: 37%;
   font-size: xxx-large;
   color: #abb2cb;
