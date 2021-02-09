@@ -280,7 +280,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   height: 100%;
 }
 
-.box{
+.searchMainBox{
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -290,7 +290,6 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   background-color: gray;
   transition: all .2s ease;
   text-align: center;
-  padding-top: 50px;
   border-radius : 10px;
 }
 
@@ -303,6 +302,15 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+.searchAlready {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding : 20px;
+  font-size : 2rem;
+  color: #fff;
 }
 
 @keyframes spin {

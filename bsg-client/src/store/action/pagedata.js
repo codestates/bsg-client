@@ -97,11 +97,9 @@ export const gettingBoard = () => {
     }
 }
 
-export const gettingComment = (boardId) => {
+export const gettingComment = () => {
   return (dispatch) => {
-    return axios.get('https://api.projects1faker.com/getComment',{
-      data : boardId
-    })
+    return axios.get('https://api.projects1faker.com/getComment')
     .then((res) => {
       dispatch(getComment(res.data))
     }).catch((err) => {
