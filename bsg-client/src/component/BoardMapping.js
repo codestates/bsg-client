@@ -31,6 +31,7 @@ const BoardMapping = () => {
             <div>{board.createdAt.slice(0, 10)}</div>
           </div>
         ))}
+
       </div>
     </>
   );
