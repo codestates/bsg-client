@@ -66,16 +66,14 @@ const MainPage = () => {
     <div className="MainPageContainer">
       <div className="search">
       <input onChange={getSearchData} className="searchBar" type="text"></input>
-      <button onClick={openSearBox} className="searchBtn">검색</button>
-    </div>
-    <div className="mainlogo">
-      {pageWidth > 500 ? <img onClick={clickLogo} src="https://ifh.cc/g/y3lzgX.png"/> : null}
-      </div>  
+      <button onClick={openSearBox} className="searchBtn"><img className = 'searchBtnImg'src = 'https://ifh.cc/g/sZGhwz.png'/> </button>
+    </div>  
   {openSearchBox ? <div className="searchData">
     <div className="box">
     <div className="loading"></div>
     </div>
   </div> : null}
+  <div className = 'recommendText'>브실골의 위한 추천영상!!</div>
   <div className="video">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>
@@ -83,7 +81,7 @@ const MainPage = () => {
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video2}`} allowFullScreen></iframe>
   </div>
-  <div className="footer">designed by apple in california</div>
+  <div className="footer">Copyright ⓒ 2021. B.S.G-Land. All rights reserved.<img className='footerImg' src ='https://ifh.cc/g/pBQRcX.png'/></div>
   </div>
   </>
   )
