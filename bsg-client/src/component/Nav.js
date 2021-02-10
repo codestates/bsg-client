@@ -31,19 +31,21 @@ const Nav = ({openModal}) => {
   
   return (
     <div className="Navbar">
-      <div className="NavLeft">
+      {/* <div className="NavLeft"> */}
       <img onClick={clickLogo} className="logo" src="https://ifh.cc/g/zvCv8t.png"></img>
-      <a href = 'https://kr.leagueoflegends.com/ko-kr/'target = '_blank'>
-        <button className = 'riotBtn'>Official</button>
-      </a>
-      </div>
-      <div className="NavRight">
+      {/* </div> */}
+      {/* <div className="NavRight"> */}
+      <div className = 'anyBtn'>
       <button onClick={() => {clickToBoard()}} className="navBtn">Community</button>
-      <a href ='http://lol.inven.co.kr/' target = '_blank'>
-      <button className = 'lolBtn'>LOL Inven</button>
+      <a href = 'https://kr.leagueoflegends.com/ko-kr/'target = '_blank'>
+        <button className = 'navBtn'>Official</button>
       </a>
-      {isLogin ? <button onClick={() => {clickToMyPage()}} className="loginBtn">My Page</button> : ''}
-      {isLogin ? <button onClick={ClicklogOutUser} className="loginBtn">Log Out</button> : <button onClick={openModal} className="loginBtn">Log In</button>}
+      <a href ='http://lol.inven.co.kr/' target = '_blank'>
+      <button className = 'navBtn'>LOL Inven</button>
+      </a>
+      {isLogin ? <button onClick={() => {clickToMyPage()}} className="navBtn">My Page</button> : ''}
+      {isLogin ? <button onClick={ClicklogOutUser} className="navBtn">Log Out</button> : <button onClick={openModal} className="loginBtn">Log In</button>}
+      {/* </div> */}
       </div>
     </div>
   )
