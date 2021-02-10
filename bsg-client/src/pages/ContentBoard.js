@@ -78,12 +78,13 @@ const ContentBoard = () => {
     getAllBoard.filter((board) => board.id === Number(params.id)) || [];
 
   return (
-    <>
+    <div className="content-board-container">
       <Modal isOpen={modalNow} closeModal={closeModal} />
       <Nav openModal={openModal}></Nav>
-      <div className="content-board-container">
+      
         <div className="mainBox">
           <div className="title">{Board[0] && Board[0].title}</div>
+          <div className="contentBox">
           {Board[0] && userNow.nickname === Board[0].user.nickname ? (
             <div className="controlbtnDiv">
               <button onClick={goToUpdate} className="controlbtn">
@@ -94,11 +95,9 @@ const ContentBoard = () => {
               </button>
             </div>
           ) : null}
-
-          <div className="contentBox">
             {Board[0] && ReactHtmlParser(Board[0].body)}
           </div>
-          <div className="buttonBox"></div>
+         
         </div>
         <div class="commentBox">
           {getComment && (
@@ -106,24 +105,30 @@ const ContentBoard = () => {
           )}
         </div>
         
-        <div class="footer">
+        <div class="footerFlex">
+          <div className="copyrightBox">
+          <div>
+        <img src ='https://ifh.cc/g/Kz5AUr.png'/>
+        </div>
+          <div className="copyright">
         Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
-  <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>
+        </div>
+        </div>
+
   
   <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
-  <img className='twitchImg' src ='https://ifh.cc/g/wZvQCi.png'/>
+  <img className="TWCICON"  src ='https://ifh.cc/g/wZvQCi.png'/>
   </a>
   
   <a href = 'http://www.afreecatv.com/?hash=game' target = '_blank'>
-  <img className='afreecaImg' src ='https://ifh.cc/g/sSPrnP.png'/>
+  <img  src ='https://ifh.cc/g/sSPrnP.png'/>
   </a>
 
   <a href = 'https://www.youtube.com/' target = '_blank'>
-  <img className='youtubeImg' src ='https://ifh.cc/g/5GjBXq.png'/>
+  <img  src ='https://ifh.cc/g/5GjBXq.png'/>
   </a>
         </div>
       </div>
-    </>
   );
 };
 
