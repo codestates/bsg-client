@@ -1,6 +1,4 @@
 .commentContainer {
-  
-  height: 1000px;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 3fr;
@@ -38,7 +36,7 @@
   margin : 10px;
   border : 1px solid black;
   border-radius : 10px;
-  height : 80px;
+  height : 13%;
 }
 
 .ViewCommentArea {
@@ -67,4 +65,3 @@
   width: 30%;
   justify-content: space-between;
 }
-

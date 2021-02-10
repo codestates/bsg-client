@@ -4,26 +4,29 @@
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
 }
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
 
 .stopScroll{
   overflow: hidden;
 }
 
 .MainPageContainer {
-  background-image: url(https://ifh.cc/g/sJooPS.jpg);
+  background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   margin:0;
   height: 1700px;
   background-color: #222831;
   display: grid;
   
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
   grid-template-rows: 0.5fr 0.8fr 0.8fr 2.7fr 1fr 1.5fr 2fr 1fr 1fr;
   gap: 4% 1%;
   grid-template-areas:
     ". . . . . ."
     ". . mainlogo mainlogo . ."
     "search search search search search search"
-    ". searchData searchData searchData searchData ."
+    ". . searchData searchData . ."
     ". . . . . ."
     ". video video video video ."
     ". video video video video ."
@@ -46,7 +49,7 @@
 .searchData { 
   z-index: 2;
   grid-area: searchData;
-  background-color : white;
+  background-color : #ffffff3b;
   border-radius : 10px;
   box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 6px 6px;
   transform: scale(0); 
@@ -57,6 +60,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
+  opacity: 0.8;
+  border: 1px solid white;
 }
 /* .video2 { 
   grid-area: video2;
@@ -77,7 +82,7 @@
 .Navbar{
   z-index : 3;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color : #00acb500;
   height : 60px;
   width : 100%;
@@ -91,30 +96,30 @@
 
 .logo{
   height : 100%;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .NavRight {
   display : flex;
   justify-content : space-between;
   width : 40%;
-  
 }
 
 
 .loginBtn {
   width : 25%;
-  background-color :black;
+  background: #ffffff00;
+  color: white;
   border: 0;
   outline :0;
-  color : white;
   font-weight: bold;
   font-size : 20px;
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
   position: relative;
-  right: 3%;
+  right: 175%;
+  cursor: pointer;
 }
 .loginBtn:hover{
   background-color:rgb(56, 11, 99);
@@ -147,17 +152,33 @@
 
 .navBtn {
   width : 25%;
-  background:rgba(0, 0, 0, 0.6);
+  background: #ffffff00;
+  color: white;
   border: 0;
   outline :0;
-  color : white;
   font-weight: bold;
   font-size : 20px;
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
   position: relative;
-  right: 13%;
+  right: 60%;
+  cursor: pointer;
+}
+
+.lolBtn{
+  background: #ffffff00;
+  color: white;
+  width: 116%;
+  height: 96%;
+  font-size: x-large;
+  border: 0;
+  outline: 0;
+  position: relative;
+  right: 490%;
+  border-radius: 40px;
+  cursor:pointer;
+  transition:800ms ease all;
 }
 
 .navBtn:before,.navBtn:after{
@@ -194,7 +215,8 @@
   padding-left: 2%;
   font-size : 19px;
   /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377); */
-  color : white;
+  background: black;
+  opacity: 0.6;
   border: 0;
   outline :0;
   border-right: none;
@@ -349,10 +371,11 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   float:left;
   position: relative;
   /*margin:0 -4px -5px -2px;*/
-  background-color: gray;
+  background-color: #80808052;
   transition: all .2s ease;
   text-align: center;
   border-radius : 10px;
+  border: 1px solid white;
 }
 
 .loading {
@@ -369,10 +392,17 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .searchAlready {
   height: 100%;
   display: flex;
-  justify-content: space-between;
   padding : 20px;
   font-size : 2rem;
   color: #fff;
+}
+
+.searchLeft {
+}
+
+.searchRight {
+  text-align: center;
+  margin-left : 30%;
 }
 
 @keyframes spin {
@@ -422,20 +452,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   height:  10%;
 }
 
-.lolBtn{
-    background: black;
-    width: 116%;
-    height: 96%;
-    color: white;
-    font-size: x-large;
-    border: 0;
-    outline: 0;
-    position: relative;
-    right: 53%;
-    border-radius: 40px;
-    cursor:pointer;
-    transition:800ms ease all;
-}
+
 
 .lolBtn:hover{
   background-color: rgb(38, 24, 65)
@@ -465,13 +482,14 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
 
 .riotBtn{
-  background: black;
+  background: #ffffff00;
+  color: white;
   position: relative;
   height: 70%;
   width: 19%;
-  color: white;
-  top: -35%;
+  top: -38%;
   font-size: x-large;
   border: 0;
   outline: 0;
+  left: 30%;
 }

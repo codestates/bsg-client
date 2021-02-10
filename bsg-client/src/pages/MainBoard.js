@@ -14,6 +14,9 @@ const MainBoard = () => {
   const [modalNow, setModal] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
+  const isLogin = useSelector((state) => state.userData.isLogin) || false;
+  const userNow = useSelector((state) => state.userData);
+  const getOut = ['PLATINUM', 'DIAMOND', 'MASTER', 'GRANDMASTER', 'CHALLENGER'];
 
   const gettingBoard = () => {
     axios
@@ -45,8 +48,29 @@ const MainBoard = () => {
     }
     gettingBoard();
     dispatch(gettingComment())
-    console.log(localStorage.getItem("Token"));
   }, []);
+
+  const filterUser = () => {
+    if(isLogin === false) {
+      return (
+        <div className="MainBoardWriteBtn">
+          작성시 로그인이 필요합니다
+        </div>
+      )
+    } else if(getOut.includes(localStorage.getItem('UserData')) === false){
+      return (
+        <button className="MainBoardWriteBtn" onClick={() => handleWriteBtn()}>
+          B.S.G Talk
+        </button>
+      )
+    } else {
+      return (
+        <div className="MainBoardWriteBtn">
+          해당 티어는 작성이 불가합니다
+        </div>
+      )
+    }
+  }
 
   return (
     <>
@@ -61,11 +85,24 @@ const MainBoard = () => {
               <NavLink to={"/contentboard/" + board.id}></NavLink>
             </BoardMapping>
           ))}
+          {userNow && filterUser()}
+        <div className="footer">
+        Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
+  <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>
+  
+  <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
+  <img className='twitchImg' src ='https://ifh.cc/g/wZvQCi.png'/>
+  </a>
+  
+  <a href = 'http://www.afreecatv.com/?hash=game' target = '_blank'>
+  <img className='afreecaImg' src ='https://ifh.cc/g/sSPrnP.png'/>
+  </a>
 
-        <button className="MainBoardWriteBtn" onClick={() => handleWriteBtn()}>
-          한마디 하기
-        </button>
-        <div className="footer"></div>
+  <a href = 'https://www.youtube.com/' target = '_blank'>
+  <img className='youtubeImg' src ='https://ifh.cc/g/5GjBXq.png'/>
+  </a>
+
+        </div>
       </div>
     </>
   );

@@ -60,7 +60,9 @@ const WritePage = () => {
                         <div className="WriteBtnBox">
                             <button className="WriteBtn" onClick={createBoard}>완료</button>
                             <button className="WriteBtn" onClick={() => handleCancleBtn()}>취소</button>
+                            
                             </div>
+
                          </div>
            
         </>
