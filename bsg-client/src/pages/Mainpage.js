@@ -52,9 +52,6 @@ const MainPage = () => {
     })
   }
 
-  const clickLogo = () => {
-    history.push('/')
-  }
   
   const openModal = () => {
     setOnOff(false)
@@ -84,7 +81,7 @@ const MainPage = () => {
   
   return(
     <>
-    <Modal isOpen={modalNow} closeModal={closeModal}/>
+    <Modal isOpen={modalNow} openModal={openModal} closeModal={closeModal}/>
 
     <Nav openModal={openModal}></Nav>
     <div className="MainPageContainer">
