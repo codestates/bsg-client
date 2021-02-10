@@ -19,7 +19,7 @@ body {
 .MainPageContainer {
   background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   margin:0;
-  height: 1700px;
+  height: 1253px;
   background-color: #222831;
   display: grid;
   
@@ -167,6 +167,8 @@ body {
   transition: all 0.5s;
   margin-left: 100px;
   cursor: pointer;
+  height: 70%;
+  font-family: 'Gugi', cursive;
 }
 
 .lolBtn{
@@ -209,7 +211,7 @@ body {
 
 
 .navBtn:hover{
-  background-color:rgb(31, 38, 78);
+  background-color:rgba(36, 50, 129, 0.459);
 }
 
 .searchBar{
@@ -233,7 +235,7 @@ body {
 .searchBtn{
   width: 4%;
   height: 90%;
-  font-size : 49px;
+  font-size : 41px;
   color : white;
   font-weight: bold;
   /* box-shadow: 5px 5px 10px 2px black; */

@@ -24,13 +24,8 @@
     justify-content: space-between;
     }
 
-.footerImg{
-  height: 88%;
-  width: 10%;
-  background: #151414;
-  position: relative;
-  left: -29%;
-  top: -29%;
+.nameText{
+  width: 33%;
 }
 
 .youtubeImg{
@@ -63,7 +58,7 @@
   }
   .MainBoardWriteBtn { 
     grid-area: writeBtn;
-    background: rgb(66 68 66 / 17%);
+    /* background: rgb(66 68 66 / 17%);
     font-size: 3.8rem;
     border: 0;
     outline: 0;
@@ -73,14 +68,30 @@
     width: 38%;
     text-align: center;
     height: 88%;
+    margin: 0 auto; */
+    font-family: 'Gugi', cursive;
+    background-color: transparent;
+    border: 2px solid black;
+    color: #fff;
+    line-height: 50px;
+    width: 35%;
+    font-size: xxx-large;
+    height: 134%;
+    text-align: center;
     margin: 0 auto;
+    border-radius: 30px;
   }
 
   .MainBoardWriteBtn:hover {
+    background-color: rgba(53, 147, 160, 0.856);
+  }
+
+
+  /* .MainBoardWriteBtn:hover {
     background-color :rgb(22, 102, 122);
     color : white;
 
-  }
+  } */
 
   .postBox{
     background-image: url(https://ifh.cc/g/6Pfu5z.png);
