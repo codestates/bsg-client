@@ -1,8 +1,8 @@
 .commentContainer {
   height: auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-flow: 500px;
+  position: absolute;
+  width: 69%;
+  height: 174%;
   gap: 0px 0px;
   grid-template-areas:
     "PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea"

@@ -1,8 +1,8 @@
 .Write-container {
-    background-image: url(https://ifh.cc/g/sJooPS.jpg);
+    background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.6fr 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 0.6fr 1fr 1fr 1fr 1fr 2fr 1fr;
     gap: 13px 0px;
     grid-template-areas:
     ". . . . ."
@@ -22,8 +22,13 @@
 .WriteTitle { 
     grid-area: WriteTitle;
     border: 2px solid black;
-    height: 80%;
+    height: 60%;
     margin: 1%;
+    text-align: center;
+    font-size: xxx-large;
+    background-color: #4b4848;
+    opacity: 0.6;
+    color: white;
 }
 
 .WriteinputTitle{
@@ -64,6 +69,9 @@
 
 .WriteBtnBox { 
     grid-area: WriteBtnBox;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
 
@@ -85,13 +93,18 @@
 }
 
 .WriteBtn {
-    height : 50%;
-    width : 50%;
+    height: 23%;
+    width: 20%;
+    font-size: xxx-large;
+    background: #333234;
+    color: white;
+    opacity: 0.6;
 }
-
-
 
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
     min-height: 550px;
+    background: grey;
+    opacity: 0.6;
+    color: black;
   }
 

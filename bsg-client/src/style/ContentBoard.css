@@ -1,6 +1,6 @@
 
 .content-board-container {
-    background-image: url(https://ifh.cc/g/sJooPS.jpg);
+    background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
     height: 1500px;
     display: grid;
     background-color: #222831;
@@ -59,13 +59,13 @@
   .title { 
     grid-area: title; 
     text-align: center;
-    color: white;
+    color: black;
     border-radius : 10px;
     height: 100%;
     width: 100%;
     font-size : 40px;
     padding : 20px;
-    background: #1d1d1d;
+    background: #00000029;
     }
   
   .contentBox { 

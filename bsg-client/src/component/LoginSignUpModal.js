@@ -80,7 +80,7 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
               <input onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
               <input onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
               {loginError ? <div className="errorMessageDiv">{loginError}</div> : <div className="NoErrorMessageDiv"></div>}
-              <button className="btnSignIn" onClick={signInUser}>로그인</button>
+              <button className="btnSignIn" onClick={signInUser}>Log In</button>
               <button className="btnSignUp" onClick={() => {toSignUp()}}>회원가입</button>
             </div>
           </div>
