@@ -36,7 +36,12 @@ const MyPage = () => {
       </div>
       <div className="footer">
       Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
-  <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>
+      <div className = 'nameText'>
+          <p>Yoo Jae Woo</p>
+          <p>Park Jun Seok</p>
+          <p>Lee Sang Cheol</p>
+          <p>Kim Yong Ho</p>
+          </div>
   
   <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
   <img className='twitchImg' src ='https://ifh.cc/g/wZvQCi.png'/>
