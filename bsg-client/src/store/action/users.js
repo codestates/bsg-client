@@ -131,10 +131,10 @@ export const signingInUser = (userdata) => {
       }).then((res) => {
       dispatch(nowLogIn())
       dispatch(getUserData(res.data.data.userInfo))
-      console.log(res.data.data.userInfo.nickname)
       axios.post('https://api.projects1faker.com/getUserRanks',{
      nickname : res.data.data.userInfo.nickname
     }).then((res) => {
+      localStorage.setItem("UserData", res.data[0].tier)
       dispatch(setDataUserNow(res.data[0]))
     })
       })
