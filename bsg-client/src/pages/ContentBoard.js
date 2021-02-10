@@ -61,10 +61,12 @@ const ContentBoard = () => {
 
   const deleteContent = () => {
     axios.post('https://api.projects1faker.com/deleteContent', {
-      commentId: Board[0].id,
+      contentId: Board[0].id,
       id: userNow.id,
-    });
-    history.push('/mainboard');
+    }).then(() => {
+      history.push('/mainboard');
+    })
+    
   };
 
   const getComment = useSelector((state) => state.pageData.comments.data) || [];
@@ -103,6 +105,7 @@ const ContentBoard = () => {
             <CommentArea board={Board[0]} comments={Comment}></CommentArea>
           )}
         </div>
+        
         <div class="footer">
         Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
   <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>

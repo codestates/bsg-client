@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { posttingComment } from '../store/action/pagedata';
 import { useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
+
 const axios = require('axios');
 
 const CommentArea = ({ board, comments }) => {
@@ -23,42 +24,66 @@ const CommentArea = ({ board, comments }) => {
     GRANDMASTER: 'https://ifh.cc/g/BpbGxY.png',
     CHALLENGER: 'https://ifh.cc/g/RIIP0P.png',
   };
+  const getOut = ['PLATINUM', 'DIAMOND', 'MASTER', 'GRANDMASTER', 'CHALLENGER'];
+
+  const filterUser = (tier) => {
+    if(isLogin === false){
+      return (
+        <input
+          placeholder="댓글을 입력하려면 로그인이 필요합니다"
+          className="InputPostComment"
+          disabled
+        ></input>
+      )
+    }else if(getOut.includes(localStorage.getItem('UserData')) === false){
+      return (
+      <input
+        placeholder="댓글을 입력해주세요"
+        className="InputPostComment"
+        onChange={setPostCommnetNow}
+      ></input>
+      )
+    }
+    return (
+      <input
+        placeholder="해당 티어는 댓글 작성이 불가합니다"
+        className="InputPostComment"
+        disabled
+      ></input>
+    )
+  }
   const setPostCommnetNow = (e) => {
     setPostComment(e.target.value);
   };
 
   const postCommentNow = () => {
+    if(postComment.length === 0) {
+      return
+    }
+
     axios.post('https://api.projects1faker.com/postComment', {
       contentid: board.id,
       tier: userNow.dataUserNow.tier,
       comment: postComment,
       userid: userNow.userNow.userid,
       nickname: userNow.userNow.nickname,
-    });
-    history.push
+    }).then(() => {
+      history.go(0);
+    })
+    
   };
   const deleteMyComment = (id) => {
     axios.post('https://api.projects1faker.com/deleteComment', {
       commentId: id
-    });
+    }).then(() => {
+      history.go(0);
+    })
   };
 
   return (
     <div className="commentContainer">
       <div className="PostCommentArea">
-        {isLogin ? (
-          <input
-            placeholder="댓글을 입력해주세요"
-            className="InputPostComment"
-            onChange={setPostCommnetNow}
-          ></input>
-        ) : (
-          <input
-            placeholder="댓글을 입력하려면 로그인이 필요합니다"
-            className="InputPostComment"
-            disabled
-          ></input>
-        )}
+        {filterUser()}
         <button onClick={postCommentNow} className="BtnPostComment">
           Send
         </button>

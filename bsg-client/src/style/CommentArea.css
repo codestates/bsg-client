@@ -1,8 +1,7 @@
 .commentContainer {
-  height: auto;
-  position: absolute;
-  width: 69%;
-  height: 174%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 3fr;
   gap: 0px 0px;
   grid-template-areas:
     "PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea PostCommentArea"
@@ -37,7 +36,7 @@
   margin : 10px;
   border : 1px solid black;
   border-radius : 10px;
-  height : 80px;
+  height : 13%;
 }
 
 .ViewCommentArea {
@@ -66,4 +65,3 @@
   width: 30%;
   justify-content: space-between;
 }
-
