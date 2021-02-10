@@ -6,8 +6,8 @@
 }
 
 .PostCommentArea { 
-
   text-align : center;
+  height : 50px
 }
 
 .ViewCommentArea { 
@@ -18,22 +18,22 @@
   margin-top : 10px;
   margin-bottom : 10px;
   width : 80%;
-  height : 20%;
+  height : 100%;
   
 }
 
 .BtnPostComment {
   width : 10%;
-  height : 30%;
+  height : 100%;
 }
 
 .oneCommentBox {
   display : flex;
   justify-content : space-between;
   margin : 10px;
-  border : 1px solid black;
   border-radius : 10px;
   height : 50px;
+  text-align : center;
 }
 
 .ViewCommentArea {
@@ -44,17 +44,17 @@
 
 .commentLeft {
   display : flex;
-  width : 15%;
+  width : 20%;
   justify-content :space-between;
-  padding : 10px;
+  padding : 15px;
 }
 
 .commentRight {
   display : flex;
-  width : 50%;
+  width : 60%;
   justify-content :space-between;
   margin-right: 10px;
-  padding : 10px;
+  padding : 15px;
 }
 
 .commentRightRight{
