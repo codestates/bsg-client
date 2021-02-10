@@ -4,7 +4,7 @@ import { signingUpUser } from '../store/action/users';
 
 
 
-const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSignUp, signInUser, isSignUp, offSignUp, loginError}) => {
+const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSignUp, signInUser, isSignUp, offSignUp, loginError ,SignInEmail, SignInPassword, SignInSetEmail, SignInSetPassword}) => {
   
   const dispatch = useDispatch()
   let pageWidth = window.innerWidth
@@ -58,17 +58,21 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       nickname : username
     }
     dispatch(signingUpUser(userdata))
-    clearInput()
+    SignInSetEmail('')
+    SignInSetPassword('')
     setSignUpError('')
     offSignUp()
   }
 
   const offAllMode = () => {
+    SignInSetEmail('')
+    SignInSetPassword('')
     setSignUpError('')
     clearInput()
     offSignUp()
     closeModal()
   }
+
 
   return ( 
     <>{!isSignUp ? 
@@ -77,11 +81,12 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
             <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
             <div className="modalContents">
             {pageWidth > 500 ? <img src="https://ifh.cc/g/gerpqs.png"></img> : <img src="https://ifh.cc/g/JDLL6X.png"></img>} 
-              <input onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
-              <input onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
+              <input value={SignInEmail} onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
+              <input value={SignInPassword} onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
               {loginError ? <div className="errorMessageDiv">{loginError}</div> : <div className="NoErrorMessageDiv"></div>}
-              <button className="btnSignIn" onClick={signInUser}>Log In</button>
+             <button className="btnSignIn" onClick={signInUser}>Log In</button>
               <button className="btnSignUp" onClick={() => {toSignUp()}}>회원가입</button>
+
             </div>
           </div>
       </div> 
@@ -91,10 +96,10 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
         <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
         <div className="modalContents">
         <img src="https://ifh.cc/g/gerpqs.png"></img> 
-          <input onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
-          <input onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
-          <input onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
-          <input onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
+          <input value={email} onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
+          <input value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
+          <input value={comPass} onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
+          <input value={username} onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
           {SignUpError ? <div className="errorMessageDiv">{SignUpError}</div> : <div className="NoErrorMessageDiv"></div>}
           <button className="btnSignIn" onClick={() => {postSignUp()}}>회원가입</button>
         </div>

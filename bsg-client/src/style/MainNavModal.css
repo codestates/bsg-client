@@ -5,6 +5,11 @@
   font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
 }
 
+html,
+body {
+	height: 100%;
+}
+
 .stopScroll{
   overflow: hidden;
 }
@@ -80,6 +85,7 @@
   z-index : 3;
   display: flex;
   background-color : #00acb500;
+  top : 0;
   height : 60px;
   position : fixed;
 }
@@ -91,13 +97,13 @@
 
 .logo{
   height : 100%;
+  cursor: pointer;
 }
 
 .NavRight {
   display : flex;
   justify-content : space-between;
   width : 40%;
-  
 }
 
 .anyBtn{
@@ -117,6 +123,7 @@
   margin : 5px;
   transition: all 0.5s;
   margin-left: 65px;
+  cursor: pointer;
 }
 .loginBtn:hover{
   background-color:rgb(56, 11, 99);
@@ -158,7 +165,26 @@
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
+
   margin-left: 100px;
+  position: relative;
+  right: 60%;
+  cursor: pointer;
+}
+
+.lolBtn{
+  background: #ffffff00;
+  color: white;
+  width: 116%;
+  height: 96%;
+  font-size: x-large;
+  border: 0;
+  outline: 0;
+  position: relative;
+  right: 490%;
+  border-radius: 40px;
+  cursor:pointer;
+  transition:800ms ease all;
 }
 
 .navBtn:before,.navBtn:after{
@@ -372,10 +398,17 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .searchAlready {
   height: 100%;
   display: flex;
-  justify-content: space-between;
   padding : 20px;
   font-size : 2rem;
   color: #fff;
+}
+
+.searchLeft {
+}
+
+.searchRight {
+  text-align: center;
+  margin-left : 30%;
 }
 
 @keyframes spin {
@@ -425,20 +458,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   height:  10%;
 }
 
-.lolBtn{
-    background: #ffffff00;
-    color: white;
-    width: 116%;
-    height: 96%;
-    font-size: x-large;
-    border: 0;
-    outline: 0;
-    position: relative;
-    right: 490%;
-    border-radius: 40px;
-    cursor:pointer;
-    transition:800ms ease all;
-}
+
 
 .lolBtn:hover{
   background-color: rgb(38, 24, 65)

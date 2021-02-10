@@ -41,15 +41,18 @@ const UpdateContent = () => {
   
 
   
-
+ // username : localStorage.getItem("UpdateDataUsername")
 const confirmUpdate = () => {
-  let data = {
-    id : localStorage.getItem("UpdateDataId"),
-    username : localStorage.getItem("UpdateDataUsername"),
-    title : title,
-    body : body
+  if(title.length === 0 || body.length === 0){
+    return
   }
-  // dispatch(SetBoardNow(data))
+  
+  axios.post('https://api.projects1faker.com/updateContent',{
+    title : title,
+    body : body,
+    id : localStorage.getItem("UpdateDataId")
+  })
+  
   history.push('/contentboard/' + Board[0].id)
 }
 
