@@ -1,9 +1,14 @@
+import { nominalTypeHack } from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { posttingComment } from '../store/action/pagedata';
+import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
 const axios = require('axios');
 
 const CommentArea = ({ board, comments }) => {
+  const history = useHistory()
+  const params = useParams()
   const isLogin = useSelector((state) => state.userData.isLogin) || false;
   const userNow = useSelector((state) => state.userData);
   const [postComment, setPostComment] = useState('');
@@ -30,6 +35,7 @@ const CommentArea = ({ board, comments }) => {
       userid: userNow.userNow.userid,
       nickname: userNow.userNow.nickname,
     });
+    history.push
   };
   const deleteMyComment = (id) => {
     axios.post('https://api.projects1faker.com/deleteComment', {
@@ -69,12 +75,12 @@ const CommentArea = ({ board, comments }) => {
                 <div className="comment">{comment.comment}</div>
                 <div className="commentRightRight">
                   <div className="date">{comment.createAt}</div>
-                  {userNow.username === comment.username ? (
+                  {userNow.userNow && userNow.userNow.nickname === comment.nickname ? (
                     <button
                       onClick={() => {
                         deleteMyComment(comment.id);
                       }}
-                      style={{ color: 'black', fontSize: '25px' }}
+                      style={{ color: 'black', fontSize: '25px', backgroundColor : 'rgba(255, 255, 255, 0)', border : 'none'}}
                     >
                       &times;
                     </button>

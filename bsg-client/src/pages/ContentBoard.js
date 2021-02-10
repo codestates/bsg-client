@@ -17,12 +17,6 @@ const ContentBoard = () => {
   const [modalNow, setModal] = useState(false);
 
   // const getAllBoardList = useSelector((state) => state.pageData.boards.data) || [];
-  const getComment = useSelector((state) => state.pageData.comments.data) || [];
-  const Comment = getComment.filter(
-    (comment) => comment.contentid === Number(params.id),
-  );
-  const getAllBoard = useSelector((state) => state.pageData.boards.data) || [];
-  const Board = getAllBoard.filter((board) => board.id === Number(params.id));
 
   const gettingBoard = () => {
     axios
@@ -34,14 +28,7 @@ const ContentBoard = () => {
         throw err;
       });
   };
-  const [comment, sendComment] = useState(Comment);
-  useEffect(() => {
-    if (localStorage.getItem('Token')) {
-      dispatch(checkLoginAgain());
-    }
-    dispatch(gettingComment())
-    gettingBoard();
-  }, []);
+
   const openModal = () => {
     html.classList.add('stopScroll');
     setModal(true);
@@ -54,7 +41,6 @@ const ContentBoard = () => {
 
   const history = useHistory();
   const userNow = useSelector((state) => state.userData.userNow) || [];
-  // const getBoardNow = useSelector((state) => state.pageData.boardNow) || []
 
   const goToUpdate = () => {
     localStorage.setItem('UpdateDataId', Board[0].id);
@@ -64,6 +50,31 @@ const ContentBoard = () => {
     history.push('/updatecontent/' + Board[0].id);
   };
 
+  useEffect(() => {
+    console.log('보드', Board[0], '유저', userNow);
+    if (localStorage.getItem('Token')) {
+      dispatch(checkLoginAgain());
+    }
+    dispatch(gettingComment());
+    gettingBoard();
+  }, []);
+
+  const deleteContent = () => {
+    axios.post('https://api.projects1faker.com/deleteContent', {
+      commentId: Board[0].id,
+      id: userNow.id,
+    });
+    history.push('/mainboard');
+  };
+
+  const getComment = useSelector((state) => state.pageData.comments.data) || [];
+  const Comment = getComment.filter(
+    (comment) => comment.contentid === Number(params.id),
+  );
+  const getAllBoard = useSelector((state) => state.pageData.boards.data) || [];
+  const Board =
+    getAllBoard.filter((board) => board.id === Number(params.id)) || [];
+
   return (
     <>
       <Modal isOpen={modalNow} closeModal={closeModal} />
@@ -71,12 +82,14 @@ const ContentBoard = () => {
       <div className="content-board-container">
         <div className="mainBox">
           <div className="title">{Board[0] && Board[0].title}</div>
-          {Board[0] && userNow.username === Board[0].username ? (
+          {Board[0] && userNow.nickname === Board[0].user.nickname ? (
             <div className="controlbtnDiv">
               <button onClick={goToUpdate} className="controlbtn">
                 수정
               </button>
-              <button className="controlbtn">삭제</button>
+              <button onClick={deleteContent} className="controlbtn">
+                삭제
+              </button>
             </div>
           ) : null}
 
@@ -87,7 +100,7 @@ const ContentBoard = () => {
         </div>
         <div class="commentBox">
           {getComment && (
-            <CommentArea board={Board[0]} comments={comment}></CommentArea>
+            <CommentArea board={Board[0]} comments={Comment}></CommentArea>
           )}
         </div>
         <div class="footer"></div>

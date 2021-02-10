@@ -1,137 +1,132 @@
 
 .content-board-container {
-    height: auto;
-    display: grid;
-    background-color: #222831;
-    grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
-    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr 0.5fr;
-    gap: 15px 0px;
-    grid-template-areas:
-      ". . . . ."
-      ". mainBox mainBox mainBox ."
-      ". mainBox mainBox mainBox ."
-      ". mainBox mainBox mainBox ."
-      ". mainBox mainBox mainBox ."
-      ". commentBox commentBox commentBox ."
-      "footer footer footer footer footer";
-  }
+  height: 2000px;
+  display: grid;
+  background-color: #222831;
+  grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  gap: 15px 0px;
+  grid-template-areas:
+    ". . . . ."
+    ". mainBox mainBox mainBox ."
+    ". mainBox mainBox mainBox ."
+    ". mainBox mainBox mainBox ."
+    ". mainBox mainBox mainBox ."
+    ". commentBox commentBox commentBox ."
+    "footer footer footer footer footer";
+}
+
+.mainBox {
+  grid-area: mainBox;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+  grid-template-rows: 0.75fr 0.2fr 1fr 5fr 1fr 1fr 0.55fr 1fr;
+  gap: 15px 0px;
+  grid-template-areas:
+    ". title title title ."
+    ". . . controlbtnDiv ."
+    ". contentBox contentBox contentBox ."
+    ". contentBox contentBox contentBox ."
+    ". contentBox contentBox contentBox ."
+    ". contentBox contentBox contentBox ."
+    ". contentBox contentBox contentBox ."
+    ". buttonBox buttonBox buttonBox .";
   
-  .mainBox {
-    grid-area: mainBox;
-    display: grid;
-    height : 700px;
-    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
-    grid-template-rows: 0.75fr 0.4fr 1fr 1fr 1fr 1fr 0.55fr 1fr;
-    gap: 15px 0px;
-    grid-template-areas:
-      ". title title title ."
-      ". . controlbtnDiv controlbtnDiv ."
-      ". contentBox contentBox contentBox ."
-      ". contentBox contentBox contentBox ."
-      ". contentBox contentBox contentBox ."
-      ". contentBox contentBox contentBox ."
-      ". contentBox contentBox contentBox ."
-      ". buttonBox buttonBox buttonBox .";
+}
+
+.controlbtnDiv {
+  grid-area: controlbtnDiv;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.controlbtn {
+  margin-left: 10px;
+  height : 100%;
+  width: 10%;
+  background-color : white;
+  border : 0;
+  outline : 0;
+  font-size : 18px;
+}
+
+.controlbtn:hover {
+  color : blue;
+}
+
+.title { 
+  grid-area: title; 
+  text-align: center;
+
+  border-radius : 10px;
+  height: 100%;
+  width: 100%;
+  font-size : 40px;
+  padding : 20px;
+  background-color : white;
   }
 
-  .controlbtnDiv {
-    grid-area: controlbtnDiv;
-    display:flex;
-    justify-content: flex-end;
-    width : 100%;
-  }
-
-  .controlbtn {
-    margin-left: 10px;
-    height : 100%;
-    width: 10%;
-    background-color : white;
-    border : 0;
-    outline : 0;
-    font-size : 18px;
-  }
-
-  .controlbtn:hover {
-    color : blue;
-  }
-  
-  .title { 
-    grid-area: title; 
+.contentBox { 
+    grid-area: contentBox; 
+    padding : 30px;
+    font-size : 1.5rem;
     text-align: center;
-    color: white;
-    border-radius : 10px;
-    height: 100%;
+    border-radius: 20px;
+    background: white;
+  }
+
+.commentBox { 
+    grid-area: commentBox; 
     width: 100%;
-    font-size : 40px;
-    padding : 20px;
-    background: #1d1d1d;
-    }
-  
-  .contentBox { 
-      grid-area: contentBox; 
-      padding : 30px;
-      font-size : 1.5rem;
-      border-radius: 20px;
-      background: white;
-      height : 500px;
-    }
-  
-  .commentBox { 
-      grid-area: commentBox; 
-      width: 100%;
-      text-align: center;
-      background-color : #222831;
-      
-    }
-    .ViewCommentArea{
-      background-color: #222831;
-    }
-    .oneCommentBox{
-      background-color : white;
-      height : 20%;
-    }
-  
-  .footer { 
-    grid-area: footer;
-    display :flex;
-    height : 200px; 
+    text-align: center;
+    background-color : #222831;
+    
   }
-
-  .PostCommentArea{
-    margin-bottom: 10px;
+  .ViewCommentArea{
+    background-color: #222831;
   }
-  
-  .InputPostComment{
-    font-size: 20px;
+  .oneCommentBox{
     background-color : white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding-left: 40px;
-    border : 0;
-    outline : 0;
+    height : 20%;
   }
 
-  .BtnPostComment{
-    font-size: 20px;
-    height : 100%;
-    border : 0;
-    outline : 0;
-    transition : 0.5s;
-    background-color : cadetblue;
-    color : white;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
+.footer { grid-area: footer; }
 
-  .BtnPostComment:hover{
-    background-color : teal;
-  }
+.PostCommentArea{
+  margin-bottom: 10px;
+}
 
-  @media screen and (max-width: 700px){
-    /* .MainBox{
-      grid-template-columns: 1fr 1fr 1fr ;
-    } */
-    .content-board-container{
-      grid-template-columns: 0.1fr 5fr 5fr 5fr 0.1fr;
-    }
+.InputPostComment{
+  font-size: 20px;
+  background-color : white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 40px;
+  border : 0;
+  outline : 0;
+}
+
+.BtnPostComment{
+  font-size: 20px;
+  height : 100%;
+  border : 0;
+  outline : 0;
+  transition : 0.5s;
+  background-color : cadetblue;
+  color : white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.BtnPostComment:hover{
+  background-color : teal;
+}
+
+@media screen and (max-width: 700px){
+  /* .MainBox{
+    grid-template-columns: 1fr 1fr 1fr ;
+  } */
+  .content-board-container{
+    grid-template-columns: 0.1fr 5fr 5fr 5fr 0.1fr;
   }
+}
