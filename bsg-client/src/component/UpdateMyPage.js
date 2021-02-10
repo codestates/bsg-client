@@ -53,7 +53,7 @@ const UpdateMyPage = ({doUpdate, cancelUpdate}) => {
 
   return (
 <div className="innerMypage">
-    <h1 className="Title">마이페이지</h1>
+    <h1 className="Title">My Page</h1>
     <img className="TearIcon" src={tearIcon[userNow.dataUserNow.tier]}></img>
     <div className="userData">
     <div className="updateData">

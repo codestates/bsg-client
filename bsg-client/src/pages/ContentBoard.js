@@ -103,7 +103,22 @@ const ContentBoard = () => {
             <CommentArea board={Board[0]} comments={Comment}></CommentArea>
           )}
         </div>
-        <div class="footer"></div>
+        <div class="footer">
+        Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
+  <img className='footerImg' src ='https://ifh.cc/g/Kz5AUr.png'/>
+  
+  <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
+  <img className='twitchImg' src ='https://ifh.cc/g/wZvQCi.png'/>
+  </a>
+  
+  <a href = 'http://www.afreecatv.com/?hash=game' target = '_blank'>
+  <img className='afreecaImg' src ='https://ifh.cc/g/sSPrnP.png'/>
+  </a>
+
+  <a href = 'https://www.youtube.com/' target = '_blank'>
+  <img className='youtubeImg' src ='https://ifh.cc/g/5GjBXq.png'/>
+  </a>
+        </div>
       </div>
     </>
   );

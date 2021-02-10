@@ -102,7 +102,6 @@ const MainPage = () => {
     
     </div>
   </div> : null}
-  <div className = 'recommendText'>브실골의 위한 추천영상!!</div>
   <div className="video">
   <iframe className="bestVideos"
           src={`https://www.youtube.com/embed/${bestvideos.video1}`} allowFullScreen></iframe>

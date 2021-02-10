@@ -1,19 +1,20 @@
 
 .content-board-container {
-  height: 2000px;
-  display: grid;
-  background-color: #222831;
-  grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-  gap: 15px 0px;
-  grid-template-areas:
-    ". . . . ."
-    ". mainBox mainBox mainBox ."
-    ". mainBox mainBox mainBox ."
-    ". mainBox mainBox mainBox ."
-    ". mainBox mainBox mainBox ."
-    ". commentBox commentBox commentBox ."
-    "footer footer footer footer footer";
+    background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
+    height: 1500px;
+    display: grid;
+    background-color: #222831;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
+    grid-template-rows: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr 0.5fr;
+    gap: 15px 0px;
+    grid-template-areas:
+      ". . . . ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". mainBox mainBox mainBox ."
+      ". commentBox commentBox commentBox ."
+      "footer footer footer footer footer";
 }
 
 .mainBox {
@@ -71,8 +72,43 @@
     padding : 30px;
     font-size : 1.5rem;
     text-align: center;
-    border-radius: 20px;
-    background: white;
+    color: black;
+    border-radius : 10px;
+    height: 100%;
+    width: 100%;
+    font-size : 40px;
+    padding : 20px;
+    background: #00000029;
+    }
+  
+  .contentBox { 
+      grid-area: contentBox; 
+      padding : 30px;
+      font-size : 1.5rem;
+      border-radius: 20px;
+      background: white;
+      height : 500px;
+    }
+  
+  .commentBox { 
+      grid-area: commentBox; 
+      width: 100%;
+      text-align: center;
+      background-color : #222831;
+      
+    }
+    .ViewCommentArea{
+      background-color: #222831;
+    }
+    .oneCommentBox{
+      background-color : white;
+      height : 20%;
+    }
+  
+  .footer { 
+    grid-area: footer;
+    display :flex;
+    height : 200px; 
   }
 
 .commentBox { 

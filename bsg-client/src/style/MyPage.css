@@ -5,6 +5,7 @@
 }
 
 .MyPageContainer {
+  background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   display: grid;
   height : 1100px;
   background-color: #222831;
@@ -24,8 +25,10 @@
 
 .MyPageCenter { 
   grid-area: MyPageCenter; 
-  background-color : #00ACB5;
+  background-color : #00000069;
 }
+
+
 
 .innerMypage {
   display: grid;
@@ -46,13 +49,16 @@
   grid-area: Title; 
   text-align: center;
   background-color : white;
+  font-size: xxx-large;
 }
 .updateUserBtn { 
   grid-area: updateUserBtn; 
+  font-size: xx-large;
 
 }
 .deleteUserBtn { 
   grid-area: deleteUserBtn; 
+  font-size: xx-large;
 }
 .TearIcon { 
   grid-area: TearIcon;
