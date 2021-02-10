@@ -13,7 +13,7 @@ const MainPage = () => {
   const [modalNow, setModal] = useState(false);
   const [bestvideos, getvideos] = useState({});
   const [openSearchBox, setOnOff] = useState(false);
-  const [searchData, setSearchData] = useState([]);
+  const [searchData, setSearchData] = useState(null);
   const dispatch = useDispatch();
   let pageWidth = window.innerWidth;
   useEffect(() => {
@@ -68,7 +68,6 @@ const MainPage = () => {
         nickname: keyword,
       })
       .then((res) => {
-        console.log(res.data[0]);
         setSearchData(res.data);
       });
     setOnOff(true);
@@ -76,6 +75,45 @@ const MainPage = () => {
 
   const getSearchData = (e) => {
     setkeyword(e.target.value);
+  };
+
+  const unrankUser = () => {
+    if (searchData.length === 0) {
+      return (
+        <div className="searchAlready">
+          <div className="searchLeft">
+            <img className="TearIcon" src='https://ifh.cc/g/AlRymC.png'></img>
+          </div>
+          <div className="unrankUser">
+            <div>랭크게임을 돌리지 않은 유저입니다</div>
+          </div>
+        </div>
+      )
+        
+        
+      
+    } else {
+      return (
+        <div className="searchAlready">
+          <div className="searchLeft">
+            <img className="TearIcon" src={tearIcon[searchData[0].tier]}></img>
+          </div>
+          <div className="searchRight">
+            <div>{searchData[0].summonerName}</div>
+            <div>{`${searchData[0].tier} ${searchData[0].rank} `}</div>
+            <div>{`승   ${searchData[0].wins} 패   ${searchData[0].losses}`}</div>
+            <div>
+              {'승률   ' +
+                (
+                  (searchData[0].wins /
+                    (searchData[0].wins + searchData[0].losses)) *
+                  100
+                ).toFixed(1)}
+            </div>
+          </div>
+        </div>
+      );
+    }
   };
 
   return (
@@ -97,28 +135,8 @@ const MainPage = () => {
         {openSearchBox ? (
           <div className="searchData">
             <div className="searchMainBox">
-              {searchData.length > 0 ? (
-                <div className="searchAlready">
-                  <div className="searchLeft">
-                    <img
-                      className="TearIcon"
-                      src={tearIcon[searchData[0].tier]}
-                    ></img>
-                  </div>
-                  <div className="searchRight">
-                    <div>{searchData[0].summonerName}</div>
-                    <div>{`${searchData[0].tier} ${searchData[0].rank} `}</div>
-                    <div>{`승   ${searchData[0].wins} 패   ${searchData[0].losses}`}</div>
-                    <div>
-                      {'승률   ' +
-                        (
-                          (searchData[0].wins /
-                            (searchData[0].wins + searchData[0].losses)) *
-                          100
-                        ).toFixed(1)}
-                    </div>
-                  </div>
-                </div>
+              {searchData !== null ? (
+                unrankUser()
               ) : (
                 <div className="loading"></div>
               )}

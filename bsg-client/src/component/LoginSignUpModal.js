@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { signingUpUser } from '../store/action/users';
-
+const axios = require('axios')
 
 
 const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSignUp, signInUser, isSignUp, offSignUp, loginError ,SignInEmail, SignInPassword, SignInSetEmail, SignInSetPassword}) => {
@@ -57,11 +57,34 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       password : pass,
       nickname : username
     }
-    dispatch(signingUpUser(userdata))
-    SignInSetEmail('')
-    SignInSetPassword('')
-    setSignUpError('')
-    offSignUp()
+    axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : username
+    }).then((res) =>{
+      if(res.data.length === 0){
+        return setSignUpError('언랭 유저는 가입불가 합니다')
+      } else {
+        axios.post('https://api.projects1faker.com/signUp',{
+      data : userdata
+    })
+    .then((res) => {
+      if(res.data.message === "Email already exists"){
+       return setSignUpError('이미 존재하는 이메일입니다.')
+      }
+      else if(res.data.message === "Nickname already exists"){
+       return setSignUpError('이미 가입된 닉네임입니다')
+      }
+
+     else if(res.message === 'Create account successfully'){
+        SignInSetEmail('')
+        SignInSetPassword('')
+        setSignUpError('')
+        offSignUp()
+      }
+    })
+  }
+
+
+    })
   }
 
   const offAllMode = () => {

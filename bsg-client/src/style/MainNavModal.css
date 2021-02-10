@@ -8,6 +8,8 @@
 html,
 body {
 	height: 100%;
+  /* overflow-x: hidden; */
+  overflow-y: 0
 }
 
 .stopScroll{
@@ -62,8 +64,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
-  opacity: 0.8;
-  border: 1px solid white;
 }
 /* .video2 { 
   grid-area: video2;
@@ -82,13 +82,11 @@ body {
 }
 
 .Navbar{
+  width: 100%;
   z-index : 3;
   display: flex;
-  /* justify-content: space-between; */
-  background-color : #00acb500;
   top : 0;
   height : 60px;
-  width : 100%;
   position : fixed;
 }
 
@@ -108,20 +106,23 @@ body {
   width : 40%;
 }
 
+.anyBtn{
+  margin-top: 15px;
+}
+
 
 .loginBtn {
-  width : 25%;
+  /* width : 25%; */
   background: #ffffff00;
   color: white;
   border: 0;
   outline :0;
   font-weight: bold;
-  font-size : 20px;
+  font-size : 25px;
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
-  position: relative;
-  right: 175%;
+  margin-left: 65px;
   cursor: pointer;
 }
 .loginBtn:hover{
@@ -135,7 +136,7 @@ body {
   right:0;
   height:2px;
   width:0;
-  background: #70086b;
+  /* background: #70086b; */
   transition:400ms ease all;
   outline:none;
 }
@@ -154,18 +155,17 @@ body {
 
 
 .navBtn {
-  width : 25%;
+  /* width : 25%; */
   background: #ffffff00;
   color: white;
   border: 0;
   outline :0;
   font-weight: bold;
-  font-size : 20px;
+  font-size : 25px;
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
-  position: relative;
-  right: 60%;
+  margin-left: 100px;
   cursor: pointer;
 }
 
@@ -191,7 +191,7 @@ body {
   right:0;
   height:2px;
   width:0;
-  background: #70086b;
+  /* background: #dde667; */
   transition:400ms ease all;
   outline:none;
 }
@@ -214,26 +214,26 @@ body {
 
 .searchBar{
   width: 40%;
-  height: 75%;
+  height: 90%;
   padding-left: 2%;
-  font-size : 19px;
+  font-size : 25px;
   /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377); */
-  background: black;
+  background: #ffffff;
   opacity: 0.6;
   border: 0;
   outline :0;
   border-right: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: #808080;
+  /* background-color: #808080; */
   position: relative;
     top: -12.5%;
 }
 
 .searchBtn{
   width: 4%;
-  height: 76%;
-  font-size : 20px;
+  height: 90%;
+  font-size : 49px;
   color : white;
   font-weight: bold;
   /* box-shadow: 5px 5px 10px 2px black; */
@@ -242,7 +242,7 @@ body {
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color : #52616B;
+  background-color : black;
   transition: all 0.5s;
   opacity: 0.6;
   
@@ -438,6 +438,9 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   .mainlogo {
     display : hidden;
   }
+  .footer {
+    display:  hidden;
+  }
 }
 
 .errorMessageDiv {
@@ -495,4 +498,11 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   border: 0;
   outline: 0;
   left: 30%;
+}
+
+.unrankUser {
+  height: 100%;
+  display : flex;
+  flex-direction: row;
+  align-items: center;
 }

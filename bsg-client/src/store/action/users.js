@@ -135,6 +135,7 @@ export const signingInUser = (userdata) => {
      nickname : res.data.data.userInfo.nickname
     }).then((res) => {
       localStorage.setItem("UserData", res.data[0].tier)
+      localStorage.setItem("RankData", JSON.stringify(res.data[0]))
       dispatch(setDataUserNow(res.data[0]))
     })
       })
