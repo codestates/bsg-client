@@ -440,6 +440,9 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   .mainlogo {
     display : hidden;
   }
+  .footer {
+    display:  hidden;
+  }
 }
 
 .errorMessageDiv {
@@ -497,4 +500,11 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   border: 0;
   outline: 0;
   left: 30%;
+}
+
+.unrankUser {
+  height: 100%;
+  display : flex;
+  flex-direction: row;
+  align-items: center;
 }

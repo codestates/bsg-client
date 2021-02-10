@@ -9,6 +9,13 @@ import { checkLoginAgain } from '../store/action/users'
 
 const MyPage = () => {
 
+
+  useEffect(() => {
+    if(localStorage.getItem('Token')){
+      dispatch(checkLoginAgain())
+    }
+  },[])
+
   const userdata = useSelector((state) => state.userData.userNow)
   const [isUpdate, setMode] = useState(false)
   const dispatch = useDispatch()
@@ -20,11 +27,7 @@ const MyPage = () => {
     setMode(false)
   }
 
-  useEffect(() => {
-    if(localStorage.getItem('Token')){
-      dispatch(checkLoginAgain())
-    }
-  },[])
+  
 
   return( 
     <>
