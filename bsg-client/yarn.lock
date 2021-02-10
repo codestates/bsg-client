@@ -1541,6 +1541,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@hoooks/use-scroll@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hoooks/use-scroll/-/use-scroll-1.0.1.tgz#c59bb03e489ae487631e22d14db79948dbe44e30"
+  integrity sha512-U08s1eO7pp8fNPf0yyvzL1aE2lICvq03eANUwu6vH4ZQiaIOyRYet9nsgdvq/LYQyIY3bUdImp2Gl+OSWgsZgw==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz"

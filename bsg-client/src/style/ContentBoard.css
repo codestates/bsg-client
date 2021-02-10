@@ -60,11 +60,9 @@
     grid-area: commentBox;
     width: 50%;
     text-align: center;
-    background-color : #222831;
     margin-bottom: 50px;
   }
   .ViewCommentArea{
-    background-color: #222831;
   }
   .oneCommentBox{
     background-color : white;

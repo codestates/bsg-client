@@ -8,6 +8,8 @@
 html,
 body {
 	height: 100%;
+  /* overflow-x: hidden; */
+  overflow-y: 0
 }
 
 .stopScroll{
@@ -81,10 +83,8 @@ body {
 
 .Navbar{
   width: 100%;
-  background: #7f9fba63;
   z-index : 3;
   display: flex;
-  background-color : #00acb500;
   top : 0;
   height : 60px;
   position : fixed;
@@ -165,10 +165,7 @@ body {
   border-radius : 25px;
   margin : 5px;
   transition: all 0.5s;
-
   margin-left: 100px;
-  position: relative;
-  right: 60%;
   cursor: pointer;
 }
 
@@ -236,7 +233,7 @@ body {
 .searchBtn{
   width: 4%;
   height: 90%;
-  font-size : 20px;
+  font-size : 49px;
   color : white;
   font-weight: bold;
   /* box-shadow: 5px 5px 10px 2px black; */

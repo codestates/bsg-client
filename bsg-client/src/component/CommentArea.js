@@ -99,16 +99,16 @@ const CommentArea = ({ board, comments }) => {
               <div className="commentRight">
                 <div className="comment">{comment.comment}</div>
                 <div className="commentRightRight">
-                  <div className="date">{comment.createAt}</div>
+                  <div className="date">{comment.createdAt.slice(0,10)}</div>
                   {userNow.userNow && userNow.userNow.nickname === comment.nickname ? (
-                    <button
+                    <div
                       onClick={() => {
                         deleteMyComment(comment.id);
                       }}
-                      style={{ color: 'black', fontSize: '25px', backgroundColor : 'rgba(255, 255, 255, 0)', border : 'none'}}
+                      style={{ color: 'black', fontSize: '15px', backgroundColor : 'rgba(255, 255, 255, 0)', border : 'none', cursor: 'pointer'}}
                     >
                       &times;
-                    </button>
+                    </div>
                   ) : null}
                 </div>
               </div>
