@@ -4,8 +4,10 @@
   margin: 0;
   font-family: 'Spoqa Han Sans Neo', 'Spoqa Han Sans JP', sans-serif;
 }
-.selector-for-some-widget {
-  box-sizing: content-box;
+
+html,
+body {
+	height: 100%;
 }
 
 .stopScroll{
@@ -84,6 +86,7 @@
   display: flex;
   /* justify-content: space-between; */
   background-color : #00acb500;
+  top : 0;
   height : 60px;
   width : 100%;
   position : fixed;
