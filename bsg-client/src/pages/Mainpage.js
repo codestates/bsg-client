@@ -36,6 +36,18 @@ const MainPage = () => {
     CHALLENGER: 'https://ifh.cc/g/RIIP0P.png',
   };
 
+  const tearColor = {
+    IRON: '#6A6A6A',
+    BRONZE: '#B88C3F',
+    SILVER: '#DFDFDF',
+    GOLD: '#BEB423',
+    PLATINUM: '#18B6C1',
+    DIAMOND: '#3862D3',
+    MASTER: '#9EB1E6',
+    GRANDMASTER: '#FF3333',
+    CHALLENGER: '#FAFF00',
+  }
+
   const getYoutube = () => {
     const enco = encodeURI('브실골');
     axios
@@ -62,7 +74,8 @@ const MainPage = () => {
     setModal(false);
   };
 
-  const openSearBox = () => {
+  const openSearBox = (e) => {
+    e.preventDefault();
     axios
       .post('https://api.projects1faker.com/getUserRanks', {
         nickname: keyword,
@@ -99,16 +112,16 @@ const MainPage = () => {
             <img className="TearIcon" src={tearIcon[searchData[0].tier]}></img>
           </div>
           <div className="searchRight">
-            <div>{searchData[0].summonerName}</div>
-            <div>{`${searchData[0].tier} ${searchData[0].rank} `}</div>
-            <div>{`승   ${searchData[0].wins} 패   ${searchData[0].losses}`}</div>
+            <div className="searchTitle">{searchData[0].summonerName}</div>
+            <div style={{color:`${tearColor[searchData[0].tier]}`}}>{`${searchData[0].tier} ${searchData[0].rank} `}</div>
+            <div>{`${searchData[0].wins} 승    ${searchData[0].losses} 패`}</div>
             <div>
               {'승률   ' +
                 (
                   (searchData[0].wins /
                     (searchData[0].wins + searchData[0].losses)) *
                   100
-                ).toFixed(1)}
+                ).toFixed(1) + '%'}
             </div>
           </div>
         </div>
@@ -123,6 +136,7 @@ const MainPage = () => {
       <Nav openModal={openModal}></Nav>
       <div className="MainPageContainer">
         <div className="search">
+          <form className="search" onSubmit={openSearBox}>
           <input
             onChange={getSearchData}
             className="searchBar"
@@ -131,6 +145,7 @@ const MainPage = () => {
           <button onClick={openSearBox} className="searchBtn">
             <img className="searchBtnImg" src="https://ifh.cc/g/sZGhwz.png" />{' '}
           </button>
+          </form>
         </div>
         {openSearchBox ? (
           <div className="searchData">
@@ -157,25 +172,17 @@ const MainPage = () => {
           ></iframe>
         </div>
         <div className="footer">
+          <div className="copyright">
           Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
-          <div className = 'nameText'>
-          <p>Yoo Jae Woo</p>
-          <p>Park Jun Seok</p>
-          <p>Lee Sang Cheol</p>
-          <p>Kim Yong Ho</p>
           </div>
-          <a
-            href="https://www.twitch.tv/directory/game/League%20of%20Legends"
-            target="_blank"
-          >
-            <img className="twitchImg" src="https://ifh.cc/g/wZvQCi.png" />
-          </a>
-          <a href="http://www.afreecatv.com/?hash=game" target="_blank">
-            <img className="afreecaImg" src="https://ifh.cc/g/sSPrnP.png" />
-          </a>
-          <a href="https://www.youtube.com/" target="_blank">
-            <img className="youtubeImg" src="https://ifh.cc/g/5GjBXq.png" />
-          </a>
+          <div className = 'nameText'>
+          <div><i class="far fa-address-card"></i> Yoo Jae Woo</div>
+          <div><i class="far fa-address-card"></i> Kim Yong Ho</div>
+          <div><i class="fas fa-address-card"></i> Park Jun Seok</div>
+          <div><i class="fas fa-address-card"></i> Lee Sang Cheol</div>
+          
+          </div>
+         
         </div>
       </div>
     </>
