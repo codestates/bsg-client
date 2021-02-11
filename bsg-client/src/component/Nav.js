@@ -42,27 +42,47 @@ const Nav = ({openModal}) => {
     dispatch(logOutUser())
   }
 
-  
-  return (
-    <div className="Navbar" style={{ backgroundColor: y > 50 ? "#000000b9" : "#00acb500"}}>
-      {/* <div className="NavLeft"> */}
-      <img onClick={clickLogo} className="logo" src="https://ifh.cc/g/zvCv8t.png"></img>
-      {/* </div> */}
-      {/* <div className="NavRight"> */}
-      <div className = 'anyBtn'>
-      <button onClick={() => {clickToBoard()}} className="navBtn">Community</button>
-      <a href = 'https://kr.leagueoflegends.com/ko-kr/'target = '_blank'>
-        <button className = 'navBtn'>Official</button>
+
+const toggleBtnSet = () => {
+  const menu = document.querySelector('.navbar__menu');
+const icons = document.querySelector('.navbar__icons');
+  menu.classList.toggle('active');
+  icons.classList.toggle('active');
+}
+
+
+
+return (
+  <nav class="navbar">
+  <div class="navbar__logo">
+      <a href="/">
+        <img class="logoimg"src="https://ifh.cc/g/zvCv8t.png"></img>
       </a>
-      <a href ='http://lol.inven.co.kr/' target = '_blank'>
-      <button className = 'navBtn'>LOL Inven</button>
-      </a>
-      {isLogin ? <button onClick={() => {clickToMyPage()}} className="navBtn">My Page</button> : ''}
-      {isLogin ? <button onClick={ClicklogOutUser} className="navBtn">Log Out</button> : <button onClick={openModal} className="loginBtn">Log In</button>}
-      {/* </div> */}
-      </div>
-    </div>
-  )
+  </div>
+
+  <ul class="navbar__menu">
+  <li className= 'NavBtns'><a href="https://kr.leagueoflegends.com/ko-kr/" target = '_blank'>OFFICIAL</a></li>
+  <li className= 'NavBtns'><a href="http://lol.inven.co.kr/" target = '_blank'>LOL INVEN</a></li>
+  <li className= 'NavBtns'><a href="/mainboard">Community</a></li>
+  <li className= 'NavBtns'>{isLogin ? <a href="/mypage">My Page</a> : <a href="https://op.gg" target = '_blank'>OP.GG</a>}</li>
+  <li class="NavBtns">{isLogin ? <a onClick = {ClicklogOutUser}>Log Out</a> : <a  onClick = {openModal}>Log In </a>}</li>
+  </ul> 
+
+  <ul class="navbar__icons">
+      <li>
+        <a href="https://www.twitch.tv" target = '_blank'>
+          <i class="fab fa-twitch"></i>
+            </a>
+        </li>
+      <li><a href="https://www.youtube.com" target = '_blank'><i class="fab fa-youtube"></i></a>
+        </li>
+  </ul>
+
+  <a href="#" onClick = {toggleBtnSet} class="navbar__toogleBtn">
+      <i class="fas fa-bars"></i>
+  </a>
+</nav>
+)
 }
 
 export default Nav;
