@@ -27,8 +27,10 @@ const BoardMapping = () => {
             onClick={() => handleClick(board)}
           >
             <div className="onePostBoxTitle">{board.title}</div>
-            <div className="onePostBoxTitle">{board.user && board.user.nickname}</div>
-            <div className="onePostBoxTitle">{board.createdAt.slice(0, 10)}</div>
+            <div className="onePostBoxBottom">
+            <div className="PostBottom">{board.user && '작성자   :  ' + board.user.nickname}</div>
+            <div className="PostBottomDay">{'작성일 : ' + board.createdAt.slice(0, 10)}</div>
+            </div>
           </div>
         ))}
 

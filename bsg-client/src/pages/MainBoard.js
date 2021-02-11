@@ -53,9 +53,9 @@ const MainBoard = () => {
   const filterUser = () => {
     if(isLogin === false) {
       return (
-        <div className="MainBoardWriteBtn">
+        <button className="MainBoardWriteBtn">
           작성시 로그인이 필요합니다
-        </div>
+        </button>
       )
     } else if(getOut.includes(localStorage.getItem('UserData')) === false){
       return (
@@ -65,9 +65,9 @@ const MainBoard = () => {
       )
     } else {
       return (
-        <div className="MainBoardWriteBtn">
+        <button  className="MainBoardWriteBtn">
           해당 티어는 작성이 불가합니다
-        </div>
+        </button>
       )
     }
   }

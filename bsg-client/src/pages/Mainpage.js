@@ -113,7 +113,7 @@ const MainPage = () => {
           </div>
           <div className="searchRight">
             <div className="searchTitle">{searchData[0].summonerName}</div>
-            <div style={{color:`${tearColor[searchData[0].tier]}`}}>{`${searchData[0].tier} ${searchData[0].rank} `}</div>
+            <div style={{color:`${tearColor[searchData[0].tier]}`}}>{`${searchData[0].tier} ${searchData[0].rank} ${searchData[0].leaguePoints} LP `}</div>
             <div>{`${searchData[0].wins} 승    ${searchData[0].losses} 패`}</div>
             <div>
               {'승률   ' +
