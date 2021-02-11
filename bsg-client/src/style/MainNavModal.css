@@ -421,8 +421,8 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
 .loading {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 240px;
+  height: 240px;
   border: 5px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   border-top-color: #fff;
