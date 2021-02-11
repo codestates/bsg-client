@@ -1,4 +1,5 @@
 .Write-container {
+    height: 1250px;
     background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
@@ -16,7 +17,7 @@
 .WriteBox { 
     grid-area: WriteBox;
     border: 2px solid black;
-    height: 110%;
+    height: 124%;
 }
 
 .WriteTitle { 
@@ -29,6 +30,7 @@
     background-color: #4b4848;
     opacity: 0.6;
     color: white;
+    border-radius: 50px;
 }
 
 .WriteinputTitle{
@@ -64,14 +66,16 @@
 
 
 .footer { 
-    grid-area: footer; 
+    grid-area: footer;
+    width: 100%;
 }
 
 .WriteBtnBox { 
     grid-area: WriteBtnBox;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
+    height: 116%;
 }
 
 
@@ -93,12 +97,18 @@
 }
 
 .WriteBtn {
-    height: 23%;
-    width: 20%;
-    font-size: xxx-large;
-    background: #333234;
-    color: white;
-    opacity: 0.6;
+    background-color: #1abc9c75;
+	border-radius: 4px;
+	color: #fff;
+	line-height: 52px;
+	-webkit-transition: none;
+	transition: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    width: 23%;
+    height: 25%;
+    font-size: xx-large;
+    border-radius: 45px;
+    font-family: 'Jua', sans-serif;
 }
 
 .ck.ck-editor__editable:not(.ck-editor__nested-editable) {

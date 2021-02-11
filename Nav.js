@@ -55,7 +55,7 @@ const icons = document.querySelector('.navbar__icons');
 return (
   <nav class="navbar">
   <div class="navbar__logo">
-      <a onClick={clickLogo}>
+      <a href="/">
         <img class="logoimg"src="https://ifh.cc/g/zvCv8t.png"></img>
       </a>
   </div>
@@ -63,8 +63,8 @@ return (
   <ul class="navbar__menu">
       <li><a href="https://kr.leagueoflegends.com/ko-kr/" target = '_blank'>OFFICIAL</a></li>
       <li><a href="http://lol.inven.co.kr/" target = '_blank'>LOL INVEN</a></li>
-      <li onClick={clickToBoard} class="loser">Community</li>
-      {isLogin ? <li class="loser" onClick={clickToMyPage}>My Page</li> : <li class="loser"><a  href="https://op.gg" target = '_blank'>OP.GG</a></li>}
+      <li><a href="/mainboard">Community</a></li>
+      <li>{isLogin ? <a href="/mypage">My Page</a> : <a href="https://op.gg" target = '_blank'>OP.GG</a>}</li>
       <li class="loser">{isLogin ? <a onClick = {ClicklogOutUser}>Log Out</a> : <a  onClick = {openModal}>Log In </a>}</li>
   </ul> 
 

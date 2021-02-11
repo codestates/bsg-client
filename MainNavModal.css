@@ -178,13 +178,21 @@ body {
   box-shadow: 5px 5px 10px 2px black;
   
 } */
-
+.footer {
+  grid-area: footer;
+  background-color: #00acb5;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+  padding: 40px;
+}
 
 .searchBar {
   width: 40%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.61) 0px 3.4px 2.4px;
-  font-size: 20px;
+  height: 90%;
+  padding-left: 2%;
+  font-size: 25px;
+  /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377); */
   background: #ffffff;
   opacity: 0.6;
   border: 0;
@@ -192,25 +200,26 @@ body {
   border-right: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding : 1%;
-  padding-left: 2%;
+  /* background-color: #808080; */
+  position: relative;
+  top: -12.5%;
 }
 
 .searchBtn {
   width: 4%;
   height: 90%;
-  font-size: 20px;
-  padding : 1%;
+  font-size: 49px;
   color: white;
   font-weight: bold;
-  box-shadow: rgba(0, 0, 0, 0.61) 2.4px 3.4px 2.4px;
+  /* box-shadow: 5px 5px 10px 2px black; */
   border: 0;
   outline: 0;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #263343;
+  background-color: black;
   transition: all 0.5s;
+  opacity: 0.6;
 }
 
 .searchBtn:hover {
@@ -296,7 +305,6 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   padding-left: 5%;
   border: 0;
   outline: 0;
-  
 }
 
 .btnSignIn {
@@ -374,15 +382,6 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .searchRight {
   text-align: center;
   margin-left: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.searchTitle {
-  font-weight: bolder;
-  color: #f1f2f6;
-  font-size : 3rem;
 }
 
 @keyframes spin {

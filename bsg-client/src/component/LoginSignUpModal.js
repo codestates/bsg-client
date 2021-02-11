@@ -120,7 +120,7 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
         <div className="modalContents">
         <img src="https://ifh.cc/g/gerpqs.png"></img> 
           <input value={email} onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
-          <input value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
+          <input style={{ border: pass.length < 8 ? '2px solid #FF3131' : '2px solid #48FF31'}} value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
           <input value={comPass} onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
           <input value={username} onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
           {SignUpError ? <div className="errorMessageDiv">{SignUpError}</div> : <div className="NoErrorMessageDiv"></div>}

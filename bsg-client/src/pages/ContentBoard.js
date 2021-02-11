@@ -105,17 +105,14 @@ const ContentBoard = () => {
           )}
         </div>
         
-        <div class="footerFlex">
-          <div className="copyrightBox">
-          <div>
-        <img src ='https://ifh.cc/g/Kz5AUr.png'/>
-        </div>
-          <div className="copyright">
-        Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
-        </div>
-        </div>
-
-  
+        <div className="footer">
+      Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
+      <div className = 'nameText'>
+          <p>Yoo Jae Woo</p>
+          <p>Park Jun Seok</p>
+          <p>Lee Sang Cheol</p>
+          <p>Kim Yong Ho</p>
+          </div>
   <a href = 'https://www.twitch.tv/directory/game/League%20of%20Legends' target = '_blank'>
   <img className="TWCICON"  src ='https://ifh.cc/g/wZvQCi.png'/>
   </a>

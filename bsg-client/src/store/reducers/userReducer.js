@@ -11,7 +11,8 @@ const initialState = {
   isLogin : false,
   userNow : null,
   accessToken : null,
-  dataUserNow : null
+  dataUserNow : null,
+  errorMessage : null
 }
 
 export default function(state = initialState, action){
