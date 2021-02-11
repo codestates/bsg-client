@@ -55,7 +55,7 @@ const icons = document.querySelector('.navbar__icons');
 return (
   <nav class="navbar">
   <div class="navbar__logo">
-      <a href="/">
+      <a onClick={clickLogo}>
         <img class="logoimg"src="https://ifh.cc/g/zvCv8t.png"></img>
       </a>
   </div>
@@ -66,6 +66,7 @@ return (
   <li className= 'NavBtns'><a href="/mainboard">Community</a></li>
   <li className= 'NavBtns'>{isLogin ? <a href="/mypage">My Page</a> : <a href="https://op.gg" target = '_blank'>OP.GG</a>}</li>
   <li class="NavBtns">{isLogin ? <a onClick = {ClicklogOutUser}>Log Out</a> : <a  onClick = {openModal}>Log In </a>}</li>
+
   </ul> 
 
   <ul class="navbar__icons">

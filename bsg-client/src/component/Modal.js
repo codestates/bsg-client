@@ -7,11 +7,11 @@ import LoginSignUpModal from '../component/LoginSignUpModal'
 const Modal = ({isOpen, closeModal, openModal}) => {
 
   const dispatch = useDispatch();
-  const [loginError, setLoginError] = useState('')
+  const [loginError, setLoginError] = useState(null)
   const [isSignUp, setSignUp] = useState(false);
   const [SignInEmail, SignInSetEmail] = useState('');
   const [SignInPassword, SignInSetPassword] = useState('');
-
+  const getErrorFromStore = useSelector((state) => state.userData.errorMessage)
 
   const setEmailfromInput = (e) => {
     SignInSetEmail(e.target.value)
@@ -29,8 +29,17 @@ const Modal = ({isOpen, closeModal, openModal}) => {
       email : SignInEmail,
       password : SignInPassword
     }
-    dispatch(signingInUser(userdata))
-    closeModal()
+    dispatch(signingInUser(userdata)).then(() => {
+      if(getErrorFromStore !== null){
+       return setLoginError(getErrorFromStore)
+      } else if(getErrorFromStore === null) {
+        dispatch(setErrorMessage(null))
+        setLoginError(null)
+        closeModal()
+        return 
+      }
+    })
+    
   }
 
   const toSignUp = () => {

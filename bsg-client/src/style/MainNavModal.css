@@ -52,6 +52,7 @@ a {
   cursor: pointer;
   font-size: x-large;
   height: 65px;
+
 }
 
 .navbar__menu li {
@@ -61,7 +62,7 @@ a {
 
 .navbar__icons {
   list-style: none;
-  color: #f0f4f500;
+  color: #f0f4f5;
   display: flex;
   padding-left: 0;
 }
@@ -71,7 +72,6 @@ a {
 }
 
 .navbar__menu li:hover {
-  /* background-color: #8395a7; */
   border-radius: 25px 25px;
 }
 
@@ -82,6 +82,7 @@ a {
   font-size: 18px;
   color: #c8d6e5;
 }
+
 
 .NavBtns {
   width: 100%;
@@ -138,10 +139,6 @@ li {
     transform: rotate(180deg);
     top: 0;
   }
-
-
-
-
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -243,6 +240,7 @@ body {
   box-shadow: 5px 5px 10px 2px black;
   
 } */
+
 .footer {
   grid-area: footer;
   background-color: #00acb5;
@@ -252,12 +250,12 @@ body {
   padding: 40px;
 }
 
+
 .searchBar {
   width: 40%;
-  height: 90%;
-  padding-left: 2%;
-  font-size: 25px;
-  /* box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.377); */
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.61) 0px 3.4px 2.4px;
+  font-size: 20px;
   background: #ffffff;
   opacity: 0.6;
   border: 0;
@@ -265,26 +263,25 @@ body {
   border-right: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  /* background-color: #808080; */
-  position: relative;
-  top: -12.5%;
+  padding : 1%;
+  padding-left: 2%;
 }
 
 .searchBtn {
   width: 4%;
   height: 90%;
-  font-size: 49px;
+  font-size: 20px;
+  padding : 1%;
   color: white;
   font-weight: bold;
-  /* box-shadow: 5px 5px 10px 2px black; */
+  box-shadow: rgba(0, 0, 0, 0.61) 2.4px 3.4px 2.4px;
   border: 0;
   outline: 0;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: black;
+  background-color: #263343;
   transition: all 0.5s;
-  opacity: 0.6;
 }
 
 .searchBtn:hover {
@@ -447,6 +444,15 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .searchRight {
   text-align: center;
   margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.searchTitle {
+  font-weight: bolder;
+  color: #f1f2f6;
+  font-size : 3rem;
 }
 
 @keyframes spin {
