@@ -38,5 +38,5 @@ ___
 
 ## [유재우](https://github.com/yuJaeWoo) 🏴 Backend
 ## [김용호](https://github.com/Yongho5580) 🏴 Backend
-## [박준석](https://github.com/wnstjr0317) 🏁 Frontend
+## [박준석](https://github.com/wnstjr0317) 🏁 Team Leader / Frontend
 ## [이상철](https://github.com/ning1315) 🏁 Frontend
