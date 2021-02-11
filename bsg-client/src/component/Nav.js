@@ -61,11 +61,12 @@ return (
   </div>
 
   <ul class="navbar__menu">
-      <li><a href="https://kr.leagueoflegends.com/ko-kr/" target = '_blank'>OFFICIAL</a></li>
-      <li><a href="http://lol.inven.co.kr/" target = '_blank'>LOL INVEN</a></li>
-      <li onClick={clickToBoard} class="loser">Community</li>
-      {isLogin ? <li class="loser" onClick={clickToMyPage}>My Page</li> : <li class="loser"><a  href="https://op.gg" target = '_blank'>OP.GG</a></li>}
-      <li class="loser">{isLogin ? <a onClick = {ClicklogOutUser}>Log Out</a> : <a  onClick = {openModal}>Log In </a>}</li>
+  <li className= 'NavBtns'><a href="https://kr.leagueoflegends.com/ko-kr/" target = '_blank'>OFFICIAL</a></li>
+  <li className= 'NavBtns'><a href="http://lol.inven.co.kr/" target = '_blank'>LOL INVEN</a></li>
+  <li className= 'NavBtns'><a href="/mainboard">Community</a></li>
+  <li className= 'NavBtns'>{isLogin ? <a href="/mypage">My Page</a> : <a href="https://op.gg" target = '_blank'>OP.GG</a>}</li>
+  <li class="NavBtns">{isLogin ? <a onClick = {ClicklogOutUser}>Log Out</a> : <a  onClick = {openModal}>Log In </a>}</li>
+
   </ul> 
 
   <ul class="navbar__icons">

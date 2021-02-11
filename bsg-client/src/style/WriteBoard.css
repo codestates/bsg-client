@@ -17,7 +17,7 @@
 .WriteBox { 
     grid-area: WriteBox;
     border: 2px solid black;
-    height: 124%;
+    height: 89.3%;
 }
 
 .WriteTitle { 
@@ -97,9 +97,9 @@
 }
 
 .WriteBtn {
-    background-color: #1abc9c75;
+    background-color: #41cfb3c2;
 	border-radius: 4px;
-	color: #fff;
+	color: black;
 	line-height: 52px;
 	-webkit-transition: none;
 	transition: none;
