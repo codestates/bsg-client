@@ -91,14 +91,14 @@
 }
 .userData { 
   grid-area: userData;
-  background-color : rgb(48, 48, 48);
+  background-color : rgb(255 255 255 / 59%);
   border-radius: 5px;
   padding : 20px;
   display : flex;
   flex-direction : column;
   justify-content : space-between;
   font-size : 2rem;
-  color : white;
+  color : black;
 }
 
 .updateData {
@@ -136,6 +136,32 @@
   font-size: 2.5rem;
   color : white;
 
+}
+
+.footer {
+  height: 100%;
+  grid-area: footer;
+  background: #326298;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  }
+
+.nameText{
+height: 150px;
+width : 10%;
+display : flex;
+flex-direction: column;
+justify-self: space-between;
+text-align: left;
+}
+.copyright{
+height: 100%;
+width : 90%;
+display : flex;
+flex-direction: column;
+justify-content : center;
 }
 
 /* .updateInput {
