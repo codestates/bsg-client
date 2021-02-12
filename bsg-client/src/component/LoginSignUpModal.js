@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { signingUpUser } from '../store/action/users';
+import { signingUpUser, nowLogIn } from '../store/action/users';
 const axios = require('axios')
 
 
@@ -67,14 +67,17 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       data : userdata
     })
     .then((res) => {
+      console.log(res)
       if(res.data.message === "Email already exists"){
        return setSignUpError('이미 존재하는 이메일입니다.')
       }
       else if(res.data.message === "Nickname already exists"){
        return setSignUpError('이미 가입된 닉네임입니다')
+      } else if(res.data.message === 'not user'){
+        return setSignUpError('존재하지 않는 계정입니다')
       }
 
-     else if(res.message === 'Create account successfully'){
+     else if(res.data.message === 'Create account successfully'){
         SignInSetEmail('')
         SignInSetPassword('')
         setSignUpError('')
@@ -119,9 +122,9 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
         <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
         <div className="modalContents">
         <img src="https://ifh.cc/g/gerpqs.png"></img> 
-          <input value={email} onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
-          <input style={{ border: pass.length < 8 ? '2px solid #FF3131' : '2px solid #48FF31'}} value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
-          <input value={comPass} onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
+          <input style={{ border : !email.includes('@') ? '2px solid #FF3131' : '2px solid #48FF31'}} value={email} onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
+          <input style={{ border : pass.length < 8 ? '2px solid #FF3131' : '2px solid #48FF31'}} value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
+          <input style={{ border : pass !== comPass ? '2px solid #FF3131' : '2px solid #48FF31'}} value={comPass} onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
           <input value={username} onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
           {SignUpError ? <div className="errorMessageDiv">{SignUpError}</div> : <div className="NoErrorMessageDiv"></div>}
           <button className="btnSignIn" onClick={() => {postSignUp()}}>회원가입</button>

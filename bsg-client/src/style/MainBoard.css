@@ -8,7 +8,7 @@
     gap: 0px 0px;
     grid-template-areas:
       ". . . . ."
-      ". writeBtn writeBtn writeBtn ."
+      ". . writeBtn . ."
       ". bigPostBox bigPostBox bigPostBox ."
       ". bigPostBox bigPostBox bigPostBox ."
       ". . . . ."
@@ -54,32 +54,20 @@
   }
   .MainBoardWriteBtn { 
     grid-area: writeBtn;
-    /* background: rgb(66 68 66 / 17%);
-    font-size: 3.8rem;
-    border: 0;
-    outline: 0;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    width: 38%;
-    text-align: center;
-    height: 88%;
-    margin: 0 auto; */
     font-family: 'Gugi', cursive;
-    background-color: transparent;
-    border: 2px solid black;
+    background-color: rgba(53, 147, 160, 0.856);
     color: #fff;
-    line-height: 50px;
-    width: 35%;
-    font-size: xxx-large;
-    height: 134%;
+    width: 100%;
+    font-size: 2rem;
+    height: 100px;
+    border : 0;
+    outline : 0;
     text-align: center;
-    margin: 0 auto;
-    border-radius: 30px;
+    border-radius: 20px;
   }
 
   .MainBoardWriteBtn:hover {
-    background-color: rgba(53, 147, 160, 0.856);
+    background-color: rgba(0, 153, 255, 0.685);
   }
 
 
@@ -99,16 +87,30 @@
     padding : 20px;
     display : flex;
     flex-direction : column;
-    justify-content : space-between;
+    justify-content : space-around;
     cursor: pointer;
+    align-items : center;
 }
 .onePostBoxTitle{
   text-align : center;
-  font-size : 1.5rem;
+  font-size : 1.7rem;
   font-weight : bold;
-  background: #26272800;
+  width: 50%;
+  padding : 10px;
+  margin-bottom: 30%;
+  background: #26272800;        
   color: black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.884);
 }
+.PostBottom{
+  font-weight : bold;
+}
+
+.PostBottomDay{
+  font-weight : bold;
+  color : red;
+}
+
 .PostBody{
   background: #262728;
   color: white;
@@ -117,6 +119,13 @@
 .PostUserName{
   background: #262728;
   color: white;
+}
+
+.onePostBoxBottom{
+  height : 20%;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-around;
 }
 
 @media screen and (max-width: 500px){

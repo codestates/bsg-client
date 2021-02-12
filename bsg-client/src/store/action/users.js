@@ -115,16 +115,11 @@ export const signingInUser = (userdata) => {
       password : userdata.password
     })
     .then((res) => {
+      console.log(res.data.message)
       if(res.data.message === 'ok'){
         dispatch(setAccessToken(res.data.data.accessToken))
         localStorage.setItem("Token", res.data.data.accessToken)
-
-        return res
-      }
-      
-    }).then((res) => {
-      console.log('두번째',res)
-      axios.get('https://api.projects1faker.com/getUserInfo', {
+        axios.get('https://api.projects1faker.com/getUserInfo', {
         headers: {
           'authorization': `Bearer ${res.data.data.accessToken}` 
         }
@@ -139,6 +134,10 @@ export const signingInUser = (userdata) => {
       dispatch(setDataUserNow(res.data[0]))
     })
       })
+      } else if(res.data.message === 'Invalid user or Wrong password'){
+        
+      }
+      
     })
   }
 }
