@@ -73,6 +73,8 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       }
       else if(res.data.message === "Nickname already exists"){
        return setSignUpError('이미 가입된 닉네임입니다')
+      } else if(res.data.message === 'not user'){
+        return setSignUpError('존재하지 않는 계정입니다')
       }
 
      else if(res.data.message === 'Create account successfully'){
