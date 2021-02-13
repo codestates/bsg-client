@@ -3,6 +3,8 @@
 .commentContainer {
   display: flex;
   flex-direction: column;
+  background-color: rgba(160, 160, 160, 0.795);
+  border-radius : 5px;
 }
 
 .PostCommentArea { 
@@ -11,7 +13,7 @@
 }
 
 .ViewCommentArea { 
-  background: #000000a1;
+
 }
 
 .InputPostComment{

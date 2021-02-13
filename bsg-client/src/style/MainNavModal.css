@@ -189,7 +189,7 @@ body {
 .MainPageContainer {
   background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   margin: 0;
-  height: 1700px;
+  height: 1800px;
   background-color: #222831;
   display: grid;
 
@@ -242,12 +242,15 @@ body {
 } */
 
 .footer {
+  height: 100%;
   grid-area: footer;
-  background-color: #00acb5;
-  text-align: center;
+  background: #326298;
   color: white;
-  font-size: 1.3rem;
-  padding: 40px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 
@@ -306,11 +309,11 @@ body {
 
 .insideModal {
   width: 480px;
-  height: 621px;
+  height: 651px;
   position: relative;
   box-sizing: border-box;
   margin: 100px auto;
-  padding: 20px;
+  padding: 30px;
   background: #222831;
   transform: scale(0);
   animation: zoomIn 0.2s 0.1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -452,7 +455,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 .searchTitle {
   font-weight: bolder;
   color: #f1f2f6;
-  font-size : 3rem;
+  font-size : 2.5rem;
 }
 
 @keyframes spin {
@@ -498,7 +501,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   padding: 20px;
   font-weight: bold;
   font-size: 20px;
-  color: rgba(255, 0, 51, 0.801);
+  color: rgb(202, 29, 63);
 }
 
 .NoErrorMessageDiv {
