@@ -61,7 +61,7 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
      nickname : username
     }).then((res) =>{
       if(res.data.length === 0){
-        return setSignUpError('언랭 유저는 가입불가 합니다')
+        return setSignUpError('랭크가 없는 유저는 가입불가 합니다')
       } else {
         axios.post('https://api.projects1faker.com/signUp',{
       data : userdata
@@ -104,14 +104,14 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
     <>{!isSignUp ? 
       <div className="modalOuter" onClick={offAllMode}>
           <div className="insideModal" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
+            <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '25px'}}>&times;</span>
             <div className="modalContents">
-            {pageWidth > 500 ? <img src="https://ifh.cc/g/gerpqs.png"></img> : <img src="https://ifh.cc/g/JDLL6X.png"></img>} 
+            {pageWidth > 500 ? <img src="https://ifh.cc/g/S2kD1t.png"></img> : <img src="https://ifh.cc/g/JDLL6X.png"></img>} 
               <input value={SignInEmail} onChange={(e) => setEmailfromInput(e)} placeholder="Email" className="typeBar" type='email'></input>
               <input value={SignInPassword} onChange={(e) => setPasswordfromInput(e)} placeholder="Password" className="typeBar" type="password"></input>
               {loginError ? <div className="errorMessageDiv">{loginError}</div> : <div className="NoErrorMessageDiv"></div>}
-             <button className="btnSignIn" onClick={signInUser}>Log In</button>
-              <button className="btnSignUp" onClick={() => {toSignUp()}}>회원가입</button>
+             <button className="btnSignIn" onClick={signInUser}>Sign In</button>
+              <button className="btnSignUp" onClick={() => {toSignUp()}}>Sign Up</button>
 
             </div>
           </div>
@@ -119,15 +119,15 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       : 
       <div className="modalOuter" onClick={offAllMode}>
       <div className="insideModal" onClick={(e) => e.stopPropagation()}>
-        <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '40px'}}>&times;</span>
+        <span className="close" onClick={offAllMode} style={{color : 'white', fontSize: '25px'}}>&times;</span>
         <div className="modalContents">
-        <img src="https://ifh.cc/g/gerpqs.png"></img> 
+        <img src="https://ifh.cc/g/S2kD1t.png"></img> 
           <input style={{ border : !email.includes('@') ? '2px solid #FF3131' : '2px solid #48FF31'}} value={email} onChange={(e) => emailSignUp(e)} placeholder="Email" className="typeBar" type='email'></input>
           <input style={{ border : pass.length < 8 ? '2px solid #FF3131' : '2px solid #48FF31'}} value={pass} onChange={(e) => passSignUp(e)} placeholder="Password" className="typeBar" type="password"></input>
           <input style={{ border : pass !== comPass ? '2px solid #FF3131' : '2px solid #48FF31'}} value={comPass} onChange={(e) => compassSignUp(e)} placeholder="Comfirm Password" className="typeBar" type="password"></input>
           <input value={username} onChange={(e) => usernameSignUp(e)} placeholder="Riot Username" className="typeBar" type="text"></input>
           {SignUpError ? <div className="errorMessageDiv">{SignUpError}</div> : <div className="NoErrorMessageDiv"></div>}
-          <button className="btnSignIn" onClick={() => {postSignUp()}}>회원가입</button>
+          <button className="btnSignIn" onClick={() => {postSignUp()}}>Confirm</button>
         </div>
       </div>
   </div> 

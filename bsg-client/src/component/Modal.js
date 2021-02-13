@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { nowLogIn, setDataUserNow, getUserData } from '../store/action/users';
+import { nowLogIn, setDataUserNow, getUserData, setAccessToken } from '../store/action/users';
 import LoginSignUpModal from '../component/LoginSignUpModal'
 const axios = require('axios')
 
@@ -11,7 +11,7 @@ const Modal = ({isOpen, closeModal, openModal}) => {
   const [isSignUp, setSignUp] = useState(false);
   const [SignInEmail, SignInSetEmail] = useState('');
   const [SignInPassword, SignInSetPassword] = useState('');
-  const getErrorFromStore = useSelector((state) => state.userData.errorMessage)
+  const tokenNow = useSelector(state => state.userData.accessToken)
 
   const setEmailfromInput = (e) => {
     SignInSetEmail(e.target.value)
@@ -37,6 +37,7 @@ const Modal = ({isOpen, closeModal, openModal}) => {
         .then((res) => {
           console.log(res.data.message)
           if(res.data.message === 'ok'){
+            dispatch(setAccessToken(res.data.data.accessToken))
             localStorage.setItem("Token", res.data.data.accessToken)
             axios.get('https://api.projects1faker.com/getUserInfo', {
             headers: {
