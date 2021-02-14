@@ -7,7 +7,7 @@ const BoardMapping = () => {
   const history = useHistory();
 
   window.scrollY = function () {
-    console.log(window.scrollY);
+
   };
 
   const handleClick = board => {

@@ -35,7 +35,6 @@ const Modal = ({isOpen, closeModal, openModal}) => {
           password : userdata.password
         })
         .then((res) => {
-          console.log(res.data.message)
           if(res.data.message === 'ok'){
             dispatch(setAccessToken(res.data.data.accessToken))
             localStorage.setItem("Token", res.data.data.accessToken)
