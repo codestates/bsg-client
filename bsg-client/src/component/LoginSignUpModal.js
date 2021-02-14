@@ -67,7 +67,6 @@ const LoginModal = ({closeModal, setEmailfromInput, setPasswordfromInput, toSign
       data : userdata
     })
     .then((res) => {
-      console.log(res)
       if(res.data.message === "Email already exists"){
        return setSignUpError('이미 존재하는 이메일입니다.')
       }

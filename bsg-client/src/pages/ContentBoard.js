@@ -51,7 +51,6 @@ const ContentBoard = () => {
   };
 
   useEffect(() => {
-    console.log('보드', Board[0], '유저', userNow);
     if (localStorage.getItem('Token')) {
       dispatch(checkLoginAgain());
     }

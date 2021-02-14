@@ -61,7 +61,6 @@ const cancelUpdate = () => {
 }
 
 const changeTitleValue = (e) => {
-  console.log(e)
   changeTitle(e.target.value)
 }
 
