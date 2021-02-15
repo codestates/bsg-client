@@ -1,8 +1,8 @@
 import React,{ useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setErrorMessage, signingInUser } from '../store/action/users';
+import { nowLogIn, setDataUserNow, getUserData, setAccessToken } from '../store/action/users';
 import LoginSignUpModal from '../component/LoginSignUpModal'
-
+const axios = require('axios')
 
 const Modal = ({isOpen, closeModal, openModal}) => {
 
@@ -11,7 +11,7 @@ const Modal = ({isOpen, closeModal, openModal}) => {
   const [isSignUp, setSignUp] = useState(false);
   const [SignInEmail, SignInSetEmail] = useState('');
   const [SignInPassword, SignInSetPassword] = useState('');
-  const getErrorFromStore = useSelector((state) => state.userData.errorMessage)
+  const tokenNow = useSelector(state => state.userData.accessToken)
 
   const setEmailfromInput = (e) => {
     SignInSetEmail(e.target.value)
@@ -29,16 +29,37 @@ const Modal = ({isOpen, closeModal, openModal}) => {
       email : SignInEmail,
       password : SignInPassword
     }
-    dispatch(signingInUser(userdata)).then(() => {
-      if(getErrorFromStore !== null){
-       return setLoginError(getErrorFromStore)
-      } else if(getErrorFromStore === null) {
-        dispatch(setErrorMessage(null))
-        setLoginError(null)
-        closeModal()
-        return 
-      }
-    })
+    
+        axios.post('https://api.projects1faker.com/login', {
+          email : userdata.email,
+          password : userdata.password
+        })
+        .then((res) => {
+          if(res.data.message === 'ok'){
+            dispatch(setAccessToken(res.data.data.accessToken))
+            localStorage.setItem("Token", res.data.data.accessToken)
+            axios.get('https://api.projects1faker.com/getUserInfo', {
+            headers: {
+              'authorization': `Bearer ${res.data.data.accessToken}` 
+            }
+          }).then((res) => {
+          dispatch(nowLogIn())
+          dispatch(getUserData(res.data.data.userInfo))
+          axios.post('https://api.projects1faker.com/getUserRanks',{
+         nickname : res.data.data.userInfo.nickname
+        }).then((res) => {
+          localStorage.setItem("UserData", res.data[0].tier)
+          localStorage.setItem("RankData", JSON.stringify(res.data[0]))
+          dispatch(setDataUserNow(res.data[0]))
+          setLoginError(null)
+          closeModal()
+        })
+          })
+          } else if(res.data.message === 'Invalid user or Wrong password'){
+            setLoginError('존재하지 않거나 잘못된 정보입니다')
+          }
+          
+        })
     
   }
 

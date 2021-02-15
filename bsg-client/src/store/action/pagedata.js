@@ -89,7 +89,6 @@ export const gettingBoard = () => {
   
     return (dispatch) =>{axios.get('https://api.projects1faker.com/getContent')
     .then((res) => {
-      console.log('2단계')
       dispatch(getBoard(res.data))
     }).catch((err) => {
       throw(err)

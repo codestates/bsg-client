@@ -3,6 +3,7 @@
 .commentContainer {
   display: flex;
   flex-direction: column;
+  border-radius : 5px;
 }
 
 .PostCommentArea { 
@@ -11,7 +12,7 @@
 }
 
 .ViewCommentArea { 
-  background: #000000a1;
+
 }
 
 .InputPostComment{
@@ -47,6 +48,7 @@
   width : 20%;
   justify-content :space-between;
   padding : 15px;
+  font-weight : bold;
 }
 
 .commentRight {

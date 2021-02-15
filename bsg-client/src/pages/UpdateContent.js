@@ -61,7 +61,6 @@ const cancelUpdate = () => {
 }
 
 const changeTitleValue = (e) => {
-  console.log(e)
   changeTitle(e.target.value)
 }
 
@@ -84,17 +83,7 @@ const changeBodyValue = (data) => {
     </div>
   </div>
   <div className="footer">
-          <div className="copyright">
-          Copyright ⓒ 2021. B.S.G-Land. All rights reserved.
-          </div>
-          <div className = 'nameText'>
-          <div><i class="far fa-address-card"></i> Yoo Jae Woo</div>
-          <div><i class="far fa-address-card"></i> Kim Yong Ho</div>
-          <div><i class="fas fa-address-card"></i> Park Jun Seok</div>
-          <div><i class="fas fa-address-card"></i> Lee Sang Cheol</div>
-          
-          </div>
-         
+          Copyright ⓒ 2021. B.S.G-Land. All rights reserved
         </div>
 </div>
 </>
