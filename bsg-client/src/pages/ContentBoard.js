@@ -104,7 +104,7 @@ const ContentBoard = () => {
           )}
         </div>
         
-        <div className="footer">
+        <div className="footerFlex">
           Copyright ⓒ 2021. B.S.G-Land. All rights reserved
         </div>
       </div>

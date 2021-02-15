@@ -1,7 +1,6 @@
 
 .content-board-container {
   background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
-  height: 965px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -48,7 +47,7 @@
   border-radius : 10px;
   font-size : 40px;
   padding : 20px;
-  background-color : #ffffff5e;
+  background-color : #ffffffba;
   margin-left: 70px;
   border: 2px solid black;
   }
@@ -60,7 +59,7 @@
     padding : 30px;
     font-size : 1.5rem;
     border-radius: 20px;
-    background: #ffffff5e;
+    background: #ffffffba;
     margin-top : 40px;
     margin-bottom : 50px;
     border: 2px solid black;
@@ -120,11 +119,13 @@
 
 .footerFlex {
   width: 100%;
-  height: 150px;
-  background-color : black;
+  height: 190px;
+  background: #326298;
+  color: white;
+  font-size: 1rem;
   display : flex;
-  justify-content: space-around;
-  align-items :inherit
+  justify-content: center;
+  align-items :center;
 }
 
 .TWCICON {

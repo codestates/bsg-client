@@ -30,8 +30,8 @@ const ViewMyPage = ({doUpdate}) => {
   const userNow = useSelector((state) => state.userData)
 
   const deleteUser = () => {
-    dispatch(signingOutUser(userNow.userNow.email))
     history.push('/')
+    dispatch(signingOutUser(userNow.userNow.email))
   }
 
   return  (
