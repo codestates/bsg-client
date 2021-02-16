@@ -54,14 +54,17 @@ const WritePage = () => {
         <Nav></Nav>
         <div className="Write-container">
             <div className="WriteBox"></div>
-            <input className = 'WriteTitle' placeholder = '제목을 입력하세요' onChange={handleTitle}></input>
+            <input className = 'WriteTitle' maxlength="10" placeholder = '제목을 입력하세요 (10자 제한)' onChange={handleTitle}></input>
             <TextEditor onChangeContent={handleContent} className="WriteinputContent"></TextEditor>
                     <div className="footer"></div>
                         <div className="WriteBtnBox">
                             <button className="WriteBtn" onClick={createBoard}>완료</button>
                             <button className="WriteBtn" onClick={() => handleCancleBtn()}>취소</button>
                             </div>
-                         </div>
+                            <div className="footer">
+          Copyright ⓒ 2021. B.S.G-Land. All rights reserved
+        </div>
+        </div>
            
         </>
     )

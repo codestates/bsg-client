@@ -11,7 +11,7 @@ export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE'
 export const IS_LOGIN = 'IN_LOGIN';
 export const NOW_LOGIN = 'NOW_LOGIN'
 export const NOW_LOGOUT = 'NOW_LOGOUT'
-
+export const SET_DATA_USER_NOW = 'SET_DATA_USER_NOW'
 
 export const signUpUser = (data) => {
   return {
@@ -78,6 +78,13 @@ export const setErrorMessage = (message) => {
     message : message
   }
 }
+
+export const setDataUserNow = (data) => {
+  return {
+    type : SET_DATA_USER_NOW,
+    data : data
+  }
+}
  
 
 
@@ -108,35 +115,38 @@ export const signingInUser = (userdata) => {
       password : userdata.password
     })
     .then((res) => {
-      console.log('첫번째',res.data.message)
       if(res.data.message === 'ok'){
         dispatch(setAccessToken(res.data.data.accessToken))
         localStorage.setItem("Token", res.data.data.accessToken)
-        return res
-      }
-      
-    }).then((res) => {
-      console.log('두번째',res)
-      axios.get('https://api.projects1faker.com/getUserInfo', {
+        axios.get('https://api.projects1faker.com/getUserInfo', {
         headers: {
           'authorization': `Bearer ${res.data.data.accessToken}` 
         }
       }).then((res) => {
-        console.log('세번째',res)
-        dispatch(nowLogIn())
-        dispatch(getUserData(res.data.data.userInfo)) 
+      dispatch(nowLogIn())
+      dispatch(getUserData(res.data.data.userInfo))
+      axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : res.data.data.userInfo.nickname
+    }).then((res) => {
+      localStorage.setItem("UserData", res.data[0].tier)
+      localStorage.setItem("RankData", JSON.stringify(res.data[0]))
+      dispatch(setDataUserNow(res.data[0]))
+    })
       })
+      } else if(res.data.message === 'Invalid user or Wrong password'){
+        
+      }
+      
     })
   }
 }
 
 export const logOutUser = () => {
   return (dispatch) => {
+      localStorage.clear();
       dispatch(getUserData(null))
       dispatch(setAccessToken(null))
       dispatch(nowLogOut())
-      return localStorage.clear();
-      
   }
 }
 
@@ -145,14 +155,10 @@ export const signingOutUser = (data) => {
     return axios.post('https://api.projects1faker.com/signOut', {
       email : data
     }).then((res) => {
-
-      if(res.data.message === "We always wait for you" ){
         dispatch(getUserData(null))
         dispatch(setAccessToken(null))
         dispatch(nowLogOut())
         localStorage.clear();
-      }
-      
     }).catch((err) => {
       throw(err)
     })
@@ -167,9 +173,13 @@ export const checkLoginAgain = () => {
         'authorization': `Bearer ${localStorage.getItem('Token')}` 
       }
     }).then((res) => {
-      console.log('세번째',res)
       dispatch(nowLogIn())
-      dispatch(getUserData(res.data.data.userInfo)) 
+      dispatch(getUserData(res.data.data.userInfo))
+      axios.post('https://api.projects1faker.com/getUserRanks',{
+     nickname : res.data.data.userInfo.nickname
+    }).then((res) => {
+      dispatch(setDataUserNow(res.data[0]))
+    })
     })
   }
 }
