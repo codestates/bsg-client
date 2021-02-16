@@ -346,7 +346,7 @@ animation: zoomIn .5s .1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   font-weight:bold;
   color :rgba(255, 0, 51, 0.801);
 }
-
+   
 .NoErrorMessageDiv {
   margin-top : 20px;
   height:  10%;
