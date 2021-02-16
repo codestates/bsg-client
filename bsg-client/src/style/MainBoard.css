@@ -1,19 +1,27 @@
 .Mainboard-container {
+  background-image: url(https://ifh.cc/g/uMX1Fx.jpg);
   height: auto;
     display: grid;
     background-color: #222831;
     grid-template-columns: 0.3fr 1.5fr 1.5fr 1.5fr 0.3fr;
-    grid-template-rows: 0.4fr 0.3fr 2.0fr 2fr 0.5fr 0.5fr;
+    grid-template-rows: 1fr 0.3fr 0.5fr 2.0fr 2fr 0.5fr 0.5fr;
     gap: 0px 0px;
     grid-template-areas:
       ". . . . ."
-      ". writeBtn writeBtn writeBtn ."
+      ". . writeBtn . ."
+      ". . . . ."
       ". bigPostBox bigPostBox bigPostBox ."
       ". bigPostBox bigPostBox bigPostBox ."
       ". . . . ."
       "footer footer footer footer footer";
   }
-  .footer { grid-area: footer; }
+ 
+
+
+
+
+
+
   .bigPostBox {
     height: auto;
     margin-top : 2rem;
@@ -25,40 +33,77 @@
   }
   .MainBoardWriteBtn { 
     grid-area: writeBtn;
-    background-color : #6B76AE;
-    font-size : 1.8rem;
+    background-color: rgba(53, 147, 160, 0.856);
+    color: #fff;
+    width: 100%;
+    font-size: 1.5rem;
+    height: 100px;
     border : 0;
     outline : 0;
-    border-radius: 10px;
-    color : white;
-    font-weight: bold;
-    width : 100%;
     text-align: center;
-    height : 50%;
+    border-radius: 20px;
   }
 
   .MainBoardWriteBtn:hover {
-    background-color :#6B76AE;
-    color : white;
-
+    background-color: rgba(0, 153, 255, 0.685);
   }
 
+
+  /* .MainBoardWriteBtn:hover {
+    background-color :rgb(22, 102, 122);
+    color : white;
+
+  } */
+
   .postBox{
-    border: 1px solid black;
-    border-radius: 20px;
-    background: #9BB7D4;
-    height : 200px;
+    background-image: url(https://ifh.cc/g/I4HNbs.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: 2627281a;
+    height: 400px;
+    width: 350px;
     padding : 20px;
     display : flex;
     flex-direction : column;
-    justify-content : space-between;
-    
+    justify-content : space-around;
+    cursor: pointer;
+    align-items : center;
 }
 .onePostBoxTitle{
-  border-bottom: 2px solid black;
   text-align : center;
-  font-size : 1.5rem;
+  font-size : 1.7rem;
   font-weight : bold;
+  width: 50%;
+  padding : 10px;
+  margin-bottom: 30%;
+  background: #26272800;        
+  color: black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.884);
+}
+.PostBottom{
+  font-weight : bold;
+}
+
+.PostBottomDay{
+  font-weight : bold;
+  color : red;
+}
+
+.PostBody{
+  background: #262728;
+  color: white;
+}
+
+.PostUserName{
+  background: #262728;
+  color: white;
+}
+
+.onePostBoxBottom{
+  height : 20%;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-around;
 }
 
 @media screen and (max-width: 500px){
@@ -66,4 +111,5 @@
     grid-template-columns: 1fr
   }
 }
+
 

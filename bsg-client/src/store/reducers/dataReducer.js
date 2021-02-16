@@ -9,9 +9,9 @@ const fakeData = require('../reducers/fakedata')
 const initialState = {
   searchData : null,
   bestVideos : null,
-  boardNow : null,
-  boards : fakeData,
-  comments : fakeData
+  boardNow : [],
+  boards : [],
+  comments : []
 }
 
 export default function(state = initialState, action){

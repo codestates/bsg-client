@@ -12,7 +12,7 @@ const CommentMapping = ({comments}) => {
   }
   
   useEffect(() => {
-    console.log(comments)
+
   },[])
 
   return (

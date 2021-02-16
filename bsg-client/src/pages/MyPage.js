@@ -4,14 +4,21 @@ import Nav from '../component/Nav'
 import Modal from '../component/Modal'
 import ViewMyPage from '../component/ViewMyPage'
 import UpdateMyPage from '../component/UpdateMyPage'
-const axios = require('axios')
+import { checkLoginAgain } from '../store/action/users'
 
 
 const MyPage = () => {
 
+
+  useEffect(() => {
+    if(localStorage.getItem('Token')){
+      dispatch(checkLoginAgain())
+    }
+  },[])
+
   const userdata = useSelector((state) => state.userData.userNow)
   const [isUpdate, setMode] = useState(false)
-
+  const dispatch = useDispatch()
   const doUpdate = () => {
     setMode(true)
   }
@@ -19,6 +26,8 @@ const MyPage = () => {
   const cancelUpdate = () => {
     setMode(false)
   }
+
+  
 
   return( 
     <>
@@ -28,7 +37,9 @@ const MyPage = () => {
       : <UpdateMyPage cancelUpdate={cancelUpdate}></UpdateMyPage>}
         
       </div>
-      <div className="footer">designed by apple in california</div>
+      <div className="footer">
+          Copyright ⓒ 2021. B.S.G-Land. All rights reserved
+        </div>
     </div>
     </>
   )

@@ -5,11 +5,14 @@ import { SET_ACCESS_TOKEN } from '../action/users'
 import { SET_ERROR_MESSAGE } from '../action/users'
 import { NOW_LOGIN } from '../action/users'
 import { NOW_LOGOUT } from '../action/users'
+import { SET_DATA_USER_NOW } from '../action/users'
 
 const initialState = {
   isLogin : false,
-  userNow : { username : '테스터유저'},
+  userNow : null,
   accessToken : null,
+  dataUserNow : null,
+  errorMessage : null
 }
 
 export default function(state = initialState, action){
@@ -49,6 +52,12 @@ export default function(state = initialState, action){
       ...state,
       errorMessage : action.message
     }
+    case SET_DATA_USER_NOW :
+      return {
+        ...state,
+        dataUserNow : action.data
+      }
+
     default :
       return state 
   }
