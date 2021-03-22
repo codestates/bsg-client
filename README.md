@@ -6,9 +6,16 @@ ___
 항상 핍박받고 멸시당하는 랭크 아이언,브론즈,실버,골드 까지의 랭크를 가진 유저들만이 글을 쓰고 댓글을 달수있는 기능을 제공하며,<br>
 나머지 랭크유저는 가입은 할수있으되, 정보조회만 할수있습니다. (랭크게임을 하지않아 언랭크인 유저 혹은 게임 계정이 없는 유저는 가입하실수 없습니다.)
 ___
-### 배포 사이트 : [링크](https://www.projects1faker.com/mainpage)
-### 클라이언트 Repository : [링크](https://github.com/codestates/bsg-client)
-### 서버 Repository : [링크](https://github.com/codestates/bsg-server)
+# About US
+![](https://ifh.cc/g/eqXtxA.gif)
+___
+# :information_desk_person: 우리를 소개합니다.
+![](https://ifh.cc/g/mSk4YS.gif)
+
+## [유재우](https://github.com/yuJaeWoo) 🏴 Backend
+## [김용호](https://github.com/Yongho5580) 🏴 Backend
+## [박준석](https://github.com/wnstjr0317) 🏁 Team Leader / Frontend
+## [이상철](https://github.com/ning1315) 🏁 Frontend
 ___
 # Stack Diagram<br>
 ## FRONT
@@ -24,15 +31,6 @@ ___
 ___
 ![](https://images.velog.io/images/pp8960/post/27b8e33d-3b06-4a88-9bde-baebf23ef760/stack%20(1).png)
 ___
-# Crew
+### 클라이언트 Repository : [링크](https://github.com/codestates/bsg-client/wiki)
+### 서버 Repository : [링크](https://github.com/codestates/bsg-server)
 ___
-![](https://images.velog.io/images/pp8960/post/8f50e083-546a-4d1f-8d17-4cf2a6b3dec1/bAckend%20(4).png)
-![](https://images.velog.io/images/pp8960/post/77d43c56-bb97-40ee-bbc3-e13fdf46be40/bAckend%20(3).png)
-![](https://images.velog.io/images/pp8960/post/94fd7fb5-602e-4820-9b69-e47e6af38817/bAckend%20(1).png)
-![](https://images.velog.io/images/pp8960/post/7d09ef2b-1b75-48b5-ace0-867d89672448/bAckend.png)
-___
-# :information_desk_person: 우리를 소개합니다.
-## [유재우](https://github.com/yuJaeWoo) 🏴 Backend
-## [김용호](https://github.com/Yongho5580) 🏴 Backend
-## [박준석](https://github.com/wnstjr0317) 🏁 Team Leader / Frontend
-## [이상철](https://github.com/ning1315) 🏁 Frontend
