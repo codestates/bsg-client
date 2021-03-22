@@ -1,4 +1,3 @@
-# B.S.G-land
 ![](https://images.velog.io/images/pp8960/post/9bffb870-7a4f-4138-929e-b68a01d8904b/cooltext376116355185636.png)
 ![](https://ifh.cc/g/UJERS3.jpg)
 ___
