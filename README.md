@@ -18,15 +18,9 @@ ___
 ___
 # Stack Diagram<br>
 ## FRONT
-![](https://img.shields.io/badge/FRONT-REACT-00AEFF?style=for-the-badge&logo=React)</br>
-![](https://img.shields.io/badge/FRONT-REACTHOOKS-00AEFF?style=for-the-badge&logo=React)</br>
-![](https://img.shields.io/badge/FRONT-REDUX-darkviolet?style=for-the-badge&logo=Redux)</br>
-![](https://img.shields.io/badge/FRONT-REDUXTHUNK-darkviolet?style=for-the-badge&logo=Redux)
+![](https://img.shields.io/badge/FRONT-REACT-00AEFF?style=for-the-badge&logo=React)![](https://img.shields.io/badge/FRONT-REACTHOOKS-00AEFF?style=for-the-badge&logo=React)![](https://img.shields.io/badge/FRONT-REDUX-darkviolet?style=for-the-badge&logo=Redux)![](https://img.shields.io/badge/FRONT-REDUXTHUNK-darkviolet?style=for-the-badge&logo=Redux)
 ## BACK
-![](https://img.shields.io/badge/BACK-NODEJS-339933?style=for-the-badge&logo=Node.js)</br>
-![](https://img.shields.io/badge/BACK-MySQL-4479A1?style=for-the-badge&logo=MySQL)</br>
-![](https://img.shields.io/badge/BACK-SEQUELIZE-3178C6?style=for-the-badge&logo=CodeSandbox)</br>
-![](https://img.shields.io/badge/BACK-AWS-FF9900?style=for-the-badge&logo=Amazon)
+![](https://img.shields.io/badge/BACK-NODEJS-339933?style=for-the-badge&logo=Node.js)![](https://img.shields.io/badge/BACK-MySQL-4479A1?style=for-the-badge&logo=MySQL)![](https://img.shields.io/badge/BACK-SEQUELIZE-3178C6?style=for-the-badge&logo=CodeSandbox)![](https://img.shields.io/badge/BACK-AWS-FF9900?style=for-the-badge&logo=Amazon)
 ___
 ![](https://images.velog.io/images/pp8960/post/27b8e33d-3b06-4a88-9bde-baebf23ef760/stack%20(1).png)
 ___
