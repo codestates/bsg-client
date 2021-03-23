@@ -22,7 +22,7 @@ ___
 ## BACK
 ![](https://img.shields.io/badge/BACK-NODEJS-339933?style=for-the-badge&logo=Node.js)![](https://img.shields.io/badge/BACK-MySQL-4479A1?style=for-the-badge&logo=MySQL)![](https://img.shields.io/badge/BACK-SEQUELIZE-3178C6?style=for-the-badge&logo=CodeSandbox)![](https://img.shields.io/badge/BACK-AWS-FF9900?style=for-the-badge&logo=Amazon)
 ___
-![](https://images.velog.io/images/pp8960/post/27b8e33d-3b06-4a88-9bde-baebf23ef760/stack%20(1).png)
+![](https://ifh.cc/g/cRzwxu.jpg)
 ___
 ### 클라이언트 Repository : [링크](https://github.com/codestates/bsg-client/wiki)
 ### 서버 Repository : [링크](https://github.com/codestates/bsg-server)
