@@ -1,5 +1,4 @@
 ![](https://images.velog.io/images/pp8960/post/9bffb870-7a4f-4138-929e-b68a01d8904b/cooltext376116355185636.png)
-![](https://ifh.cc/g/UJERS3.jpg)
 ___
 **B.S.G-land**는 게임 **League of Legends**의 **특정랭크**를 위한 게시판이며, 유저정보 조회를 통한 유저정보를 열람할수 있는 서비스입니다.
 항상 핍박받고 멸시당하는 랭크 아이언,브론즈,실버,골드 까지의 랭크를 가진 유저들만이 글을 쓰고 댓글을 달수있는 기능을 제공하며,<br>
